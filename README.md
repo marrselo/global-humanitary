@@ -1,4 +1,4 @@
 global-humanitary
 =================
 
-CMS ZEND , Mysql
+CMS ZEND , Mysql o
