@@ -10,6 +10,7 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
         $v = $layout->getView();
         $v->addHelperPath('App/View/Helper', 'App_View_Helper');
         $config = Zend_Registry::get('config');
+        
 
         //Definiendo Constante para Partials
         defined('MEDIA_URL')

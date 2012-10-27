@@ -43,7 +43,7 @@ class index
      *
      * @var array
      */
-    protected static $_ini = array('routes.ini', 'private.ini','images.ini');
+    protected static $_ini = array('routes.ini','images.ini', 'private.ini',);
 
     /**
      *
@@ -73,9 +73,8 @@ class index
                     $config->toArray());
             }
         }
-
-        $application->setOptions($options);
-
+                
+        $application->setOptions($options);        
         return $application;
     }
 
@@ -92,5 +91,9 @@ class index
 }
 if (Index::$_runBoostrap && !defined('CONSOLE')) {
     $application = Index::getApplication()->bootstrap();
+    
+    var_dump($application);
+    exit;
     $application->run();
 }
+echo "hola"; exit;

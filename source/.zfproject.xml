@@ -19,7 +19,9 @@
           <layoutScriptFile layoutName="layout"/>
         </layoutScriptsDirectory>
       </layoutsDirectory>
-      <modelsDirectory/>
+      <modelsDirectory>
+        <modelFile modelName="Banner"/>
+      </modelsDirectory>
       <modulesDirectory>
         <moduleDirectory moduleName="admin">
           <apisDirectory enabled="false"/>
