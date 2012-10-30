@@ -82,7 +82,7 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
     public function _initActionHelpers()
     {
 //        Zend_Controller_Action_HelperBroker::addHelper(
-//            new App_Controller_Action_Helper_Auth()
+//            new Core_Controller_Action_Helper_Auth()
 //        );
 //        Zend_Controller_Action_HelperBroker::addHelper(
 //            new App_Controller_Action_Helper_Security()

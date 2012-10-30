@@ -15,16 +15,10 @@ class Core_Controller_Action extends Zend_Controller_Action {
     protected $_flashMessenger;
 
     public function init() {
-        echo "asdasdasd"; exit;
-//        $this->_flashMessenger = $this->_helper->getHelper('FlashMessengerCustom');
+        
+//        $this->_flashMessenger = $this->_helper->getHelper('FlashMessengerCustom');     
 //        $this->view->fmsgs = $this->_flashMessenger->getMessages();
-//        $this->_hash = new Zend_Form_Element_Hash('csrf_hash', array('salt' => 'exitsalt'));
-//        $this->_hash->setTimeout(3600);
-//        $this->_hash->initCsrfToken();
-//        $csrfhash = $this->_hash->getValue();
-//        $this->view->csrfhash = $csrfhash;
-//        defined('CSRF_HASH')
-//                || define('CSRF_HASH', $csrfhash);
+
         parent::init();
     }
 
@@ -38,13 +32,16 @@ class Core_Controller_Action extends Zend_Controller_Action {
         parent::preDispatch();
         
         $config = $this->getConfig();
-
+        
         $this->config = $this->getConfig();
-       // echo $this->config;exit
-        $this->log = $this->getLog();
-        $this->cache = $this->getCache();
-        $this->siteUrl = $this->config->app->siteUrl;
-        $this->view->assign('siteUrl', $config->app->siteUrl);
+        //Zend_Debug::dump($this->config);exit;
+        //$this->log = $this->getLog();
+        
+        //$this->cache = $this->getCache();
+        $this->siteUrl = $this->config['app']['siteUrl'];
+        
+        $this->view->assign('siteUrl', $config['app']['siteUrl']);       
+       
 /*
         if (APPLICATION_ENV != 'production') {
             $sep = sprintf('[%s]', strtoupper(substr(APPLICATION_ENV, 0, 3)));
@@ -63,14 +60,15 @@ class Core_Controller_Action extends Zend_Controller_Action {
      */
     public function postDispatch() {
         parent::postDispatch();
-
-        if (APPLICATION_ENV != 'production') {
-            $sep = sprintf('[%s]', strtoupper(substr(APPLICATION_ENV, 0, 3)));
-            $titleStack = $this->view->headTitle()->getContainer()->getValue();
-            if (!is_array($titleStack) || (is_array($titleStack) && isset($titleStack[0]) && $titleStack[0] != $sep) ){
-                $this->view->headTitle()->prepend($sep);
-            }
-        }
+        
+//        if (APPLICATION_ENV != 'production') {
+//            $sep = sprintf('[%s]', strtoupper(substr(APPLICATION_ENV, 0, 3)));
+//            $titleStack = $this->view->headTitle()->getContainer()->getValue();
+//            if (!is_array($titleStack) || (is_array($titleStack) && isset($titleStack[0]) && $titleStack[0] != $sep) ){
+//                $this->view->headTitle()->prepend($sep);
+//            }
+//        }
+        
     }
 
 

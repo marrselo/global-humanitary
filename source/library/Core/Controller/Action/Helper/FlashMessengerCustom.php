@@ -1,6 +1,6 @@
 <?php
 
-class App_Controller_Action_Helper_FlashMessengerCustom
+class Core_Controller_Action_Helper_FlashMessengerCustom
     extends Zend_Controller_Action_Helper_FlashMessenger
 {
     
