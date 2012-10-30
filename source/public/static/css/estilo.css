@@ -1,0 +1,57 @@
+
+body {
+    background: none repeat scroll 0 0 #DEDEDE;
+    font-family: arial;
+    font-size: 12px;
+}
+ul.toplinks li {
+    float: left;
+}
+.body-container ul.toplinks {
+    list-style: none outside none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    right: 0;
+}
+.body-container {
+    margin: auto;
+    position: relative;
+    width: 900px;
+}
+.body-container .header {
+    display: table;
+    margin-bottom: 1%;
+    position: relative;
+}
+.body-container .header .logo {
+    display: inline;
+    float: left;
+}
+.body-container div.header ul.topmenu {
+    display: inline;
+    float: left;
+    list-style: none outside none;
+    margin: 71px 0 0;
+    padding: 0;
+}
+.body-container div.header ul.topmenu li {
+    border: 0 none;
+    float: left;
+    margin: 0;
+}
+.body-container div.header ul.topmenu li a {
+    float: left;
+    padding: 10px;
+    text-align: center;
+    width: 80px;
+}
+ul.toplinks li a {
+    font-size: 0.8em;
+    padding: 3px;
+}
+
+.body-container .slideshow-cont {
+  background: none repeat scroll 0 0 orange;
+  padding: 3.8%;
+}

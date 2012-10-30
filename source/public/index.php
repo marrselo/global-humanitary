@@ -1,7 +1,9 @@
 <?php
 
 // Define path to application directory
-
+ini_set('session.auto_start', 0);
+error_reporting(E_ALL);
+date_default_timezone_set('America/Lima');
 defined('APPLICATION_PATH')
     || define('APPLICATION_PATH', realpath(__DIR__ . '/../application'));
 
@@ -43,7 +45,7 @@ class index
      *
      * @var array
      */
-    protected static $_ini = array('routes.ini','images.ini', 'private.ini',);
+    protected static $_ini = array('routes.ini','images.ini','private.ini',);
 
     /**
      *
@@ -60,21 +62,25 @@ class index
         $application = new Zend_Application(
                 APPLICATION_ENV
         );
-
+        //Zend_Debug::dump($application); exit;
         $applicationini = new Zend_Config_Ini(APPLICATION_PATH . "/configs/application.ini", APPLICATION_ENV);
-
+        //Zend_Debug::dump($applicationini);exit;
         $options = $applicationini->toArray();
-                
+        //Zend_Debug::dump($options);exit;
+        //Zend_Debug::dump(self::$_ini); exit;
         foreach (self::$_ini as $value) {
             $iniFile = APPLICATION_PATH . self::$_pathConfig . $value;
+            
             if (is_readable($iniFile)) {
                 $config = new Zend_Config_Ini($iniFile);
                 $options = $application->mergeOptions($options,
                     $config->toArray());
+            } else {
+            throw new Zend_Exception('error en la configuracion de los .ini');
             }
-        }
-                
-        $application->setOptions($options);        
+        }        
+        Zend_Registry::set('config',$options);       
+        $application->setOptions($options);           
         return $application;
     }
 
@@ -90,10 +96,10 @@ class index
 
 }
 if (Index::$_runBoostrap && !defined('CONSOLE')) {
+    
     $application = Index::getApplication()->bootstrap();
     
-    var_dump($application);
-    exit;
+    //Zend_Debug::dump($application); exit;
     $application->run();
+    echo "al fin "; 
 }
-echo "hola"; exit;
