@@ -4,7 +4,10 @@ class Default_IndexController extends Core_Controller_Action
 {
     public function indexAction()
     {           
-       echo "que falta";exit;
+       
+       $params = $this->_getAllParams();
+       Zend_Debug::dump($params); 
+       
    } 
 }
 
