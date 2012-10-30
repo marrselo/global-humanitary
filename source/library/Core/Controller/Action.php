@@ -15,16 +15,16 @@ class Core_Controller_Action extends Zend_Controller_Action {
     protected $_flashMessenger;
 
     public function init() {
-
-        $this->_flashMessenger = $this->_helper->getHelper('FlashMessengerCustom');
-        $this->view->fmsgs = $this->_flashMessenger->getMessages();
-        $this->_hash = new Zend_Form_Element_Hash('csrf_hash', array('salt' => 'exitsalt'));
-        $this->_hash->setTimeout(3600);
-        $this->_hash->initCsrfToken();
-        $csrfhash = $this->_hash->getValue();
-        $this->view->csrfhash = $csrfhash;
-        defined('CSRF_HASH')
-                || define('CSRF_HASH', $csrfhash);
+        echo "asdasdasd"; exit;
+//        $this->_flashMessenger = $this->_helper->getHelper('FlashMessengerCustom');
+//        $this->view->fmsgs = $this->_flashMessenger->getMessages();
+//        $this->_hash = new Zend_Form_Element_Hash('csrf_hash', array('salt' => 'exitsalt'));
+//        $this->_hash->setTimeout(3600);
+//        $this->_hash->initCsrfToken();
+//        $csrfhash = $this->_hash->getValue();
+//        $this->view->csrfhash = $csrfhash;
+//        defined('CSRF_HASH')
+//                || define('CSRF_HASH', $csrfhash);
         parent::init();
     }
 
@@ -36,6 +36,7 @@ class Core_Controller_Action extends Zend_Controller_Action {
      */
     public function preDispatch() {
         parent::preDispatch();
+        
         $config = $this->getConfig();
 
         $this->config = $this->getConfig();

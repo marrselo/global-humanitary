@@ -9,14 +9,10 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
         
         $this->bootstrap('layout');        
         $layout = $this->getResource('layout');
-        //Zend_Debug::dump($layout);exit;
         $v = $layout->getView();
-        
-        //Zend_Debug::dump($v);exit;
+
         $v->addHelperPath('Core/View/Helper', 'Core_View_Helper');
-        //Zend_Debug::dump($v);exit;
         $config = Zend_Registry::get('config');
-        //Zend_Debug::dump($config['app']); exit;
         
         //Definiendo Constante para Partials
         defined('STATIC_URL')

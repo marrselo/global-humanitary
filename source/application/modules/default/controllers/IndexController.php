@@ -1,10 +1,10 @@
 <?php
 
-class IndexController extends Core_Controller_Action       
+class Default_IndexController extends Core_Controller_Action       
 {
     public function indexAction()
     {           
-       
+       echo "que falta";
    } 
 }
 
