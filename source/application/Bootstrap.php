@@ -71,10 +71,12 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 //                $config['app']['cache']
 //            )
 //        );
-        
-        $multidb = $this->getPluginResource('multidb');
-        Zend_Registry::set('multidb', $multidb);
-       // Zend_Debug::dump($multidb); exit;
+        $this->bootstrap('multidb');
+        $db = $this->getPluginResource('multidb')->getDb('db');
+        Zend_Db_Table::setDefaultAdapter($db);
+        //$multidb = $this->getPluginResource('multidb');
+        Zend_Registry::set('multidb', $db);
+       //Zend_Debug::dump($db); exit;
 
 //        $this->_executeResource('log');
 //        $log = $this->getResource('log');

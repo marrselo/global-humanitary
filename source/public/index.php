@@ -61,13 +61,9 @@ class index
     {
         $application = new Zend_Application(
                 APPLICATION_ENV
-        );
-        //Zend_Debug::dump($application); exit;
-        $applicationini = new Zend_Config_Ini(APPLICATION_PATH . "/configs/application.ini", APPLICATION_ENV);
-        //Zend_Debug::dump($applicationini);exit;
+        );        
+        $applicationini = new Zend_Config_Ini(APPLICATION_PATH . "/configs/application.ini", APPLICATION_ENV);        
         $options = $applicationini->toArray();
-        //Zend_Debug::dump($options);exit;
-        //Zend_Debug::dump(self::$_ini); exit;
         foreach (self::$_ini as $value) {
             $iniFile = APPLICATION_PATH . self::$_pathConfig . $value;
             
@@ -80,7 +76,7 @@ class index
             }
         }        
         Zend_Registry::set('config',$options);       
-        $application->setOptions($options);           
+        $application->setOptions($options);  
         return $application;
     }
 
@@ -97,9 +93,6 @@ class index
 }
 if (Index::$_runBoostrap && !defined('CONSOLE')) {
     
-    $application = Index::getApplication()->bootstrap();
-    
-    //Zend_Debug::dump($application); exit;
-    $application->run();
-    echo "al fin "; 
+    $application = Index::getApplication()->bootstrap();  
+    $application->run();    
 }

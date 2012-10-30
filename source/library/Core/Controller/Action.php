@@ -15,7 +15,7 @@ class Core_Controller_Action extends Zend_Controller_Action {
     protected $_flashMessenger;
 
     public function init() {
-        
+
         $this->_flashMessenger = $this->_helper->getHelper('FlashMessengerCustom');
         $this->view->fmsgs = $this->_flashMessenger->getMessages();
         $this->_hash = new Zend_Form_Element_Hash('csrf_hash', array('salt' => 'exitsalt'));
@@ -39,6 +39,7 @@ class Core_Controller_Action extends Zend_Controller_Action {
         $config = $this->getConfig();
 
         $this->config = $this->getConfig();
+       // echo $this->config;exit
         $this->log = $this->getLog();
         $this->cache = $this->getCache();
         $this->siteUrl = $this->config->app->siteUrl;
