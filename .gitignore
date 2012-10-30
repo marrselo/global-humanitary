@@ -3,6 +3,4 @@ source/nbproject/*
 source/data/log
 source/data/cache
 source/application/configs/private.ini
-source/nbproject/private/private.properties
-source/nbproject/project.properties
-source/nbproject/project.xml
+
