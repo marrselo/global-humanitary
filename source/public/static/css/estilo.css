@@ -1,11 +1,16 @@
 
 body {
-    background: none repeat scroll 0 0 #DEDEDE;
+    background: none repeat scroll 0 0 #EAEAEA;
     font-family: arial;
     font-size: 12px;
 }
 ul.toplinks li {
     float: left;
+}
+.bottom-content {
+    background: none repeat scroll 0 0 #FFFFFF;
+    display: table;
+    width: 100%;
 }
 .body-container ul.toplinks {
     list-style: none outside none;
@@ -41,17 +46,282 @@ ul.toplinks li {
     margin: 0;
 }
 .body-container div.header ul.topmenu li a {
+    border-right: 1px dotted #999999;
     float: left;
-    padding: 10px;
+    padding: 0;
     text-align: center;
-    width: 80px;
 }
 ul.toplinks li a {
     font-size: 0.8em;
     padding: 3px;
 }
-
 .body-container .slideshow-cont {
-  background: none repeat scroll 0 0 orange;
-  padding: 3.8%;
+    background: none repeat scroll 0 0 orange;
+    padding: 3.8%;
 }
+.bloque-noticias {
+}
+.body-container div.bottom-content div.left-zone {
+    background: none repeat scroll 0 0 #E4E4E4;
+    float: left;
+    margin-left: 1%;
+    margin-right: 0;
+    padding-left: 1.8%;
+    padding-right: 1.8%;
+    width: 30%;
+}
+.body-container div.bottom-content div.right-zone {
+    background: none repeat scroll 0 0 #E4E4E4;
+    float: left;
+    padding-left: 1.8%;
+    padding-right: 1.8%;
+    width: 61%;
+}
+div.body-container div.bottom-content div.left-zone div.bloque-noticias {
+    background: none repeat scroll 0 0 #415EAA;
+    width: 253px;
+}
+div.body-container div.bottom-content div.left-zone div.bloque-noticias div.bloque-noticias-title {
+    background: none repeat scroll 0 0 orange;
+    color: #FFFFFF;
+    display: table;
+    margin-bottom: 5%;
+    width: 100%;
+}
+div.body-container div.bottom-content div.left-zone div.bloque-noticias div.bloque-noticias-body {
+    display: table;
+}
+div.body-container div.bottom-content div.left-zone div.bloque-noticias div.bloque-noticias-body div.bloque-noticias-field-image {
+    text-align: center;
+}
+div.body-container div.bottom-content div.left-zone div.bloque-noticias div.bloque-noticias-body div.bloque-noticias-field-image img {
+    border: 2px solid #FFFFFF;
+}
+div.body-container div.bottom-content div.left-zone div.bloque-noticias div.bloque-noticias-body div.bloque-noticias-field-teaser {
+    color: #FFFFFF;
+    font-size: 0.9em;
+    padding: 5%;
+    text-align: justify;
+}
+div.body-container div.bottom-content div.left-zone div.bloque-noticias div.bloque-noticias-body a.bloque-noticias-field-morelink {
+    color: orange;
+    float: right;
+    margin-bottom: 4%;
+}
+div.body-container div.bottom-content div.left-zone div.bloque-noticias div.bloque-noticias-title a {
+    clear: both;
+    color: #FFFFFF;
+    float: left;
+    padding: 4%;
+    text-decoration: none;
+    text-indent: 10%;
+    width: 92%;
+}
+div.body-container .footer {
+    background: none repeat scroll 0 0 #FFB12B;
+    clear: both;
+    display: table;
+    width: 100%;
+}
+div.body-container .footer .leftside {
+    float: left;
+    padding-bottom: 2%;
+    padding-left: 2%;
+    padding-right: 0;
+    width: 58%;
+}
+div.body-container .footer .leftside ul.bottom_menu {
+    list-style: none outside none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+div.body-container .footer .leftside ul.bottom_menu li {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-color: red -moz-use-text-color;
+    border-image: none;
+    border-style: solid none;
+    border-width: 1px 0;
+    display: table;
+    float: left;
+    margin-right: 7%;
+    width: 26%;
+}
+div.body-container .footer .leftside ul.bottom_menu li a {
+    float: left;
+    padding: 2%;
+    text-align: left;
+    text-decoration: none;
+    width: 100%;
+}
+div.body-container .footer .rightside {
+    float: left;
+    width: 40%;
+}
+div.body-container div.bottom-content div.right-zone div.bloque-generico {
+    background: none repeat scroll 0 0 #FF7F00;
+    margin-bottom: 2%;
+}
+div.body-container div.bottom-content div.right-zone div.bloque-generico div.bloque-generico-title {
+    background: none repeat scroll 0 0 #335696;
+}
+div.body-container div.bottom-content div.right-zone div.bloque-generico div.bloque-generico-body {
+    color: #FFFFFF;
+    display: table;
+    font-size: 0.9em;
+    padding: 3% 3% 2%;
+}
+div.body-container div.bottom-content div.right-zone div.bloque-generico div.bloque-generico-body div.bloque-generico-field-image {
+    float: left;
+    width: 50%;
+}
+div.body-container div.bottom-content div.right-zone div.bloque-generico div.bloque-generico-body div.bloque-generico-field-teaser {
+    float: left;
+    text-align: justify;
+    width: 50%;
+}
+div.body-container div.bottom-content div.right-zone div.bloque-generico div.bloque-generico-body a.bloque-generico-field-morelink {
+    color: #FFFFFF;
+    float: right;
+    margin-top: 3%;
+}
+div.body-container div.bottom-content div.right-zone div.bloque-generico div.bloque-generico-title a {
+    color: #FFFFFF;
+    display: table;
+    padding: 2%;
+}
+div.body-container div.bottom-content div.right-zone div.bloque-ultimoproyecto div.bloque-generico-title {
+    background: none repeat scroll 0 0 #333333;
+}
+.footer .footer-wide {
+    background: none repeat scroll 0 0 #FF9501;
+    clear: both;
+    color: #FFFFFF;
+    display: block;
+    text-align: center;
+    width: 100%;
+}
+.section-title {
+    color: #6E7295;
+    font-family: Calibri;
+    font-size: 1.8em;
+    font-weight: 400;
+    margin-bottom: 0;
+    text-transform: uppercase;
+}
+.subtitle {
+    clear: both;
+    color: #666666;
+    display: table;
+    font-family: Calibri;
+    height: 21px;
+    margin-bottom: 5px;
+    width: 100%;
+}
+div.body-container div.bottom-content div.right-zone div.bloque-ultimoproyecto div.bloque-generico-body {
+    width: 94%;
+}
+div.body-container div.bottom-content div.right-zone div.bloque-generico div.bloque-generico-body .rightside {
+    float: left;
+    width: 45%;
+}
+div.body-container div.bottom-content div.right-zone div.bloque-generico div.bloque-generico-body .leftside {
+    float: left;
+    width: 55%;
+}
+div.body-container div.bottom-content div.right-zone div.bloque-ultimoproyecto {
+    background: none repeat scroll 0 0 #38569F;
+}
+div.body-container div.bottom-content div.right-zone div.bloque-generico div.bloque-generico-body .leftside .texto {
+    float: left;
+    margin-right: 4%;
+    width: 44%;
+}
+div.body-container div.bottom-content div.right-zone div.bloque-generico div.bloque-generico-body .leftside .block-images {
+}
+div.body-container div.bottom-content div.right-zone div.bloque-generico div.bloque-generico-body .leftside .block-images img {
+    border: 2px solid #FFFFFF;
+}
+div.body-container div.bottom-content div.right-zone div.bloque-ultimoproyecto div.bloque-generico-body div.rightside div.bloque-generico-field-image img {
+    border: 2px solid #FFFFFF;
+    text-align: center;
+}
+div.body-container div.bottom-content div.right-zone div.bloque-ultimoproyecto div.bloque-generico-body div.rightside div.bloque-generico-field-teaser {
+    width: 100%;
+}
+.body-container .breadcrumb {
+    background: none repeat scroll 0 0 orange;
+    float: left;
+    padding: 1% 2%;
+    width: 96%;
+}
+html body div.body-container div.body-content div.contentside {
+    border-left: 2px dotted #CCCCCC;
+    float: left;
+    padding-left: 2%;
+    width: 78.7%;
+}
+html body div.body-container div.body-content div.leftside {
+    float: left;
+    width: 19%;
+}
+div.body-container div.body-content div.contentside h1.section-title {
+    color: blue;
+}
+div.body-container div.body-content div.contentside div.bloque-content {
+    padding: 3%;
+}
+div.body-container div.body-content div.contentside div.bloque-content div.bloque-imagen {
+    border: 2px solid #FFFFFF;
+    float: left;
+}
+div.body-container div.body-content div.contentside div.bloque-content div.bloque-text {
+    float: left;
+    margin-right: 4%;
+    width: 63.8%;
+}
+div.body-container div.body-content div.leftside ul.leftmenu li a {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-color: grey -moz-use-text-color;
+    border-image: none;
+    border-style: solid none;
+    border-width: 1px 0;
+    color: grey;
+    float: left;
+    padding: 3% 5%;
+    text-decoration: none;
+    width: 90%;
+}
+div.body-container div.body-content div.leftside ul.leftmenu li {
+}
+div.body-container div.body-content div.leftside ul.leftmenu {
+    border-bottom: 1px solid grey;
+    border-top: 1px solid grey;
+    display: table;
+    float: left;
+    list-style: none outside none;
+    margin: 15% 0 0;
+    padding: 0;
+    width: 100%;
+}
+div.body-container div.body-content div.leftside {
+}
+div.body-container div.body-content div.leftside ul.leftmenu li a.active {
+    background: none repeat scroll 0 0 orange;
+    color: #FFFFFF;
+}
+div.body-container div.body-content {
+    background: none repeat scroll 0 0 #E3E3E3;
+    border-left: 10px solid white;
+    border-right: 10px solid white;
+    display: table;
+    margin: auto;
+    width: 96%;
+}
+ 

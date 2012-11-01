@@ -1,1 +1,70 @@
-<?php echo "Contenido del Index" ; ?>
+
+<div class="left-zone">
+    <h1 class="section-title">Noticias</h1>
+    <div class="subtitle">Informate de nuestras ultimas novedades</div>
+
+    <?php foreach($this->noticias as $index): ?>
+    <div class="bloque-noticias">
+        <div class="bloque-noticias-title"><a href="#"><?php echo $index['noticias_titulo'] ?></a></div>
+        <div class="bloque-noticias-body">
+            <div class="bloque-noticias-field-image"><img src="<?php echo DINAMIC_URL; ?>/noticias/<?php echo $index['noticias_imagen']; ?>"></div>
+            <div class="bloque-noticias-field-teaser"><?php echo $index['noticias_descripcion_corta']; ?></div>
+            <a href="<?php echo SITE_URL ?>noticias/<?php echo $index['noticias_slug']; ?>" class="bloque-noticias-field-morelink">Leer mas</a>
+        </div>
+    </div>
+<?php endforeach; ?>   
+<!--    <div class="bloque-noticias">
+        <div class="bloque-noticias-title"><a href="#">La ayuda llego a Pucara</a></div>
+        <div class="bloque-noticias-body">
+            <div class="bloque-noticias-field-image"><img src="/static/images/imagen-noticia-01.jpg"></div>
+            <div class="bloque-noticias-field-teaser">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </div>
+            <a href="#" class="bloque-noticias-field-morelink">Leer mas</a>
+        </div>
+    </div>
+
+    <div class="bloque-noticias">
+        <div class="bloque-noticias-title"><a href="#">La ayuda llego a Pucara</a></div>
+        <div class="bloque-noticias-body">
+            <div class="bloque-noticias-field-image"><img src="/static/images/imagen-noticia-01.jpg"></div>
+            <div class="bloque-noticias-field-teaser">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </div>
+            <a class="bloque-noticias-field-morelink" href="#">Leer mas</a>
+        </div>
+    </div>-->
+</div>
+<div class="right-zone">
+    <h1 class="section-title">Colabora</h1>
+    <div class="subtitle">Demuestra que tanto tu comania puede hacer por el Peru</div>
+
+    <div class="bloque-generico">
+        <div class="bloque-generico-title"><a href="#">La ayuda llego a Pucara</a></div>
+        <div class="bloque-generico-body">
+            <div class="bloque-generico-field-image"><img src="images/imagen1.jpg"></div>
+            <div class="bloque-generico-field-teaser">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+            <a href="#" class="bloque-generico-field-morelink">Leer mas</a>
+        </div>
+    </div>
+
+    <div class="bloque-generico bloque-ultimoproyecto">
+        <div class="bloque-generico-title"><a href="#">La ayuda llego a Pucara</a></div>
+        <div class="bloque-generico-body">
+            <div class="leftside">
+                <div class="texto">
+                    sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                </div> 
+                <div class="block-images">
+                    <img src="images/imagen2.jpg">
+                    <img src="images/imagen2.jpg">
+                    <img src="images/imagen2.jpg">
+                    <img src="images/imagen2.jpg">
+                </div>
+            </div>
+
+            <div class="rightside">
+                <div class="bloque-generico-field-image"><img style="width: 204px; height: 77px;" src="images/imagen-noticia-01.jpg"></div>
+                <div class="bloque-generico-field-teaser">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+                <a class="bloque-generico-field-morelink" href="#">Leer mas</a>
+            </div>
+        </div>
+    </div>
+
+</div>

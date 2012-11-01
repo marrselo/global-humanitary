@@ -14,9 +14,13 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
         $v->addHelperPath('Core/View/Helper', 'Core_View_Helper');
         $config = Zend_Registry::get('config');
         
+        $this->getResourceLoader()->addResourceType('entity', 'entitys/', 'Entity');
+        
         //Definiendo Constante para Partials
         defined('STATIC_URL')
             || define('STATIC_URL', $config['app']['staticUrl']);
+        defined('DINAMIC_URL')
+            || define('DINAMIC_URL', $config['app']['dinamicUrl']);
         defined('IMG_URL')
             || define('IMG_URL', $config['app']['imgUrl']);
         defined('SITE_URL')
