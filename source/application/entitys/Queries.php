@@ -22,6 +22,10 @@ class Application_Entity_Queries {
       $model = new Application_Model_Queries();
       return $model->getBanner();
     }
+    static function getProyectosHome(){
+      $model = new Application_Model_Queries();
+      return $model->getProyectosHome();
+    }
 }
 
 ?>
