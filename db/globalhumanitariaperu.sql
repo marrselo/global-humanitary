@@ -47,11 +47,13 @@ CREATE TABLE `banner` (
   `banner_publico` tinyint(1) NOT NULL,
   `banner_orden` int(11) DEFAULT NULL,
   PRIMARY KEY (`banner_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 /*Data for the table `banner` */
 
 LOCK TABLES `banner` WRITE;
+
+insert  into `banner`(`banner_id`,`banner_nombre`,`banner_link`,`banner_img`,`banner_publico`,`banner_orden`) values (1,'banner1','banner1','001.jpg',1,1),(2,'banner2','banner1','002.jpg',1,2);
 
 UNLOCK TABLES;
 
@@ -185,12 +187,16 @@ CREATE TABLE `noticias` (
   `noticias_descripcion` text,
   `noticias_imagen` char(45) DEFAULT NULL,
   `noticias_publico` tinyint(1) DEFAULT NULL,
+  `noticias_slug` text,
+  `noticias_descripcion_corta` char(50) DEFAULT NULL,
   PRIMARY KEY (`noticias_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 /*Data for the table `noticias` */
 
 LOCK TABLES `noticias` WRITE;
+
+insert  into `noticias`(`noticias_id`,`noticias_titulo`,`noticias_subtitulo`,`noticias_fecha_creacion`,`noticias_descripcion`,`noticias_imagen`,`noticias_publico`,`noticias_slug`,`noticias_descripcion_corta`) values (1,'La ayuda llego a Pucara','SUBTitulo primera noticias',NULL,NULL,'noticia1.jpg',1,'titulo-primera-noticias','Lorem ipsum dolor sit amet, consectetur adipisicin'),(2,'La ayuda llego a Pucara','SUBTitulo primera noticias',NULL,NULL,'noticia2.jpg',1,'titulo-primera-noticias','Lorem ipsum dolor sit amet, consectetur adipisicin');
 
 UNLOCK TABLES;
 
@@ -206,14 +212,19 @@ CREATE TABLE `proyectos` (
   `proyectos_orden` int(11) DEFAULT NULL,
   `proyectos_publico` tinyint(1) DEFAULT NULL,
   `proyectos_estado_id` int(11) NOT NULL,
+  `proyectos_home` tinyint(4) DEFAULT NULL,
+  `proyectos_slug` text,
+  `proyectos_descripcion_corta` char(50) DEFAULT NULL,
   PRIMARY KEY (`proyectos_id`),
   KEY `fk_proyectos_proyectos_estado_idx` (`proyectos_estado_id`),
   CONSTRAINT `fk_proyectos_proyectos_estado` FOREIGN KEY (`proyectos_estado_id`) REFERENCES `proyectos_estado` (`proyectos_estado_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 /*Data for the table `proyectos` */
 
 LOCK TABLES `proyectos` WRITE;
+
+insert  into `proyectos`(`proyectos_id`,`proyectos_nombre`,`proyectos_subtitulo`,`proyectos_descripcion`,`proyectos_orden`,`proyectos_publico`,`proyectos_estado_id`,`proyectos_home`,`proyectos_slug`,`proyectos_descripcion_corta`) values (1,'La ayuda llego a Pucara',NULL,'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',1,1,1,1,'la-ayuda-llego-a-pucalla','Lorem ipsum dolor sit amet, consectetur adipisicin'),(2,'La ayuda llego a Pucara',NULL,'Lorem ipsum dolor sit amet, consectetur adipisicin',2,1,1,1,'la-ayuda-llego-a-pucalla','Lorem ipsum dolor sit amet, consectetur adipisicin');
 
 UNLOCK TABLES;
 
@@ -225,11 +236,13 @@ CREATE TABLE `proyectos_estado` (
   `proyectos_estado_id` int(11) NOT NULL AUTO_INCREMENT,
   `proyectos_estado_nombre` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`proyectos_estado_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 /*Data for the table `proyectos_estado` */
 
 LOCK TABLES `proyectos_estado` WRITE;
+
+insert  into `proyectos_estado`(`proyectos_estado_id`,`proyectos_estado_nombre`) values (1,'Realizados'),(2,'En proceso');
 
 UNLOCK TABLES;
 
@@ -244,11 +257,13 @@ CREATE TABLE `proyectos_imagen` (
   PRIMARY KEY (`proyectos_imagen_id`),
   KEY `fk_proyectos_imagen_proyectos1_idx` (`proyectos_id`),
   CONSTRAINT `fk_proyectos_imagen_proyectos1` FOREIGN KEY (`proyectos_id`) REFERENCES `proyectos` (`proyectos_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
 /*Data for the table `proyectos_imagen` */
 
 LOCK TABLES `proyectos_imagen` WRITE;
+
+insert  into `proyectos_imagen`(`proyectos_imagen_id`,`proyectos_imagen_nombre`,`proyectos_id`) values (1,'proyecto1.jpg',1),(2,'proyecto2.jpg',1),(3,'proyecto3.jpg',1),(4,'proyecto4.jpg',2),(5,'proyecto1.jpg',2),(6,'proyecto1.jpg',2);
 
 UNLOCK TABLES;
 
