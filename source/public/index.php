@@ -1,5 +1,4 @@
 <?php
-
 // Define path to application directory
 ini_set('session.auto_start', 0);
 error_reporting(E_ALL);
