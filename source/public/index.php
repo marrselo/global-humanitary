@@ -62,7 +62,7 @@ class index
                 APPLICATION_ENV
         );        
         $applicationini = new Zend_Config_Ini(APPLICATION_PATH . "/configs/application.ini", APPLICATION_ENV);        
-        $options = $applicationini->toArray();
+        $options = $applicationini->toArray();        
         foreach (self::$_ini as $value) {
             $iniFile = APPLICATION_PATH . self::$_pathConfig . $value;
             

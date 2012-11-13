@@ -26,6 +26,8 @@ class Default_ErrorController extends Zend_Controller_Action
                 // application error
                 $this->getResponse()->setHttpResponseCode(500);
                 $priority = Zend_Log::CRIT;
+                Zend_Debug::dump($errors);
+                Zend_Debug::dump($priority);
                 $this->view->message = 'Application error';
                 break;
         }
