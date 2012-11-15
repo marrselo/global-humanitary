@@ -1,8 +1,10 @@
 
 body {
-    background: none repeat scroll 0 0 #EAEAEA;
+    background: none repeat scroll 0 0 #FFFFFF;
     font-family: arial;
     font-size: 12px;
+    margin: 0;
+    padding: 0;
 }
 ul.toplinks li {
     float: left;
@@ -10,11 +12,12 @@ ul.toplinks li {
 .bottom-content {
     background: none repeat scroll 0 0 #FFFFFF;
     display: table;
+    margin-top: 2%;
     width: 100%;
 }
 .body-container ul.toplinks {
     list-style: none outside none;
-    margin: 0;
+    margin: 4% 0 0;
     padding: 0;
     position: absolute;
     right: 0;
@@ -22,11 +25,13 @@ ul.toplinks li {
 .body-container {
     margin: auto;
     position: relative;
-    width: 900px;
+    width: 825px;
 }
 .body-container .header {
+    background: url("../images/fondoheader.png") no-repeat scroll right top transparent;
     display: table;
     margin-bottom: 1%;
+    padding-top: 4%;
     position: relative;
 }
 .body-container .header .logo {
@@ -34,11 +39,13 @@ ul.toplinks li {
     float: left;
 }
 .body-container div.header ul.topmenu {
+    background: none repeat scroll 0 0 #4B589F;
     display: inline;
     float: left;
     list-style: none outside none;
-    margin: 71px 0 0;
-    padding: 0;
+    margin: 1.5% 0 0;
+    padding: 0 2.5%;
+    width: 95%;
 }
 .body-container div.header ul.topmenu li {
     border: 0 none;
@@ -46,89 +53,103 @@ ul.toplinks li {
     margin: 0;
 }
 .body-container div.header ul.topmenu li a {
-    border-right: 1px dotted #999999;
+    background: none repeat scroll 0 0 #4B589F;
+    color: #FFFFFF;
     float: left;
-    padding: 0;
+    font-family: GandhiSansRegular;
+    font-size: 1.1em;
+    padding: 18px 0;
     text-align: center;
+    text-decoration: none;
 }
 ul.toplinks li a {
+    color: #737373;
+    float: left;
     font-size: 0.8em;
-    padding: 3px;
+    padding: 22px 3px 3px;
+    text-decoration: none;
 }
 .body-container .slideshow-cont {
-    background: none repeat scroll 0 0 orange;
-    padding: 3.8%;
+    position: relative;
 }
-.bloque-noticias {
+.bloque {
 }
 .body-container div.bottom-content div.left-zone {
     background: none repeat scroll 0 0 #E4E4E4;
     float: left;
-    margin-left: 1%;
-    margin-right: 0;
-    padding-left: 1.8%;
-    padding-right: 1.8%;
-    width: 30%;
+    padding-left: 0;
+    padding-right: 0;
+    width: 33%;
 }
 .body-container div.bottom-content div.right-zone {
     background: none repeat scroll 0 0 #E4E4E4;
     float: left;
-    padding-left: 1.8%;
-    padding-right: 1.8%;
-    width: 61%;
+    margin-top: 0;
+    padding-left: 0;
+    padding-right: 0;
+    width: 67%;
 }
-div.body-container div.bottom-content div.left-zone div.bloque-noticias {
-    background: none repeat scroll 0 0 #415EAA;
-    width: 253px;
+div.body-container div.bottom-content div.left-zone div.bloque {
+    background: none repeat scroll 0 0 #D2D0D0;
+    width: 100%;
 }
-div.body-container div.bottom-content div.left-zone div.bloque-noticias div.bloque-noticias-title {
-    background: none repeat scroll 0 0 orange;
+div.body-container div.bottom-content div.left-zone div.bloque div.bloque-title {
+    background: none repeat scroll 0 0 #4D60AA;
     color: #FFFFFF;
     display: table;
     margin-bottom: 5%;
     width: 100%;
 }
-div.body-container div.bottom-content div.left-zone div.bloque-noticias div.bloque-noticias-body {
+div.body-container div.bottom-content div.left-zone div.bloque div.bloque-body {
     display: table;
+    padding: 4% 11.6% 5%;
 }
-div.body-container div.bottom-content div.left-zone div.bloque-noticias div.bloque-noticias-body div.bloque-noticias-field-image {
+div.body-container div.bottom-content div.left-zone div.bloque div.bloque-body div.bloque-field-image {
     text-align: center;
 }
-div.body-container div.bottom-content div.left-zone div.bloque-noticias div.bloque-noticias-body div.bloque-noticias-field-image img {
+div.body-container div.bottom-content div.left-zone div.bloque div.bloque-body div.bloque-field-image img {
     border: 2px solid #FFFFFF;
+    width: 206px;
 }
-div.body-container div.bottom-content div.left-zone div.bloque-noticias div.bloque-noticias-body div.bloque-noticias-field-teaser {
-    color: #FFFFFF;
+div.body-container div.bottom-content div.left-zone div.bloque div.bloque-body div.bloque-field-teaser {
+    color: #000000;
     font-size: 0.9em;
-    padding: 5%;
+    padding: 5% 0;
     text-align: justify;
 }
-div.body-container div.bottom-content div.left-zone div.bloque-noticias div.bloque-noticias-body a.bloque-noticias-field-morelink {
+div.body-container div.bottom-content div.left-zone div.bloque div.bloque-body a.bloque-field-morelink {
     color: orange;
     float: right;
+    font-size: 0.9em !important;
     margin-bottom: 4%;
+    margin-right: 11%;
 }
-div.body-container div.bottom-content div.left-zone div.bloque-noticias div.bloque-noticias-title a {
+div.body-container div.bottom-content div.left-zone div.bloque div.bloque-title a {
     clear: both;
     color: #FFFFFF;
     float: left;
-    padding: 4%;
+    padding: 4% 4% 3%;
     text-decoration: none;
-    text-indent: 10%;
+    text-indent: 3%;
     width: 92%;
 }
 div.body-container .footer {
-    background: none repeat scroll 0 0 #FFB12B;
+    background: none repeat scroll 0 0 #323232;
     clear: both;
     display: table;
+    float: left;
+    padding-bottom: 0;
+    padding-left: 0;
+    padding-top: 4%;
     width: 100%;
 }
 div.body-container .footer .leftside {
     float: left;
+    margin-left: 2%;
     padding-bottom: 2%;
     padding-left: 2%;
     padding-right: 0;
-    width: 58%;
+    width: 55%;
 }
 div.body-container .footer .leftside ul.bottom_menu {
     list-style: none outside none;
@@ -141,10 +162,10 @@ div.body-container .footer .leftside ul.bottom_menu li {
     -moz-border-left-colors: none;
     -moz-border-right-colors: none;
     -moz-border-top-colors: none;
-    border-color: red -moz-use-text-color;
     border-image: none;
-    border-style: solid none;
-    border-width: 1px 0;
+    border-left: 0 none;
+    border-right: 0 none;
+    border-top: 1px solid #CCCCCC;
     display: table;
     float: left;
     margin-right: 7%;
@@ -152,6 +173,7 @@ div.body-container .footer .leftside ul.bottom_menu li {
 }
 div.body-container .footer .leftside ul.bottom_menu li a {
     float: left;
+    font-size: 0.9em;
     padding: 2%;
     text-align: left;
     text-decoration: none;
@@ -159,7 +181,7 @@ div.body-container .footer .leftside ul.bottom_menu li a {
 }
 div.body-container .footer .rightside {
     float: left;
-    width: 40%;
+    width: 37%;
 }
 div.body-container div.bottom-content div.right-zone div.bloque-generico {
     background: none repeat scroll 0 0 #FF7F00;
@@ -197,20 +219,30 @@ div.body-container div.bottom-content div.right-zone div.bloque-ultimoproyecto d
     background: none repeat scroll 0 0 #333333;
 }
 .footer .footer-wide {
-    background: none repeat scroll 0 0 #FF9501;
+    background: none repeat scroll 0 0 #C7C7C7;
     clear: both;
-    color: #FFFFFF;
+    color: #000000;
     display: block;
+    font-size: 0.9em;
+    padding-bottom: 1%;
+    padding-top: 1%;
     text-align: center;
     width: 100%;
 }
 .section-title {
-    color: #6E7295;
-    font-family: Calibri;
+    background: none repeat scroll 0 0 #4D60AA;
+    color: #FFFFFF;
+    float: left;
+    font-family: arial;
     font-size: 1.8em;
     font-weight: 400;
     margin-bottom: 0;
+    margin-top: 0;
+    padding-bottom: 0.5%;
+    padding-left: 3%;
+    padding-top: 0.9%;
     text-transform: uppercase;
+    width: 100%;
 }
 .subtitle {
     clear: both;
@@ -259,49 +291,80 @@ div.body-container div.bottom-content div.right-zone div.bloque-ultimoproyecto d
     width: 96%;
 }
 html body div.body-container div.body-content div.contentside {
-    border-left: 2px dotted #CCCCCC;
+    border-left: 3px dotted grey;
+    color: #545454;
     float: left;
-    padding-left: 2%;
-    width: 78.7%;
+    font-size: 0.9em;
+    margin-bottom: 1.5%;
+    padding-bottom: 3%;
+    padding-left: 3%;
+    padding-right: 4%;
+    width: 72.6%;
 }
 html body div.body-container div.body-content div.leftside {
     float: left;
-    width: 19%;
+    padding-left: 1.8%;
+    padding-right: 1.8%;
+    width: 16.4%;
 }
 div.body-container div.body-content div.contentside h1.section-title {
-    color: blue;
+    background: url("../images/title-button.jpg") no-repeat scroll 0 7px transparent;
+    border-bottom: 3px dotted grey;
+    clear: both;
+    color: #4D60AA;
+    display: block;
+    font-family: GandhiSansRegular;
+    font-size: 1.5em;
+    font-weight: 400;
+    margin-bottom: 1%;
+    margin-left: 0;
+    padding-bottom: 3%;
+    padding-left: 4%;
+    text-transform: inherit;
+    width: 55%;
 }
 div.body-container div.body-content div.contentside div.bloque-content {
-    padding: 3%;
+    clear: both;
+    display: table;
+    margin-top: 0;
+    padding: 0 0 0 1%;
 }
 div.body-container div.body-content div.contentside div.bloque-content div.bloque-imagen {
     border: 2px solid #FFFFFF;
+    box-shadow: 2px 2px 4px #7B7B7B;
     float: left;
+    margin-bottom: 7%;
+    margin-top: 1%;
 }
 div.body-container div.body-content div.contentside div.bloque-content div.bloque-text {
+    color: grey;
     float: left;
-    margin-right: 4%;
-    width: 63.8%;
+    font-size: 1em;
+    margin-right: 8%;
+    text-align: justify;
+    width: 56.8%;
 }
 div.body-container div.body-content div.leftside ul.leftmenu li a {
     -moz-border-bottom-colors: none;
     -moz-border-left-colors: none;
     -moz-border-right-colors: none;
     -moz-border-top-colors: none;
-    border-color: grey -moz-use-text-color;
+    background: url("../images/bullet-off.jpg") no-repeat scroll 2px 11px transparent;
+    border-bottom: 1px solid grey;
     border-image: none;
-    border-style: solid none;
-    border-width: 1px 0;
+    border-left: 0 none;
+    border-right: 0 none;
     color: grey;
     float: left;
-    padding: 3% 5%;
+    font-size: 0.9em;
+    padding: 4% 5% 4% 7%;
     text-decoration: none;
-    width: 90%;
+    width: 87%;
 }
 div.body-container div.body-content div.leftside ul.leftmenu li {
 }
 div.body-container div.body-content div.leftside ul.leftmenu {
-    border-bottom: 1px solid grey;
+    border-bottom: 0 none;
     border-top: 1px solid grey;
     display: table;
     float: left;
@@ -313,15 +376,416 @@ div.body-container div.body-content div.leftside ul.leftmenu {
 div.body-container div.body-content div.leftside {
 }
 div.body-container div.body-content div.leftside ul.leftmenu li a.active {
-    background: none repeat scroll 0 0 orange;
-    color: #FFFFFF;
+    background: url("../images/bullet-on.jpg") no-repeat scroll 2px 11px #CCCCCC;
+    color: #000000;
 }
 div.body-container div.body-content {
-    background: none repeat scroll 0 0 #E3E3E3;
-    border-left: 10px solid white;
-    border-right: 10px solid white;
+    background: none repeat scroll 0 0 transparent;
+    border: 0 none;
+    box-shadow: 0 0 7px 0 #666666;
     display: table;
     margin: auto;
-    width: 96%;
+    width: 100%;
 }
- 
+div.footer div.leftside h1.section-title {
+    background: none repeat scroll 0 0 transparent;
+    font-family: calibri;
+    font-size: 1.3em;
+    padding: 0 0 2%;
+}
+div.footer div.rightside h1.section-title {
+    background: none repeat scroll 0 center transparent;
+    font-family: calibri;
+    font-size: 1.3em;
+    padding: 0 0 2.9%;
+}
+div.footer div.rightside a {
+    margin-right: 4%;
+}
+div.body-container .footer .leftside ul li a {
+    color: #FFFFFF;
+}
+.body-container div.bottom-content div.right-zone .right-block {
+}
+.body-container div.bottom-content div.right-zone .left-block {
+}
+.body-container div.bottom-content div.right-zone .morelink {
+    color: orange;
+    float: right;
+    font-size: 0.9em;
+}
+.body-container div.bottom-content div.right-zone .sectionblock {
+    float: left;
+    padding: 2% 4%;
+    width: 41%;
+}
+.body-container div.bottom-content div.right-zone .sectionblock .noticia-title {
+    color: orange;
+    font-size: 0.9em;
+    margin-bottom: 3%;
+}
+.body-container div.bottom-content div.right-zone .sectionblock .morelink {
+    float: left;
+    font-size: 0.8em;
+    margin-top: 2%;
+    text-decoration: none;
+}
+.section-colabora .section-title {
+    background: none repeat scroll 0 0 #FABE60;
+    width: 100%;
+}
+.body-container div.bottom-content div.right-zone .section-colabora .sectionblock {
+    padding-left: 2%;
+    padding-right: 2%;
+    width: 46%;
+}
+.body-container div.bottom-content div.right-zone .section-colabora .sectionblock .field-image {
+    float: left;
+    margin-right: 5%;
+}
+.body-container div.bottom-content div.right-zone .section-colabora .sectionblock .bloque-info-colabora {
+    float: left;
+    margin-top: 1%;
+    width: 53%;
+}
+.body-container div.bottom-content div.right-zone .section-colabora .sectionblock .bloque-info-colabora .pre-title {
+    color: orange;
+    font-size: 0.8em;
+}
+.body-container div.bottom-content div.right-zone .section-colabora .sectionblock .bloque-info-colabora .title {
+    color: #000000;
+    font-size: 0.9em;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.body-container div.bottom-content div.right-zone .section-colabora .sectionblock .bloque-info-colabora .descripcion {
+    font-size: 0.9em;
+    line-height: 1;
+    margin-top: 3%;
+    text-align: justify;
+}
+.body-container div.bottom-content div.right-zone .section-colabora {
+    background: none repeat scroll 0 0 #FFFFFF;
+    display: table;
+}
+ul.toplinks li a.inicio {
+    background: url("../images/icon-home.png") no-repeat scroll center top transparent;
+}
+ul.toplinks li a.favoritos {
+    background: url("../images/icon-star.png") no-repeat scroll center top transparent;
+}
+ul.toplinks li a.contactenos {
+    background: url("../images/icon-contactenos.png") no-repeat scroll center 4px transparent;
+}
+ul.toplinks li a.mapadelsitio {
+    background: url("../images/icon-mapasitio.png") no-repeat scroll center top transparent;
+}
+ul.toplinks li a.active {
+    color: orange;
+}
+div.body-container div.bottom-content div.left-zone div.bloque div.bloque-body .four-pictures {
+    float: left;
+    width: 46%;
+}
+div.body-container div.bottom-content div.left-zone div.bloque div.blq2 {
+    padding-left: 6%;
+    padding-right: 6%;
+}
+div.body-container div.bottom-content div.left-zone div.bloque div.bloque-body .bloque-field-resumen {
+    font-size: 0.9em;
+    text-align: justify;
+}
+div.body-container div.body-content div.leftside div.topsection h2.section-title {
+    background: none repeat scroll 0 0 transparent;
+    color: #4D60AA;
+    font-family: GandhiSansRegular;
+    font-size: 1.3em;
+    margin-top: 5%;
+    text-align: center;
+}
+div.body-container div.body-content div.leftside div.topsection .subtitle {
+    color: #4D60AA;
+    padding-left: 3%;
+}
+div.interna div.body-content {
+    border-top: 1px solid #CCCCCC;
+    padding-top: 2%;
+}
+div.body-container div.body-content div.contentside div.bloque-content h2.bloque-title {
+    color: #4B589F;
+    font-family: GandhiSansBold;
+    font-size: 1.4em;
+}
+div.body-container div.slideshow-cont div.slideshow-control {
+    bottom: 0;
+    position: absolute;
+    width: 100%;
+    z-index: 99;
+}
+div.body-container div.slideshow-cont div.slideshow-control a {
+}
+div.body-container div.slideshow-cont div.slideshow-control a #prev {
+}
+div.body-container div.slideshow-cont div.slideshow-control a #next {
+}
+div.body-container div.slideshow-cont div.slideshow-control ul#nav {
+    background: none repeat scroll 0 0 #000000;
+    float: left;
+    margin: auto;
+    padding: 0;
+    position: relative;
+    width: 100%;
+}
+div.body-container div.slideshow-cont div.slideshow-control ul#nav a {
+    background: url("../images/slideshow-button.jpg") no-repeat scroll 0 -14px transparent;
+    color: #D4CDCD;
+    float: left;
+    font-size: 0;
+    height: 14px;
+    margin: 0.7%;
+    overflow: hidden;
+    text-align: center;
+    width: 14px;
+}
+div.body-container div.slideshow-cont div.slideshow-control ul#nav a.activeSlide {
+    background-position: 0 0;
+}
+div.body-container div.slideshow-cont div.slideshow-control .nextprev-controls {
+    display: none;
+}
+.body-container div.header ul.topmenu li a.active {
+    background: none repeat scroll 0 0 #7A8FD0;
+}
+@font-face {
+    font-family: "GandhiSansRegular";
+    font-style: normal;
+    font-weight: normal;
+    src: url("GandhiSans-Regular-webfont.eot?#iefix") format("embedded-opentype"), url("GandhiSans-Regular-webfont.woff") format("woff"), url("GandhiSans-Regular-webfont.ttf") format("truetype"), url("GandhiSans-Regular-webfont.svg#GandhiSansRegular") format("svg");
+}
+@font-face {
+    font-family: "GandhiSansItalic";
+    font-style: normal;
+    font-weight: normal;
+    src: url("GandhiSans-Italic-webfont.eot?#iefix") format("embedded-opentype"), url("GandhiSans-Italic-webfont.woff") format("woff"), url("GandhiSans-Italic-webfont.ttf") format("truetype"), url("GandhiSans-Italic-webfont.svg#GandhiSansItalic") format("svg");
+}
+@font-face {
+    font-family: "GandhiSansBold";
+    font-style: normal;
+    font-weight: normal;
+    src: url("GandhiSans-Bold-webfont.eot?#iefix") format("embedded-opentype"), url("GandhiSans-Bold-webfont.woff") format("woff"), url("GandhiSans-Bold-webfont.ttf") format("truetype"), url("GandhiSans-Bold-webfont.svg#GandhiSansBold") format("svg");
+}
+@font-face {
+    font-family: "GandhiSansBoldItalic";
+    font-style: normal;
+    font-weight: normal;
+    src: url("GandhiSans-BoldItalic-webfont.eot?#iefix") format("embedded-opentype"), url("GandhiSans-BoldItalic-webfont.woff") format("woff"), url("GandhiSans-BoldItalic-webfont.ttf") format("truetype"), url("GandhiSans-BoldItalic-webfont.svg#GandhiSansBoldItalic") format("svg");
+}
+.body-container div.header ul.topmenu li.first a span {
+    border-left: 1px dotted;
+    float: left;
+}
+.body-container div.header ul.topmenu li a span {
+    border-right: 1px dotted;
+    float: left;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 7px 14.5px;
+}
+.body-container .header .logo a, .body-container .header .logo a img {
+    border: medium none;
+}
+.compartir {
+    border-top: 2px dotted #8E8E8E;
+    clear: both;
+    float: left;
+    margin-top: 2%;
+    padding-top: 1%;
+    width: 60%;
+}
+.compartir .compartir-label {
+    color: #4B589F;
+    float: left;
+    font-size: 0.9em;
+    font-weight: bold;
+    margin-left: 1%;
+    margin-right: 1%;
+}
+.compartir a {
+    border: medium none;
+    float: left;
+    margin-right: 1%;
+    margin-top: 0.2%;
+}
+.compartir a img {
+    border: medium none;
+}
+div.body-container div.body-content div.contentside p {
+    clear: both;
+    padding-left: 1%;
+    text-align: justify;
+    width: 94%;
+}
+div.body-container div.body-content div.contentside .small-gallery {
+    float: left;
+    margin-left: 9%;
+    margin-right: 9%;
+    text-align: center;
+    width: 72%;
+}
+div.body-container div.body-content div.contentside div.bloque-content div.bloque-text .bloque-doble-imagen {
+    margin-bottom: 4%;
+}
+div.body-container div.body-content div.contentside .small-gallery .picturebox {
+    display: inline-table;
+    margin: 1.5%;
+    text-align: center;
+    width: 128px;
+}
+div.body-container div.body-content div.contentside div.bloque-content div.bloque-text .bloque-doble-imagen img {
+    border: 2px solid white;
+    box-shadow: 2px 2px 2px #000000;
+    margin: 1% 4%;
+}
+div.body-container div.body-content div.contentside div.bloque-content div.bloque-images {
+    float: left;
+    margin-right: 4%;
+    width: 32%;
+}
+div.body-container div.body-content div.contentside div.bloque-content .leftzone {
+    display: block;
+    float: left;
+    margin-right: 8%;
+    width: 56%;
+}
+div.body-container div.body-content div.contentside div.bloque-content .leftzone div.bloque-text {
+    margin-top: 2%;
+    width: 100%;
+}
+div.body-container div.body-content div.contentside div.bloque-content .leftzone div.bloque-text .subtitle {
+    color: #4B589F;
+    font-family: inherit;
+    font-size: 1em;
+    height: auto;
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 0;
+}
+div.body-container div.body-content div.contentside .memorias-gallery {
+}
+div.body-container div.body-content div.contentside .memorias-gallery .memoriabox {
+    float: left;
+    margin-bottom: 2%;
+    text-align: center;
+}
+div.body-container div.body-content div.contentside .memorias-gallery .leftcolumn {
+    margin-right: 7%;
+}
+div.body-container div.body-content div.contentside .memorias-gallery .rightcolumn {
+    margin-left: 7%;
+}
+div.body-container div.body-content div.contentside .memorias-gallery .centralcolumn {
+    margin-left: 1%;
+    margin-right: 1%;
+}
+div.body-container div.body-content div.contentside div.personal-gallery {
+}
+div.body-container div.body-content div.contentside div.personal-gallery .personal-box {
+    float: left;
+    margin-bottom: 1%;
+    margin-top: 1%;
+    width: 50%;
+}
+div.body-container div.body-content div.contentside div.personal-gallery .personal-box .profile-picture {
+    float: left;
+}
+div.body-container div.body-content div.contentside div.personal-gallery .personal-box .profile-name {
+    float: left;
+    margin-left: 4%;
+    margin-top: 6%;
+}
+div.body-container div.body-content div.contentside div.personal-gallery h3.zone-title {
+    color: #4B589F;
+    font-family: GandhiSansRegular;
+    font-size: 1.5em;
+    font-weight: normal;
+}
+html body div.body-container div.body-content div.contentside .subtitle {
+    color: #4B589F;
+}
+div.body-container div.body-content div.contentside .proyecto-box {
+    clear: both;
+    display: block;
+    float: left;
+    margin-bottom: 4%;
+}
+div.body-container div.body-content div.contentside .proyecto-box div.body-container div.body-content div.contentside .left-aligned {
+}
+div.body-container div.body-content div.contentside .right-aligned {
+}
+div.body-container div.body-content div.contentside .proyecto-box .proyecto-imagen {
+}
+div.body-container div.body-content div.contentside .left-aligned .proyecto-imagen {
+    float: left;
+    margin-right: 3%;
+}
+div.body-container div.body-content div.contentside .proyecto-box .proyecto-text {
+    width: 67%;
+}
+div.body-container div.body-content div.contentside .right-aligned .proyecto-imagen {
+    float: right;
+    margin-left: 3%;
+}
+div.body-container div.body-content div.contentside .right-aligned .proyecto-text {
+    float: right;
+}
+div.body-container div.body-content div.contentside .left-aligned .proyecto-text {
+    float: left;
+}
+div.body-container div.body-content div.contentside ul.agenda-list {
+    float: left;
+    margin: 0;
+    padding: 0 0 0 4%;
+}
+div.body-container div.body-content div.contentside .calendar-block {
+    float: left;
+}
+div.body-container div.body-content div.contentside .bloque-casos {
+    clear: both;
+    display: table;
+    margin-bottom: 2%;
+}
+div.body-container div.body-content div.contentside .bloque-casos .bloque-text {
+    float: left;
+    width: 66%;
+}
+div.body-container div.body-content div.contentside .bloque-casos .bloque-imagen {
+    float: left;
+    margin-right: 3%;
+}
+div.body-container div.body-content div.contentside h1.clean-title {
+    background: none repeat scroll 0 0 transparent;
+    padding-bottom: 1%;
+    padding-left: 1%;
+    width: 100%;
+}
+div.body-container div.body-content div.contentside .nlabor-gallery {
+    float: none;
+    margin: auto;
+    position: relative;
+    width: 69%;
+}
+div.body-container div.body-content div.contentside .nlabor-gallery .leftcolumn {
+    margin-right: 1%;
+}
+div.body-container div.body-content div.contentside .nlabor-gallery .rightcolumn {
+    margin-left: 1%;
+}
+div.body-container div.body-content div.contentside .memorias-gallery .memoriabox .label {
+    font-size: 0.7em;
+    margin-bottom: 4%;
+}
+.slideshiw {
+    overflow: hidden;
+    width: 100%;
+}

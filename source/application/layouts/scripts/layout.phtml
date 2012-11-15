@@ -1,60 +1,67 @@
-<?php $this->doctype() ?>
-
-<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
-    <head>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+        <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
         <?php $this->headTitle() ?>
         <?php $this->headMeta() ?>
         <?php $this->headLink() ?>
-        <link href="<?php echo STATIC_URL; ?>/css/estilo.css" type="text/css" rel="stylesheet"/>
+
         <?php $this->headScript() ?>
         <?php $this->headStyle() ?>       
         <script src="<?php echo STATIC_URL; ?>/js/jquery-1.8.2.min.js" type="text/javascript"></script>
         <script src="<?php echo STATIC_URL; ?>/js/jquery.cycle.all.js" type="text/javascript"></script>
-
+        <script type="text/javascript">
+            $(function() {
+                $('.slideshow').cycle({
+                    fx:     'fade',
+                    speed:  'fast',
+                    timeout: 3000,
+                    pager:  '#nav',
+                    slideExpr: 'img'
+                });
+            });
+        </script>
+        <link href="<?php echo STATIC_URL; ?>/css/estilo.css" type="text/css" rel="stylesheet"/>
     </head>
     <body>
         <div class="body-container">
             <div class="header">
-                <div class="logo"><img src="<?php echo STATIC_URL; ?>/images/logo.jpg" /></div>
+                <div class="logo"><a href="/"><img src="<?php echo STATIC_URL; ?>/images/logo.png" alt="Global Humanitaria Perú"></a></div>
                 <ul class="topmenu">
-                    <li><a href="<?php echo SITE_URL; ?>nosotros"><img src="<?php echo STATIC_URL; ?>/images/menu-lacompania.jpg"/></a></li>
-                    <li><a href="#"><img src="<?php echo STATIC_URL; ?>/images/menu-nuestralabor.jpg"/></a></li>
-                    <li><a href="#"><img src="<?php echo STATIC_URL; ?>/images/menu-colabora.jpg"/></a></li>
-                    <li><a href="#"><img src="<?php echo STATIC_URL; ?>/images/menu-unete.jpg"/></a></li>
-                    <li><a href="#"><img src="<?php echo STATIC_URL; ?>/images/menu-saladeprensa.jpg"/></a></li>
-                    <li><a href="#"><img src="<?php echo STATIC_URL; ?>/images/menu-descarga.jpg"/></a></li>
-                    <li><a href="#"><img src="<?php echo STATIC_URL; ?>/images/menu-voluntariado.jpg"/></a></li>
+                    <li class="first"><a href="quienes-somos.html"><span>¿QUIÉNES SOMOS?</span></a></li>
+                    <li><a href="nuestra-labor.html"><span>NUESTRA LABOR</span></a></li>
+                    <li><a href="colabora.html"><span>COLABORA</span></a></li>
+                    <li><a href="unete.html"><span>ÚNETE</span></a></li>
+                    <li><a href="sala-de-prensa.html"><span>SALA DE PRENSA	</span></a></li>
+                    <li><a href="descarga.html"><span>DESCARGA</span></a></li>
+                    <li><a href="voluntariado.html"><span>VOLUNTARIADO</span></a></li>
                 </ul>
                 <ul class="toplinks">
-                    <li><a href="#">Inicio</a></li>
-                    <li><a href="#">Favoritos</a></li>
-                    <li><a href="#">Contactanos</a></li>
-                    <li><a href="#">Mapa del sitio</a></li>
+                    <li><a class="active inicio" href="#">Inicio</a></li>
+                    <li><a class="favoritos" href="#">Favoritos</a></li>
+                    <li><a class="contactenos" href="#">Contactanos</a></li>
+                    <li><a class="mapadelsitio" href="#">Mapa del sitio</a></li>
                 </ul>
             </div>
-            <?php if(!empty($this->banner)){ ?>
-            <div class="slideshow-cont">
-                <div class="slideshow" style="position: relative; width: 834px; height: 390px;">
-                    <?php foreach($this->banner as $index): ?>
-                    <a href="<?php echo $index['banner_link'];?>">
-                        <img width="834" height="390" src="<?php echo DINAMIC_URL; ?>/banner/<?php echo $index['banner_img'] ?>" style="position: absolute; top: 0px; left: 0px; z-index: 8; opacity: 1; height: 390px; width: 834px;"/>
-                    </a>
-                    
-                    <?php endforeach;?>
-<!--                    
-                    <img width="834" height="390" src="<?php echo STATIC_URL; ?>/images/001.jpg" style="position: absolute; top: 0px; left: 0px; z-index: 8; opacity: 0; height: 390px; width: 834px; display: none;"/>
-                    <img width="834" height="390" src="<?php echo STATIC_URL; ?>/images/002.jpg" style="position: absolute; top: 0px; left: 0px; display: none; z-index: 8; height: 390px; opacity: 0; width: 834px;"/>
-                    <img width="834" height="390" src="<?php echo STATIC_URL; ?>/images/003.jpg" style="position: absolute; top: 0px; left: 0px; display: block; z-index: 9; height: 390px; opacity: 1; width: 834px;"/>
-                    <img width="834" height="390" src="<?php echo STATIC_URL; ?>/images/004.jpg" style="position: absolute; top: 0px; left: 0px; display: none; z-index: 8; height: 390px; opacity: 0; width: 834px;"/>
-                    <img width="834" height="390" src="<?php echo STATIC_URL; ?>/images/005.jpg" style="position: absolute; top: 0px; left: 0px; display: none; z-index: 8; height: 390px; opacity: 0; width: 834px;"/>
-                    <img width="834" height="390" src="<?php echo STATIC_URL; ?>/images/006.jpg" style="position: absolute; top: 0px; left: 0px; display: none; z-index: 8; height: 390px; opacity: 0; width: 834px;"/>
-                    <img width="834" height="390" src="<?php echo STATIC_URL; ?>/images/007.jpg" style="position: absolute; top: 0px; left: 0px; display: none; z-index: 8; height: 390px; opacity: 0; width: 834px;"/>
-                    <img width="834" height="390" src="<?php echo STATIC_URL; ?>/images/008.jpg" style="position: absolute; top: 0px; left: 0px; display: none; z-index: 8; height: 390px; opacity: 0; width: 834px;"/>-->
+            <?php if (!empty($this->banner)) { ?>
+                <div class="slideshow-cont">
+                    <div class="slideshow-control">
+                        <div class="nextprev-controls">
+                            <a href="#" class="prevlink"><span id="prev">Prev</span></a> 
+                            <a href="#" class="nextlink"><span id="next">Next</span></a>
+                        </div>
+                        <ul id="nav"></ul>
+                    </div>
+                    <div class="slideshow" style="position: relative; width: 834px; height: 390px;">
+                        <?php foreach ($this->banner as $index): ?>
+
+                            <img width="834" height="390" src="<?php echo DINAMIC_URL; ?>/banner/<?php echo $index['banner_img'] ?>" />
+
+                        <?php endforeach; ?>
+                    </div>
                 </div>
-            </div>
-            <?php } else{ ?>
-            <div class="breadcrumb"><a href="#">Inicio</a> &gt; <a href="#">Inicio</a></div>
-            <?php }  ?>
+            <?php } else { ?>
+                <div class="breadcrumb"><a href="#">Inicio</a> &gt; <a href="#">Inicio</a></div>
+            <?php } ?>
             <div class="bottom-content">
                 <?php echo $this->layout()->content ?>
             </div>

@@ -1,17 +1,14 @@
 <?php
 
-class Admin_IndexController extends Core_Controller_Action       
+class Admin_IndexController extends Core_Controller_ActionAdmin       
 {
     public function init() {
         parent::init();
     }
     public function indexAction()
     {           
-        $this->_helper->layout->setLayout('layout-admin');
+        
         $this->view->banner = Application_Entity_Queries::getBanner();               
-         
-         
-
     } 
     
 }

@@ -1,8 +1,7 @@
 
-<div class="left-zone">
+<div class="right-zone">
+    <div class="section-noticias">
     <h1 class="section-title">Noticias</h1>
-    <div class="subtitle">Informate de nuestras ultimas novedades</div>
-
     <?php foreach($this->noticias as $index): ?>
     <div class="bloque-noticias">
         <div class="bloque-noticias-title"><a href="#"><?php echo $index['noticias_titulo'] ?></a></div>
@@ -12,9 +11,10 @@
             <a href="<?php echo SITE_URL ?>noticias/<?php echo $index['noticias_slug']; ?>" class="bloque-noticias-field-morelink">Leer mas</a>
         </div>
     </div>
-<?php endforeach; ?>   
+    <?php endforeach; ?>   
+    </div>
 </div>
-<div class="right-zone">
+<div class="left-zone">
     <h1 class="section-title">Colabora</h1>
     <div class="subtitle">Demuestra que tanto tu comania puede hacer por el Peru</div>
 
