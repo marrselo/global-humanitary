@@ -11,8 +11,11 @@ class Admin_IndexController extends Core_Controller_Action
         $this->view->banner = Application_Entity_Queries::getBanner();               
          
          
-
     } 
+    public function deleteAction()
+    {
+        
+    }
     
 }
 
