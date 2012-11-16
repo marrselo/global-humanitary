@@ -2,14 +2,17 @@
 <div class="right-zone">
     <div class="section-noticias">
         <h1 class="section-title">Noticias</h1>
-        <?php foreach ($this->noticias as $index): ?>
-            <div class="bloque-noticias">
-                <div class="bloque-noticias-title"><a href="#"><?php echo $index['noticias_titulo'] ?></a></div>
-                <div class="bloque-noticias-body">
-                    <div class="bloque-noticias-field-image"><img src="<?php echo DINAMIC_URL; ?>/noticias/<?php echo $index['noticias_imagen']; ?>"></div>
-                    <div class="bloque-noticias-field-teaser"><?php echo $index['noticias_descripcion_corta']; ?></div>
-                    <a href="<?php echo SITE_URL ?>noticias/<?php echo $index['noticias_slug']; ?>" class="bloque-noticias-field-morelink">Leer mas</a>
+
+        <?php
+        $arrayClass = array('sectionblock left-block', 'sectionblock right-block');
+        foreach ($this->noticias as $value => $index):
+            ?>
+            <div class="<?php echo $arrayClass[$value]; ?>">
+                <div class="noticia-title"><?php echo $index['noticias_titulo'] ?></div>
+                <div class="field-image">
+                    <img src="<?php echo DINAMIC_URL; ?>/noticias/<?php echo $index['noticias_imagen']; ?>"/>
                 </div>
+                <a class="morelink" href="<?php echo SITE_URL ?>noticias/<?php echo $index['noticias_slug']; ?>" class="bloque-noticias-field-morelink">Leer mas</a>
             </div>
         <?php endforeach; ?>   
     </div>
@@ -19,7 +22,7 @@
 
         <div class="sectionblock left-block">
             <div class="field-image">
-                <img alt="Colabora" src="images/section-colabora-img.jpg">
+                <img alt="Colabora" src="<?php echo STATIC_URL; ?>/images/section-colabora-img.jpg">
             </div><div class="bloque-info-colabora">
                 <div class="pre-title">PARTICIPA</div>
                 <div class="title">Iniciativas Solidarias</div>
@@ -29,7 +32,7 @@
 
         <div class="sectionblock right-block">
             <div class="field-image">
-                <img src="images/section-colabora-img.jpg" alt="Colabora">
+                <img src="<?php echo STATIC_URL; ?>/images/section-colabora-img.jpg" alt="Colabora">
             </div><div class="bloque-info-colabora">
                 <div class="pre-title">PARTICIPA</div>
                 <div class="title">Iniciativas Solidarias</div>
@@ -39,48 +42,38 @@
     </div>
 </div>
 <div class="left-zone">
-    
+    <div class="bloque bloque-ultproyecto">
+        <div class="bloque-title"><a href="#">Ultimo proyecto en curso</a></div>
+        <div class="bloque-body">
+            <div class="bloque-field-image"><img src="<?php echo STATIC_URL; ?>/images/imagen-noticia-01.jpg" alt="Noticia"></div>
+            <div class="bloque-field-teaser">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </div>
+            <a class="bloque-field-morelink" href="#">Leer mas</a>
+        </div>
+    </div>
 
-    <?php foreach ($this->proyectosHome as $valueIndex => $index): ?>
-        <?php if ($valueIndex == 0) { ?>
-            <div class="bloque-generico">
-                <div class="bloque-generico-title"><a href="#"><?php echo $index['proyectos_nombre']; ?></a></div>
-                <div class="bloque-generico-body">
+    <?php foreach ($this->proyectosHome as $index): ?>
+        <div class="bloque bloque-ultproyecto">
+            <div class="bloque-body blq2">
+                <div class="four-pictures">
                     <?php $imagenesProyecto = explode('|', $index['imagen']); ?>
-                    <div class="bloque-generico-field-image"><img src="<?php echo DINAMIC_URL; ?>/proyectos/imagen/<?php echo $imagenesProyecto[0]; ?>"></div>
-                    <div class="bloque-generico-field-teaser"><?php echo $index['proyectos_descripcion_corta'] ?></div>
-                    <a href="<?php echo SITE_URL ?>proyecto/<?php echo $index['proyectos_slug']; ?>" class="bloque-generico-field-morelink">Leer mas</a>
-                </div>
-            </div>
-        <?php } else { ?>
+                    <div class="block-images">
+                        <?php
+                        foreach ($imagenesProyecto as $indexImagen => $valueImagen):
+                            if ($indexImagen > 3)
+                                break;
+                            ?>
+                            <a href="#"><img width="48" height="48" src="<?php echo DINAMIC_URL; ?>/proyectos/imagen/<?php echo $valueImagen; ?>"></a>
 
-            <div class="bloque-generico bloque-ultimoproyecto">
-                <div class="bloque-generico-title"><a href="#"><?php echo $index['proyectos_nombre']; ?></a></div>
-                <div class="bloque-generico-body">
-                    <div class="leftside">
-                        <div class="texto">
-
-                        </div> 
-                        <?php $imagenesProyecto = explode('|', $index['imagen']); ?>
-                        <div class="block-images">
-                            <?php
-                            foreach ($imagenesProyecto as $indexImagen => $valueImagen):
-                                if ($indexImagen > 3)
-                                    break;
-                                ?>
-                                <img width="56" height="56" src="<?php echo DINAMIC_URL; ?>/proyectos/imagen/<?php echo $valueImagen; ?>">
-        <?php endforeach; ?>
-
-                        </div>
+                        <?php endforeach; ?>
                     </div>
-                    <div class="rightside">
-                        <div class="bloque-generico-field-image"><img style="width: 204px; height: 77px;" src="<?php echo DINAMIC_URL; ?>/proyectos/imagen/<?php echo $imagenesProyecto[0]; ?>"></div>
-                        <div class="bloque-generico-field-teaser"><?php echo $index['proyectos_descripcion_corta'] ?></div>
-                        <a class="bloque-generico-field-morelink" href="<?php echo SITE_URL ?>proyecto/<?php echo $index['proyectos_slug']; ?>">Leer mas</a>
                     </div>
-                </div>
+                    <div class="bloque-field-resumen">
+                        <?php echo $index['proyectos_descripcion_corta'] ?>
+                    </div>
+                    <a class="bloque-field-morelink" href="<?php echo SITE_URL ?>proyecto/<?php echo $index['proyectos_slug']; ?>">Leer mas</a>
+                
             </div>
-    <?php } ?>
-<?php endforeach; ?>
+        </div>
+    <?php endforeach; ?>
 
 </div>

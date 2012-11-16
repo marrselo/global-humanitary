@@ -1,0 +1,42 @@
+
+body {
+    font-family: Arial;
+    margin: 0;
+    font-size: 1em;
+}
+.bodycontainer {
+    background: none repeat scroll 0 0 #CCCCCC;
+    margin: 0.5%;
+    width: 99%;
+}
+.bodycontainer .leftmenu {
+    background: none repeat scroll 0 0 #EBDFBA;
+    float: left;
+    overflow: hidden;
+    width: 10%;
+}
+.bodycontainer .contentzone {
+    background: none repeat scroll 0 0 #F8F5CC;
+    display: inline-block;
+    width: 90%;
+}
+.bodycontainer .contentzone iframe {
+    border: 0 none;
+    height: 94%;
+    width: 100%;
+}
+.bodycontainer .leftmenu ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 0.9em;
+}
+.bodycontainer .leftmenu ul li {
+}
+.bodycontainer .leftmenu ul li a {
+    color: red;
+    font: ;
+}
+.bodycontainer .header {
+    font-weight: bold;
+}
