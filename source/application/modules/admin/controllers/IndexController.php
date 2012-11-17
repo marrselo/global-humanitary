@@ -6,8 +6,7 @@ class Admin_IndexController extends Core_Controller_ActionAdmin
         parent::init();
     }
     public function indexAction()
-    {           
-        
+    {                   
         $this->view->banner = Application_Entity_Queries::getBanner();               
     } 
     public function deleteAction()
