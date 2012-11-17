@@ -20,6 +20,18 @@ class Default_QuienesSomosController extends Core_Controller_ActionDefault
     {           
         
     } 
+    public function principiosActuacionAction()
+    {           
+        
+    } 
+    public function memoriasAction()
+    {           
+        
+    } 
+    public function nuestroEquipoAction()
+    {           
+        
+    } 
     
     public function getNavLeft(){
         return array(
