@@ -68,7 +68,7 @@ class Application_Model_Queries extends Core_Model {
                 ->where('tp.proyectos_home =?',1)
                 ->order('tp.proyectos_orden asc')
                 ->group('tp.proyectos_id')
-                ;
+                ->limit(1);
         return $result->query()->fetchAll();
     }
 

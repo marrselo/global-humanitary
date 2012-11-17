@@ -11,10 +11,6 @@ MySQL - 5.5.15-log : Database - globalhumanitariaperu
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
-CREATE DATABASE /*!32312 IF NOT EXISTS*/`globalhumanitariaperu` /*!40100 DEFAULT CHARACTER SET latin1 */;
-
-USE `globalhumanitariaperu`;
-
 /*Table structure for table `actividades` */
 
 DROP TABLE IF EXISTS `actividades`;
@@ -172,6 +168,26 @@ CREATE TABLE `modos_ayuda` (
 /*Data for the table `modos_ayuda` */
 
 LOCK TABLES `modos_ayuda` WRITE;
+
+UNLOCK TABLES;
+
+/*Table structure for table `nosotros` */
+
+DROP TABLE IF EXISTS `nosotros`;
+
+CREATE TABLE `nosotros` (
+  `nosotros_id` int(11) NOT NULL AUTO_INCREMENT,
+  `nosotros_titulo` char(100) DEFAULT NULL,
+  `nosotros_descripcion` text,
+  `nosotros_date` datetime DEFAULT NULL,
+  PRIMARY KEY (`nosotros_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
+
+/*Data for the table `nosotros` */
+
+LOCK TABLES `nosotros` WRITE;
+
+insert  into `nosotros`(`nosotros_id`,`nosotros_titulo`,`nosotros_descripcion`,`nosotros_date`) values (1,'asdasd','asdasdsa','0000-00-00 00:00:00'),(2,'asdasdsd','asdasdasd','0000-00-00 00:00:00'),(3,'asdasd','asdasd','2012-11-14 20:31:49'),(4,'asdasd asdasdasd','asdasd asdasdsa asdasdsad adassa adasdasd','2012-11-14 20:34:39'),(5,'asdasd asdasdasd','asdasd asdasdsa asdasdsad adassa adasdasd','2012-11-14 20:40:42'),(6,'asdasd asdasdasd','asdasd asdasdsa asdasdsad adassa adasdasd','2012-11-14 20:41:38'),(7,'asdasd asdasdasd','asdasd asdasdsa asdasdsad adassa adasdasd','2012-11-14 20:41:59'),(8,'asdasd asdasdasd','asdasd asdasdsa asdasdsad adassa adasdasd','2012-11-14 20:42:52'),(9,'asdasd asdasdasd','asdasd asdasdsa asdasdsad adassa adasdasd','2012-11-14 20:43:28'),(10,'asdasd asdasdasd','asdasd asdasdsa asdasdsad adassa adasdasd','2012-11-14 20:43:36'),(11,'asdasd asdasdasd','asdasd asdasdsa asdasdsad adassa adasdasd','2012-11-14 20:43:41');
 
 UNLOCK TABLES;
 
