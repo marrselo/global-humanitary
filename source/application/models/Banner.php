@@ -21,5 +21,11 @@ class Application_Model_Banner
         $smt->closeCursor();
         return $result;
     }
+    public function saveBanner($data){
+        $this->_tableBanner->insert($data);
+        return  $ultimoId = $this->_tableBanner->getAdapter()->lastInsertId();
+        
+    } 
+    
 }
 
