@@ -5,40 +5,29 @@ class Application_Form_AdminBannerForm extends Zend_Form
         public function init() {
             $this->setMethod('post');
             $this->setAttrib('enctype', 'multipart/form-data');
-            $this->addElement(new Zend_Form_Element_Text('nombre',
+            $this->addElement(new Zend_Form_Element_Text('titulo',
                                   array('required'=>true,
                                         'label'=>'Titulo')));
             $this->addElement(new Zend_Form_Element_File('imagen')); 
-            $this->addElement(new Zend_Form_Element_Text('descripcion',
-                array('label'=>'Descripción : '), array('validators' => 
-                                  array('alnum', array('stringLength', false, array(4,100))))
-                      ));
-            $this->addElement(new Zend_Form_Element_Text('link',
-                                  array('label'=>'Link : ')));
-            $this->addElement(new Zend_Form_Element_Checkbox('estado',
-                                  array('label'=>'Estado Activado : ')));
-            $this->addElement(new Zend_Form_Element_Checkbox('borrarFoto',
-                                  array('label'=>'Borrar Imagen Banner: ')));
+                        
             
-            $this->addElement(new Zend_Form_Element_Text('precio',
-                                  array('label'=>'Precio Oferta')));
-
-            
-            $this->getElement('estado')->setValue('1');
-            $this->getElement('estado')->setRequired();
-            
-            $this->getElement('borrarFoto')->setValue('si');
-            
-            
-            $frontController = Zend_Controller_Front::getInstance();
-            $file = $frontController->getParam('bootstrap')->getOption('file2');
             $this->getElement('imagen')->setLabel('imagen')
-                ->setDestination($file['ruta'])
+                ->setDestination(ROOT_IMG_DINAMIC.'/banner')
                 ->addValidator('Count', false, 1)     // ensure only 1 file
                 ->addValidator('Size', false, 102400) // limit to 100K
                 ->addValidator('Extension', true, 'jpg,png,gif')// only JPEG, PNG, and GIFs
                 ->setRequired(true);
             
+            $this->getElement('imagen')->setAttribs(
+                array('class'=>'fileInput','id'=>'fileInput'));
+            
+            $this->getElement('titulo')->setAttribs(
+                array('placeholder'=>'Ingrese titulo imagen'));
+            
+            $this->getElement('titulo')->removeDecorator('label');
+            $this->getElement('titulo')->removeDecorator('htmlTag');
+            $this->getElement('imagen')->removeDecorator('label');
+            $this->getElement('imagen')->removeDecorator('htmlTag');
             
             $this->addElement(new Zend_Form_Element_Submit('Guardar'));      
             

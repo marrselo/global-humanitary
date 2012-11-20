@@ -29,6 +29,8 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
             || define('SITE_TEMP',$config['app']['elementTemp']);
         defined('STATIC_ADMIN_IMG')
             || define('STATIC_ADMIN_IMG',$config['app']['imgAdmin']);
+        defined('ROOT_IMG_DINAMIC')
+            || define('ROOT_IMG_DINAMIC',$config['app']['rootImgDinamic']);
                 
         $doctypeHelper = new Zend_View_Helper_Doctype();                
         $doctypeHelper->doctype(Zend_View_Helper_Doctype::XHTML1_STRICT);
