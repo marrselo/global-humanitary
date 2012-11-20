@@ -1,0 +1,51 @@
+<div class="body-content">
+
+    <div class="leftside">
+        <div class="topsection">
+            <h2 class="section-title">¿QUIENES SOMOS?</h2>
+            <div class="subtitle">Acerca de nosotros</div>
+        </div>
+        <?php echo $this->navigation()->menu()->renderMenu($this->navigationLeft, array('ulClass' => 'leftmenu')); ?>
+    </div>
+    <div class="contentside">
+        <h1 class="section-title clean-title"><?php echo $this->nosotrosValue['nosotros_titulo'] ?></h1>
+
+
+        <p><?php echo $this->nosotrosValue['nosotros_descripcion'] ?></p>
+        <div class="small-gallery">
+            <div class="picturebox">
+                <div class="label">HISTORIA</div>
+                <img src="<?php echo STATIC_URL; ?>/images/imagen01.jpg">
+            </div>
+
+            <div class="picturebox">
+                <div class="label">HISTORIA</div>
+                <img src="<?php echo STATIC_URL; ?>/images/imagen02.jpg">
+            </div>
+
+            <div class="picturebox">
+                <div class="label">HISTORIA</div>
+                <img src="<?php echo STATIC_URL; ?>/images/imagen03.jpg">
+            </div>
+
+            <div class="picturebox">
+                <div class="label">HISTORIA</div>
+                <img src="<?php echo STATIC_URL; ?>/images/imagen04.jpg">
+            </div>
+
+            <div class="picturebox">
+                <div class="label">HISTORIA</div>
+                <img src="<?php echo STATIC_URL; ?>/images/imagen05.jpg">
+            </div>
+        </div>
+
+        <div class="compartir">
+            <span class="compartir-label">Compartir</span>
+            <a href=""><img src="<?php echo STATIC_URL; ?>/images/mini-facebook.jpg"></a>
+            <a href=""><img src="<?php echo STATIC_URL; ?>/images/mini-twitter.jpg"></a>
+            <a href="#"><img src="<?php echo STATIC_URL; ?>/images/mini-icon3.jpg"></a>
+            <a href="#"><img src="<?php echo STATIC_URL; ?>/images/mini-mail.jpg"></a>
+        </div>
+
+    </div>
+</div>

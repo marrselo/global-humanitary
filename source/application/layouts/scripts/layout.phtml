@@ -26,15 +26,19 @@
         <div class="body-container">
             <div class="header">
                 <div class="logo"><a href="/"><img src="<?php echo STATIC_URL; ?>/images/logo.png" alt="Global Humanitaria Perú"></a></div>
-                <ul class="topmenu">
-                    <li class="first"><a href="quienes-somos.html"><span>¿QUIÉNES SOMOS?</span></a></li>
+                <?php 
+                
+                //print_r(Zend_Registry::get('navigationMais'));
+                echo $this->navigation()->menu()->renderMenu(Zend_Registry::get('navigationMais'),array('ulClass'=>'topmenu')); ?>
+<!--                <ul class="topmenu">
+                    <li class="first"><a href="/quienes-somos"><span>¿QUIÉNES SOMOS?</span></a></li>
                     <li><a href="nuestra-labor.html"><span>NUESTRA LABOR</span></a></li>
                     <li><a href="colabora.html"><span>COLABORA</span></a></li>
                     <li><a href="unete.html"><span>ÚNETE</span></a></li>
                     <li><a href="sala-de-prensa.html"><span>SALA DE PRENSA	</span></a></li>
                     <li><a href="descarga.html"><span>DESCARGA</span></a></li>
                     <li><a href="voluntariado.html"><span>VOLUNTARIADO</span></a></li>
-                </ul>
+                </ul>-->
                 <ul class="toplinks">
                     <li><a class="active inicio" href="#">Inicio</a></li>
                     <li><a class="favoritos" href="#">Favoritos</a></li>
@@ -60,7 +64,7 @@
                     </div>
                 </div>
             <?php } else { ?>
-                <div class="breadcrumb"><a href="#">Inicio</a> &gt; <a href="#">Inicio</a></div>
+<!--                <div class="breadcrumb"><a href="#">Inicio</a> &gt; <a href="#">Inicio</a></div>-->
             <?php } ?>
             <div class="bottom-content">
                 <?php echo $this->layout()->content ?>
