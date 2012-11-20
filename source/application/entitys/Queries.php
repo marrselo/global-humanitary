@@ -18,9 +18,10 @@ class Application_Entity_Queries {
       return $model->getUltimasNoticias($limit);
     }
     
-    static function getBanner(){
+    static function getBanner($toAdmin=false)
+    {        
       $model = new Application_Model_Queries();
-      return $model->getBanner();
+      return $model->getBanner($toAdmin);
     }
     static function getProyectosHome(){
       $model = new Application_Model_Queries();

@@ -11,42 +11,37 @@ class Admin_HomeController extends Core_Controller_ActionAdmin
     } 
     public function bannerAction()
     {
-       //$this->_helper->layout()->disableLayout();      
-       $this->view->banner = Application_Entity_Queries::getBanner();
+       //$this->_helper->layout()->disableLayout();             
+       $objBanner = new Application_Model_Banner();
+       $orden = $objBanner->getOrden();
+       
        $form  = new Application_Form_AdminBannerForm();
        $form->setDecorators(array(array('ViewScript',
             array('viewScript'=>'forms/_formBanner.phtml'))));
-      $this->view->form = $form;
+      
       if ($this->_request->isPost()){
         $params = $this->_getAllParams();
-         if($form->isValid($params)){
-             Zend_Debug::dump($params);
+         if($form->isValid($params)){             
              $filter = new Core_Utils_SeoUrl(); 
-             $extn = pathinfo($form->imagen->getFileName(),PATHINFO_EXTENSION);             
+             $extn = pathinfo($form->imagen->getFileName(),PATHINFO_EXTENSION);          
              $nameFile = $filter->filter(trim($params['titulo']),'-',0);
-            // $dataBanner = array()
+             $nameFile = $nameFile.'-'.date('Ymdhis');
+             $dataBanner = array('banner_nombre'=>$nameFile,
+                 'banner_img'=>$nameFile.$extn,
+                 'banner_orden'=>$orden['banner_orden']+1);
+             $objBanner->saveBanner($dataBanner);
              $form->imagen->addFilter('Rename',array('target' 
                   => $form->imagen->getDestination().'/'.$nameFile.$extn)); 
              $form->imagen->receive();
-             if( $form->imagen->receive()){
-                 echo "recibio CSM";
-             
-//             
-//             if (!$adapter->receive()) {
-//                $messages = $adapter->getMessages();
-//                $code = 0;
-//            }
-//              $this->redimencionarBanner($form->imagen->getDestination().'/'.$nameFile.'-'.$idBanner.'.'.$extn);
-//              $data = array('imagen'=>$nameFile.'-'.$idBanner.'.'.$extn);
-//              $this->_banner->actualizarBanner($idBanner,$data);
-//              $this->_redirect('/admin/admin-web');
-              
-             }else{
-                 Zend_Debug::dump($form->getMessages());
-                 exit();
-             }
+//             if($form->imagen->receive()){                                            
+//             }else{
+//                 Zend_Debug::dump($form->getMessages());
+//                 exit();
+//             }
           }        
+        }    
+        $this->view->banner = Application_Entity_Queries::getBanner($toAdmin=true);
+        $this->view->form = $form;
     }
-    
 }
 
