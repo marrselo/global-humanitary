@@ -13,12 +13,29 @@
 
 <p>Es un hecho establecido hace demasiado tiempo que un lector se distraerá con el contenido del texto de un sitio mientras que mira su diseño. El punto de usar Lorem Ipsum es que tiene una distribución más o menos normal de las letras, al contrario de usar textos como por ejemplo "Contenido aquí, contenido aquí". Estos textos hacen parean evolucionado a través de los años, algunas veces por accidente, otras veces a propósito (por ejemplo insertándole humor y cosas por el estilo).</p>
 <div class="memorias-gallery">
-<div class="memoriabox leftcolumn">
-<div class="label">MEMORIA</div>
-<a href="#"><img src="<?php echo STATIC_URL; ?>/images/imagen01.jpg"></a>
+    <?php $arrayClass = array(
+        'memoriabox leftcolumn',
+        'memoriabox centralcolumn',
+        'memoriabox rightcolumn'
+        ); ?>
+    <?php foreach($this->listingMemorias as $index=>$value): 
+        $indexArray = $index+1;
+        if($index%3==0){
+            $indexArray=0;
+        }elseif($index%2==0){
+            $indexArray=2;
+        }else{
+            $indexArray=1;
+        }
+        
+        ?>
+<div class="<?php echo $arrayClass[$indexArray]; ?>">
+<div class="label"><?php echo $value['memorias_nombre']; ?></div>
+<a href="#"><img width="128" height="112" src="<?php echo DINAMIC_URL ?>/memorias/<?php echo $value['memorias_imagen']; ?>"></a>
 </div>
+    <?php endforeach; ?>
 
-<div class="memoriabox centralcolumn">
+<!--<div class="memoriabox centralcolumn">
 <div class="label">MEMORIA</div>
 <a href="#"><img src="<?php echo STATIC_URL; ?>/images/imagen01.jpg"></a>
 </div>
@@ -41,7 +58,7 @@
 <div class="memoriabox rightcolumn">
 <div class="label">MEMORIA</div>
 <a href="#"><img src="<?php echo STATIC_URL; ?>/images/imagen01.jpg"></a>
-</div>
+</div>-->
 
 </div>
 

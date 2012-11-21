@@ -1,0 +1,39 @@
+<div class="nNote"><?php foreach($this->message as $index):  
+echo '<p>'.$index.'</p>';
+ endforeach;  ?></div>
+<a href="/admin/miembros/insert">Nuevo Registro</a>
+<table>
+    <tr> 
+        <td>nombre </td>
+        <td>resumen</td>
+        <td>cargo</td>
+        <td>imagen</td>
+        <td>estado</td>
+        <td>orden</td>
+        <td>Opciones</td>
+    </tr>
+    
+ <?php 
+ $arrayEstado = array('no publico', 'publico' );
+ $arrayLinkPublicar = array(
+     array('link'=>'/admin/miembros/publicar/id/','label'=>'publicar'), 
+     array('link'=>'/admin/miembros/despublicar/id/','label'=>'despublicar'), 
+     );
+ foreach($this->listingMiembros as $index): ?>
+    <tr> 
+        <td><?php echo $index['miembros_nombre']; ?></td>
+        <td><?php echo $index['miembros_resumen']; ?></td>
+        <td><?php echo $index['miembros_cargo']; ?></td>
+        <td><?php echo $index['miembros_imagen']; ?></td>
+        <td><?php echo $arrayEstado[$index['miembros_publico']]; ?></td>
+        <td><?php echo $index['miembros_orden']; ?></td>
+        <td>
+            <a href="/admin/miembros/edit/id/<?php echo $index['miembros_id']; ?>" > [Editar]</a>
+            <a href="<?php echo $arrayLinkPublicar[$index['miembros_publico']]['link'].$index['miembros_id']; ?>">[<?php echo $arrayLinkPublicar[$index['miembros_publico']]['label']; ?>]</a>
+            <a href="/admin/miembros/uporder/id/<?php echo $index['miembros_id']; ?>" > [Subir orden]</a>
+            <a href="/admin/miembros/lowerorder/id/<?php echo $index['miembros_id']; ?>" > [Bajar orden]</a>
+        </td>
+    </tr>
+
+<?php endforeach; ?>
+</table>

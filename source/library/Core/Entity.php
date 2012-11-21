@@ -58,6 +58,19 @@ abstract class Core_Entity {
             }    
      return $propsFormat;
     }
+    function cleanArray($data){
+        foreach($data as $index=>$value){
+            if($value==''){
+                unset($data[$index]);
+            }else{
+                if($value=='NULL'){
+                    $data[$index]='';
+                }
+            }
+            
+        }
+        return $data;
+    }
     function getPropertie($propertie){
         if(property_exists($this, $propertie)){
             return $this->{$propertie};
