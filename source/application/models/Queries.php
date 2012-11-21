@@ -40,13 +40,19 @@ class Application_Model_Queries extends Core_Model {
         return $result->query()->fetchAll();
     }
     
-    public function getBanner(){
+    /*
+     * @param bool $toAdmin 
+     */
+    public function getBanner($toAdmin=true){
         $result = $this->_tableBanner
-                ->select()
-                ->where('banner_publico =?',1)
-                ->order('banner_orden desc')
-                ;
+                ->select();
+        if(!$toAdmin){
+            $result->where('banner_publico =?',1);
+        }                
+            $result->order('banner_orden desc')
+            ;        
         return $result->query()->fetchAll();
+        
     }
     
     public function listingMemorias(){

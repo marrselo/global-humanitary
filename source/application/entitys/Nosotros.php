@@ -21,7 +21,7 @@ class Application_Entity_Nosotros extends Core_Entity {
         $this->_modelNosotros = new Application_Model_Nosotros();
     }
 
-    static function getNosotros() {
+    static function getNosotros() {        
         $model = new Application_Model_Nosotros();
         return $model->getNosotros();
     }
