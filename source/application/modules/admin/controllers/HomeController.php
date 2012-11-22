@@ -10,8 +10,8 @@ class Admin_HomeController extends Core_Controller_ActionAdmin
         
     } 
     public function bannerAction()
-    {
-       //$this->_helper->layout()->disableLayout();             
+    {   
+       //$this->_helper->layout()->disableLayout();    
        $objBanner = new Application_Model_Banner();
        $orden = $objBanner->getOrden();
        
@@ -25,8 +25,8 @@ class Admin_HomeController extends Core_Controller_ActionAdmin
              $filter = new Core_Utils_SeoUrl(); 
              $extn = pathinfo($form->imagen->getFileName(),PATHINFO_EXTENSION);          
              $nameFile = $filter->filter(trim($params['titulo']),'-',0);
-             $nameFile = $nameFile.'-'.date('Ymdhis');
-             $dataBanner = array('banner_nombre'=>$nameFile,
+             $nameFile = $nameFile.'-'.date('mdis');
+             $dataBanner = array('banner_nombre'=>$params['titulo'],
                  'banner_img'=>$nameFile.$extn,
                  'banner_orden'=>$orden['banner_orden']+1);
              $objBanner->saveBanner($dataBanner);
@@ -40,8 +40,15 @@ class Admin_HomeController extends Core_Controller_ActionAdmin
 //             }
           }        
         }    
-        $this->view->banner = Application_Entity_Queries::getBanner($toAdmin=true);
+        
+        $this->view->banner = $objBanner->listBannerAdmin();        
         $this->view->form = $form;
+    }
+    
+    public function deleteAction()
+    {
+        //$modelBanner = new Application_Model_Banner();
+        
     }
 }
 

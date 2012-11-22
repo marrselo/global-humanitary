@@ -13,7 +13,7 @@ class Application_Form_AdminBannerForm extends Zend_Form
             
             $this->getElement('imagen')->setLabel('imagen')
                 ->setDestination(ROOT_IMG_DINAMIC.'/banner')                
-                ->addValidator('Size', false, 102400) // limit to 100K
+                ->addValidator('Size', false, 1002400) // limit to 100K
                 ->addValidator('Extension', true, 'jpg,png,gif')// only JPEG, PNG, and GIFs
                 ->setRequired(true);
             
