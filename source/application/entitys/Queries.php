@@ -27,6 +27,14 @@ class Application_Entity_Queries {
       $model = new Application_Model_Queries();
       return $model->getProyectosHome();
     }
+    static function listingMemorias(){
+      $model = new Application_Model_Queries();
+      return $model->listingMemorias();
+    }
+    static function listingMiembros(){
+      $model = new Application_Model_Queries();
+      return $model->listingMiembros();
+    }
 }
 
 ?>

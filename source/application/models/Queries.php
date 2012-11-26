@@ -17,11 +17,15 @@ class Application_Model_Queries extends Core_Model {
     private $_tableBanner;
     private $_tableProyectos;
     private $_tableProyectosImagen;
+    private $_tableMemorias;
+    private $_tableMiembros;
     function __construct() {
         $this->_tableNoticias = new Application_Model_DbTable_Noticias();
         $this->_tableBanner = new Application_Model_DbTable_Banner();
         $this->_tableProyectos = new Application_Model_DbTable_Proyectos();
         $this->_tableProyectosImagen = new Application_Model_DbTable_ProyectosImagen();
+        $this->_tableMemorias = new Application_Model_DbTable_Memorias();
+        $this->_tableMiembros = new Application_Model_DbTable_Miembros();
     }
     public function getUltimasNoticias($limit=0){
         $result = $this->_tableNoticias
@@ -49,6 +53,21 @@ class Application_Model_Queries extends Core_Model {
             ;        
         return $result->query()->fetchAll();
         
+    }
+    
+    public function listingMemorias(){
+        $result = $this->_tableMemorias
+                ->select()
+                ->where('memorias_publico =?',1)
+                ->order('memorias_orden asc');
+        return $result->query()->fetchAll();
+    }
+    public function listingMiembros(){
+        $result = $this->_tableMiembros
+                ->select()
+                ->where('miembros_publico =?',1)
+                ->order('miembros_orden asc');
+        return $result->query()->fetchAll();
     }
     
     public function getProyectosHome(){

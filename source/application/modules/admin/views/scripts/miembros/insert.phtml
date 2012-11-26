@@ -1,0 +1,6 @@
+<div class="nNote"><?php 
+if(is_array($this->message)){
+foreach($this->message as $index):  
+echo '<p>'.$index.'</p>';
+ endforeach; } ?></div>
+<?php echo $this->form; ?>

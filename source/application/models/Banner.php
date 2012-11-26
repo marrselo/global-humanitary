@@ -35,14 +35,17 @@ class Application_Model_Banner  extends Core_Model
     
     public function listBannerAdmin()
     {
-       $smt = $this->_tableBanner->getAdapter()->select()
+      $smt = $this->_tableBanner->getAdapter()->select()
             ->from(array('B'=>$this->_tableBanner->getName()),
-                  array('banner_orden','banner_id','banner_link','banner_publico',
-                   'banner_orden',  
-                   'fecha'=> new Zend_Db_Expr(
-                       DATE_FORMAT('B.', '%W %M %Y')))
+                  array('banner_orden','','banner_id','banner_link','banner_img',
+                       'banner_publico',
+                       'banner_nombre',
+                       'banner_orden',  
+                       'fecha'=> new Zend_Db_Expr(
+                       "DATE_FORMAT(B.fecha_creacion,'%d-%m-%Y')")
+                      )
                 )
-            ->order('banner_orden desc')            
+            ->order('banner_orden desc')
             ->query();
         $result = $smt->fetchAll();
         $smt->closeCursor();

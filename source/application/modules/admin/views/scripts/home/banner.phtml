@@ -17,8 +17,11 @@
     <?php if (!empty($this->banner)): ?>
         <div class="widget check grid9">
             <div class="whead">
-                <span class="titleIcon"><input type="checkbox" id="titleCheck" name="titleCheck" /></span>
-                <h6>Media table</h6><div class="clear"></div>
+                <span class="titleIcon">
+                    <input type="checkbox" id="titleCheck" name="titleCheck" />
+                </span>
+                <h6>Media table</h6>
+                <div class="clear"></div>
             </div>
             <table cellpadding="0" cellspacing="0" width="100%" class="tDefault checkAll tMedia" id="checkAll">
                 <thead>
@@ -72,15 +75,15 @@
                             <td class="textL">
                                 <a href="#" title=""><?php echo $index['banner_nombre'] ?></a>
                             </td>
-                            <td><?php echo $index['fecha_creacion'] ?></td>
+                            <td><?php echo $index['fecha'] ?></td>
                             <td class="fileInfo">
+                                
                                 <span>
                                     <strong>Size:</strong> 215 Kb</span>
                                 <span><strong>Format:</strong> .jpg</span>
                             </td>
                             <td class="tableActs">
-                                <a href="#" class="tablectrl_small bDefault tipS" title="Editar">
-                                    <span class="iconb" data-icon="&#xe1db;"></span></a>
+
                                 <a href="#" class="tablectrl_small bDefault tipS" title="Borrar">
                                     <span class="iconb" data-icon="&#xe136;"></span></a>
                                 <a href="<?php //echo ?>" class="tablectrl_small bDefault tipS" 

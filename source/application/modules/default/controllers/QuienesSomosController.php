@@ -26,11 +26,11 @@ class Default_QuienesSomosController extends Core_Controller_ActionDefault
     } 
     public function memoriasAction()
     {           
-        
+        $this->view->listingMemorias = Application_Entity_Queries::listingMemorias();
     } 
     public function nuestroEquipoAction()
     {           
-        
+        $this->view->listingMiembros = Application_Entity_Queries::listingMiembros();
     } 
     
     public function getNavLeft(){
