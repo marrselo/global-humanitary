@@ -3,7 +3,7 @@
 class Admin_HomeController extends Core_Controller_ActionAdmin       
 {
     public function init() {
-        parent::init();
+        parent::init();       
     }
     public function indexAction()
     {                   
@@ -42,6 +42,35 @@ class Admin_HomeController extends Core_Controller_ActionAdmin
         }    
         $this->view->banner = Application_Entity_Queries::getBanner($toAdmin=true);
         $this->view->form = $form;
+        
+    }
+    
+    public function publishBannerAction()
+    {        
+        $idBanner = $this->_getParam('id',0);
+        $objBanner= new Application_Model_Banner();
+        
+        if(empty($idBanner)){
+            $this->_redirect('admin/home/banner');
+        }
+        $objBanner->publishBanner($idBanner);
+        $this->_redirect('/admin/home/banner');        
+    }
+    
+    public function unpublisBannerAction()
+    {
+        $idBanner = $this->_getParam('id',0);
+        $objBanner= new Application_Model_Banner();
+        
+        if(empty($idBanner)){
+            $this->_redirect('admin/home/banner');
+        }
+        $objBanner->unpublishBanner($idBanner);
+        $this->_redirect('/admin/home/banner');        
+    }
+    
+    public function deleteBannerAction(){
+        
     }
 }
 

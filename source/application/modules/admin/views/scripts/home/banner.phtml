@@ -83,8 +83,13 @@
                                     <span class="iconb" data-icon="&#xe1db;"></span></a>
                                 <a href="#" class="tablectrl_small bDefault tipS" title="Borrar">
                                     <span class="iconb" data-icon="&#xe136;"></span></a>
-                                <a href="#" class="tablectrl_small bDefault tipS" title="Desactivar">
-                                    <span class="iconb" data-icon="&#xe1f7;"></span></a>
+                                <a href="<?php //echo ?>" class="tablectrl_small bDefault tipS" 
+                                   title="<?php echo $index['banner_publico']==1 ?
+                                        'desactivar' : 'activar'?>">
+                                    <span class="iconb" data-icon="&#xe1f7;">
+                                        
+                                    </span>
+                                </a>
                             </td>
                         </tr>
                     <?php endforeach ?>

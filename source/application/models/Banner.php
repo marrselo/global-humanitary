@@ -42,17 +42,30 @@ class Application_Model_Banner  extends Core_Model
                    'fecha'=> new Zend_Db_Expr(
                        DATE_FORMAT('B.', '%W %M %Y')))
                 )
-            ->order('banner_orden desc')
-            
+            ->order('banner_orden desc')            
             ->query();
         $result = $smt->fetchAll();
         $smt->closeCursor();
         return $result; 
-    }
-    
+    }    
     public function saveBanner($data){
         $this->_tableBanner->insert($data);        
         return   $this->_tableBanner->getAdapter()->lastInsertId();        
-    }         
+    }
+    
+    public function publishBanner($idBanner)
+    {        
+        $where=$this->_tableBanner->getAdapter()->quoteInto('banner_id =?',$idBanner);
+        $data= array('banner_publico'=>1);
+        $this->_tableBanner->update($data,$where);
+    }
+    public function unpublishBanner($idBanner)
+    {
+        $where=$this->_tableBanner->getAdapter()->quoteInto('banner_id =?',$idBanner);
+        $data=array('banner_publico'=>1);
+        $this->_tableBanner->update($data,$where);
+    }
+                
+    
 }
 
