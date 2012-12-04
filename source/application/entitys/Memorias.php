@@ -112,7 +112,7 @@ class Application_Entity_Memorias extends Core_Entity {
         $this->updateMemorias();
     }
     
-    public function insertNosotros() {
+    public function insertMemorias() {
         $this->_orden = $this->getSigOrden();
         return $this->_modelMemorias->insertMemorias($this->setArrayDb());
     }

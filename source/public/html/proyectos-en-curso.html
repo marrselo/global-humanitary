@@ -1,135 +1,106 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html><head>
+<html>
+<head>
 <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
 <title>Interna</title>
 <script type="text/javascript" src="lib/jquery-1.8.2.min.js"></script>
 <script type="text/javascript" src="lib/jquery.cycle.all.js"></script>
 <script type="text/javascript" src="javascript/modernizr.custom.00605.js"></script>
-<script type="text/javascript">
-$(function() {
-    $('.slideshow').cycle({
-        fx:     'fade',
-        speed:  'fast',
-        timeout: 3000,
-        pager:  '#nav',
-		slideExpr: 'img'
-    });
-});
-</script>
+<script type="text/javascript" src="http://simplemodal.googlecode.com/files/jquery.simplemodal-1.4.3.js"></script>
+<script type="text/javascript" src="javascript/common.js"></script>
 <link rel="stylesheet" type="text/css" href="css/estilo.css">
+<link rel="stylesheet" type="text/css" href="javascript/modal/css/demo.css">
+<link rel="stylesheet" type="text/css" href="javascript/modal/css/basic.css">
+<link href="css/fontface.css" type="text/css" rel="stylesheet"/>
+<link rel="stylesheet" type="text/css" href="css/estilo.css">
+<script type="text/javascript">
+$(document).ready(function(){
+    $('a.leermas-link').click(function(){
+      $('#popup').modal({minWidth : 492,minHeight : 492});
+    });
+});</script>
 </head>
 <body>
-	<div class="body-container interna">
-		<div class="header">
-			<div class="logo"><a href="/"><img alt="Global Humanitaria Perú" src="images/logo.png"></a></div>
-			<ul class="topmenu">
-				<li class="first"><a href="quienes-somos.html"><span>¿QUI&Eacute;NES SOMOS?</span></a></li>
-				<li><a class="active" href="nuestra-labor.html"><span>NUESTRA LABOR</span></a></li>
-				<li><a href="colabora.html"><span>COLABORA</span></a></li>
-				<li><a href="unete.html"><span>&Uacute;NETE</span></a></li>
-				<li><a href="sala-de-prensa.html"><span>SALA DE PRENSA	</span></a></li>
-				<li><a href="descarga.html"><span>DESCARGA</span></a></li>
-				<li><a href="voluntariado.html"><span>VOLUNTARIADO</span></a></li>
-			</ul>
-			<ul class="toplinks">
-				<li><a href="#" class="inicio">Inicio</a></li>
-				<li><a href="#" class="favoritos">Favoritos</a></li>
-				<li><a href="#" class="contactenos">Contactanos</a></li>
-				<li><a href="#" class="mapadelsitio">Mapa del sitio</a></li>
-			</ul>
-		</div>
-
-
-<div class="body-content">
-
-<div class="leftside">
-<div class="topsection">
-<h2 class="section-title">LA COMPAÑIA</h2>
-<div class="subtitle">Acerca de nosotros</div>
+    
+<div class="body-container interna">
+  <div class="header">
+    <div class="logo"><a href="index.html"><img alt="Global Humanitaria Perú" src="images/logo.png"></a></div>
+    <ul class="topmenu">
+      <li class="first"><a href="quienes-somos.html">¿QUI&Eacute;NES SOMOS?</a></li>
+      <li><a class="active" href="nuestra-labor.html">NUESTRA LABOR></a></li>
+      <li><a href="colabora.html">COLABORA></a></li>
+      <li><a href="unete.html">&Uacute;NETE</a></li>
+      <li><a href="sala-de-prensa.html">SALA DE PRENSA</a></li>
+      <li><a href="descarga.html">DESCARGA</span></a></li>
+      <li><a href="voluntariado.html">VOLUNTARIADO</a></li>
+    </ul>
+    <ul class="toplinks">
+      <li><a href="index.html" class="inicio" title="Inicio">Inicio</a></li>
+      <li><a id="bookmarkme" onclick="bookmark()" class="favoritos" title="Favoritos">Favoritos</a></li>
+      <li><a href="contactanos.html" class="contactenos" title="Contactanos">Contactanos</a></li>
+      <li><a href="mapadelsitio.html" class="mapadelsitio" title="Mapa del Sitio">Mapa del sitio</a></li>
+    </ul>
+  </div>
+  <div class="body-content">
+    <div class="leftside">
+      <div class="topsection">
+        <h2 class="section-title">LA COMPAÑIA</h2>
+        <div class="subtitle">Acerca de nosotros</div>
+      </div>
+      <ul class="leftmenu">
+        <li><a  href="por-que-ayudar-en-global.html">Zonas de Proyeccion</a></li>
+        <li><a href="ejes-estrategicos.html">Ejes estratégicos</a></li>
+        <li><a  href="zonas-de-proyeccion.html">Zonas de proyección</a></li>
+        <li><a class="active" href="proyetos-en-curso.html">Proyectos en curso</a></li>
+        <li><a href="agenda.html">Agenda</a></li>
+        <li><a href="casos.html">Casos</a></li>
+      </ul>
+    </div>
+    <div class="contentside">
+      <h1 class="section-title">Proyectos en curso</h1>
+      <p>Es un hecho establecido hace demasiado tiempo que un lector se distraerá con el contenido del texto de un sitio mientras que mira su diseño. El punto de usar Lorem Ipsum es que tiene una distribución más o menos normal de las letras, al contrario de usar textos como por ejemplo "Contenido aquí, contenido aquí". Estos textos hacen parean evolucionado a través de los años, algunas veces por accidente, otras veces a propósito (por ejemplo insertándole humor y cosas por el estilo).</p>
+      <div class="proyecto-box left-aligned">
+        <div class="proyecto-imagen"><img src="images/proyectos1.jpg"></div>
+        <div class="proyecto-text">Es un hecho establecido hace demasiado tiempo que un lector se distraerá con el contenido del texto de un sitio mientras que mira su diseño. El punto de usar Lorem Ipsum es que tiene una distribución más o menos normal de las letras, al contrario de usar textos como por ejemplo "Contenido aquí, contenido aquí". Estos textos hacen parean evolucionado a través de los años, algunas veces por accidente, otras veces a propósito (por ejemplo insertándole humor y cosas por el estilo). <a href="" class="leermas-link">Leer más</a></div>
+      </div>
+      <div class="proyecto-box right-aligned">
+        <div class="proyecto-imagen"><img src="images/proyectos1.jpg"></div>
+        <div class="proyecto-text">Es un hecho establecido hace demasiado tiempo que un lector se distraerá con el contenido del texto de un sitio mientras que mira su diseño. El punto de usar Lorem Ipsum es que tiene una distribución más o menos normal de las letras, al contrario de usar textos como por ejemplo "Contenido aquí, contenido aquí". Estos textos hacen parean evolucionado a través de los años, algunas veces por accidente, otras veces a propósito (por ejemplo insertándole humor y cosas por el estilo). <a href="" class="leermas-link">Leer más</a></div>
+      </div>
+      <div class="proyecto-box left-aligned">
+        <div class="proyecto-imagen"><img src="images/proyectos1.jpg"></div>
+        <div class="proyecto-text">Es un hecho establecido hace demasiado tiempo que un lector se distraerá con el contenido del texto de un sitio mientras que mira su diseño. El punto de usar Lorem Ipsum es que tiene una distribución más o menos normal de las letras, al contrario de usar textos como por ejemplo "Contenido aquí, contenido aquí". Estos textos hacen parean evolucionado a través de los años, algunas veces por accidente, otras veces a propósito (por ejemplo insertándole humor y cosas por el estilo). <a href="" class="leermas-link">Leer más</a></div>
+      </div>
+      <div class="proyecto-box right-aligned">
+        <div class="proyecto-imagen"><img src="images/proyectos1.jpg"></div>
+        <div class="proyecto-text">Es un hecho establecido hace demasiado tiempo que un lector se distraerá con el contenido del texto de un sitio mientras que mira su diseño. El punto de usar Lorem Ipsum es que tiene una distribución más o menos normal de las letras, al contrario de usar textos como por ejemplo "Contenido aquí, contenido aquí". Estos textos hacen parean evolucionado a través de los años, algunas veces por accidente, otras veces a propósito (por ejemplo insertándole humor y cosas por el estilo). <a href="" class="leermas-link">Leer más</a></div>
+      </div>
+      <div class="compartir"> <span class="compartir-label">Compartir</span> <a href=""><img src="images/mini-facebook.jpg"></a> <a href=""><img src="images/mini-twitter.jpg"></a> <a href="#"><img src="images/mini-icon3.jpg"></a> <a href="#"><img src="images/mini-mail.jpg"></a> </div>
+    </div>
+  </div>
+<div class="footer">
+    <div class="leftside">
+      <h1 class="section-title">MAPA GENERAL</h1>
+      <ul class="bottom_menu">
+        <li><a href="quienes-somos.html">Quienes somos</a></li>
+        <li><a href="unete.html">Unete</a></li>
+        <li><a href="voluntariado.html">Voluntariado</a></li>
+        <li><a href="nuestra-labor.html">Nuestra labor</a></li>
+        <li><a href="sala-de-prensa.html">Sala de prensa</a></li>
+        <li><a href="contactenos.html">Contactenos</a></li>
+        <li><a href="colabora.html">Colabora</a></li>
+        <li><a href="descarga.html">Descargas</a></li>
+      </ul>
+    </div>
+    <div class="rightside">
+      <h1 class="section-title">Estamos en las Redes Sociales</h1>
+      <a href="https://www.facebook.com/GHumanitaria?fref=ts"><img src="images/facebook.png" alt="Facebook"></a> 
+      <a href="#"><img src="images/twitter.png" alt="Twitter"></a> 
+      <a href="#"><img src="images/flickr.png" alt="Flickr"></a> 
+      <a href="#"><img src="images/youtube.png"  alt="Youtube"></a> 
+    </div>
+    <div class="footer-wide">&reg; Global Humanitaria 2012 todos los derechos reservados<br>Creado y desarrollado por Crystal Studio </div>
+  </div>
 </div>
-
-<ul class="leftmenu">
-	<li><a  href="por-que-ayudar-en-global.html">Zonas de Proyeccion</a></li>
-	<li><a href="ejes-estrategicos.html">Ejes estratégicos</a></li>
-	<li><a  href="zonas-de-proyeccion.html">Zonas de proyección</a></li>
-	<li><a class="active" href="proyetos-en-curso.html">Proyectos en curso</a></li>
-	<li><a href="agenda.html">Agenda</a></li>
-	<li><a href="casos.html">Casos</a></li>
-</ul> 
-
-</div>
-<div class="contentside">
-<h1 class="section-title">Proyectos en curso</h1>
-
-
-<p>Es un hecho establecido hace demasiado tiempo que un lector se distraerá con el contenido del texto de un sitio mientras que mira su diseño. El punto de usar Lorem Ipsum es que tiene una distribución más o menos normal de las letras, al contrario de usar textos como por ejemplo "Contenido aquí, contenido aquí". Estos textos hacen parean evolucionado a través de los años, algunas veces por accidente, otras veces a propósito (por ejemplo insertándole humor y cosas por el estilo).</p>
-
-<div class="proyecto-box left-aligned">
-<div class="proyecto-imagen"><img src="images/proyectos1.jpg"></div>
-<div class="proyecto-text">Es un hecho establecido hace demasiado tiempo que un lector se distraerá con el contenido del texto de un sitio mientras que mira su diseño. El punto de usar Lorem Ipsum es que tiene una distribución más o menos normal de las letras, al contrario de usar textos como por ejemplo "Contenido aquí, contenido aquí". Estos textos hacen parean evolucionado a través de los años, algunas veces por accidente, otras veces a propósito (por ejemplo insertándole humor y cosas por el estilo). <a href="" class="leermas-link">Leer más</a></div>
-</div>
-<div class="proyecto-box right-aligned">
-<div class="proyecto-imagen"><img src="images/proyectos1.jpg"></div>
-<div class="proyecto-text">Es un hecho establecido hace demasiado tiempo que un lector se distraerá con el contenido del texto de un sitio mientras que mira su diseño. El punto de usar Lorem Ipsum es que tiene una distribución más o menos normal de las letras, al contrario de usar textos como por ejemplo "Contenido aquí, contenido aquí". Estos textos hacen parean evolucionado a través de los años, algunas veces por accidente, otras veces a propósito (por ejemplo insertándole humor y cosas por el estilo). <a href="" class="leermas-link">Leer más</a></div>
-</div>
-<div class="proyecto-box left-aligned">
-<div class="proyecto-imagen"><img src="images/proyectos1.jpg"></div>
-<div class="proyecto-text">Es un hecho establecido hace demasiado tiempo que un lector se distraerá con el contenido del texto de un sitio mientras que mira su diseño. El punto de usar Lorem Ipsum es que tiene una distribución más o menos normal de las letras, al contrario de usar textos como por ejemplo "Contenido aquí, contenido aquí". Estos textos hacen parean evolucionado a través de los años, algunas veces por accidente, otras veces a propósito (por ejemplo insertándole humor y cosas por el estilo). <a href="" class="leermas-link">Leer más</a></div>
-</div>
-<div class="proyecto-box right-aligned">
-<div class="proyecto-imagen"><img src="images/proyectos1.jpg"></div>
-<div class="proyecto-text">Es un hecho establecido hace demasiado tiempo que un lector se distraerá con el contenido del texto de un sitio mientras que mira su diseño. El punto de usar Lorem Ipsum es que tiene una distribución más o menos normal de las letras, al contrario de usar textos como por ejemplo "Contenido aquí, contenido aquí". Estos textos hacen parean evolucionado a través de los años, algunas veces por accidente, otras veces a propósito (por ejemplo insertándole humor y cosas por el estilo). <a href="" class="leermas-link">Leer más</a></div>
-</div>
-
-
-
-
-
-<div class="compartir">
-	<span class="compartir-label">Compartir</span>
-	<a href=""><img src="images/mini-facebook.jpg"></a>
-	<a href=""><img src="images/mini-twitter.jpg"></a>
-	<a href="#"><img src="images/mini-icon3.jpg"></a>
-	<a href="#"><img src="images/mini-mail.jpg"></a>
-</div>
-
-</div>
-</div>
-		
-		
-		<div class="footer">
-			<div class="leftside">
-				<h1 class="section-title">MAPA GENERAL</h1>
-				<ul class="bottom_menu">
-					<li><a href="#">Quienes somos</a></li>
-					<li><a href="#">&Uacute;nete</a></li>
-					<li><a href="#">Voluntariado</a></li>
-					<li><a href="#">Nuestra labor</a></li>
-					<li><a href="#">Sala de prensa</a></li>
-					<li><a href="#">Cont&aacute;ctenos</a></li>
-					<li><a href="#">Colabora</a></li>
-					<li><a href="#">Descargas</a></li>
-				</ul>
-			</div>
-			<div class="rightside">
-<h1 class="section-title">Estamos en las Redes Sociales</h1>
-<a href="#"><img src="images/facebook.png" alt="Facebook"/></a>
-<a href="#"><img src="images/twitter.png" alt="Twitter"/></a>
-<a href="#"><img src="images/flickr.png" alt="Flickr"/></a>
-<a href="#"><img src="images/youtube.png" alt="Youtube"/></a>
-</div>
-<div class="footer-wide"><div class="footer-text">® Global Humanitaria 2012 todos los derechos reservados</br>
-Creado y desarrollado por Crystal Studio </div>
-    <a href="http://validator.w3.org/check?uri=referer" class="validator"><img
-      src="http://www.w3.org/Icons/valid-html401" alt="Valid HTML 4.01 Transitional" height="31" width="88"></a>
-  
-<a href="http://jigsaw.w3.org/css-validator/check/referer" class="validator">
-    <img style="border:0;width:88px;height:31px"
-        src="http://jigsaw.w3.org/css-validator/images/vcss-blue"
-        alt="¡CSS Válido!" />
-</a>
-</div>
-		</div>
-	</div>
-
- </body></html>
+</body>
+</html>

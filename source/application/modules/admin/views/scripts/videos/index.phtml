@@ -1,0 +1,37 @@
+<div class="nNote"><?php foreach($this->message as $index):  
+echo '<p>'.$index.'</p>';
+ endforeach;  ?></div>
+<a href="/admin/videos/insert">Nuevo Registro</a>
+<table>
+    <tr> 
+        <td>nombre </td>
+        <td>descripcion</td>
+        <td>imagen</td>
+        <td>estado</td>
+        <td>orden</td>
+        <td>Opciones</td>
+    </tr>
+    
+ <?php 
+ $arrayEstado = array('no publico', 'publico' );
+ $arrayLinkPublicar = array(
+     array('link'=>'/admin/videos/publicar/id/','label'=>'publicar'), 
+     array('link'=>'/admin/videos/despublicar/id/','label'=>'despublicar'), 
+     );
+ foreach($this->listingVideos as $index): ?>
+    <tr> 
+        <td><?php echo $index['videos_titulo']; ?></td>
+        <td><?php echo $index['videos_descripcion']; ?></td>
+        <td><?php echo $index['videos_imagen']; ?></td>
+        <td><?php echo $arrayEstado[$index['videos_publico']]; ?></td>
+        <td><?php echo $index['videos_orden']; ?></td>
+        <td>
+            <a href="/admin/videos/edit/id/<?php echo $index['videos_id']; ?>" > [Editar]</a>
+            <a href="<?php echo $arrayLinkPublicar[$index['videos_publico']]['link'].$index['videos_id']; ?>">[<?php echo $arrayLinkPublicar[$index['videos_publico']]['label']; ?>]</a>
+            <a href="/admin/videos/uporder/id/<?php echo $index['videos_id']; ?>" > [Subir orden]</a>
+            <a href="/admin/videos/lowerorder/id/<?php echo $index['videos_id']; ?>" > [Bajar orden]</a>
+        </td>
+    </tr>
+
+<?php endforeach; ?>
+</table>
