@@ -19,6 +19,8 @@ class Application_Model_Queries extends Core_Model {
     private $_tableProyectosImagen;
     private $_tableMemorias;
     private $_tableMiembros;
+    private $_tableImagenes;
+    private $_tableWallpaper;
     function __construct() {
         $this->_tableNoticias = new Application_Model_DbTable_Noticias();
         $this->_tableBanner = new Application_Model_DbTable_Banner();
@@ -26,6 +28,8 @@ class Application_Model_Queries extends Core_Model {
         $this->_tableProyectosImagen = new Application_Model_DbTable_ProyectosImagen();
         $this->_tableMemorias = new Application_Model_DbTable_Memorias();
         $this->_tableMiembros = new Application_Model_DbTable_Miembros();
+        $this->_tableImagenes = new Application_Model_DbTable_Imagenes();
+        $this->_tableWallpaper = new Application_Model_DbTable_Wallpaper();
     }
     public function getUltimasNoticias($limit=0){
         $result = $this->_tableNoticias
@@ -67,6 +71,20 @@ class Application_Model_Queries extends Core_Model {
                 ->select()
                 ->where('miembros_publico =?',1)
                 ->order('miembros_orden asc');
+        return $result->query()->fetchAll();
+    }
+    public function listingImagenes(){
+        $result = $this->_tableImagenes
+                ->select()
+                ->where('imagenes_publico =?',1)
+                ->order('imagenes_orden asc');
+        return $result->query()->fetchAll();
+    }
+    public function listingWallpaper(){
+        $result = $this->_tableWallpaper
+                ->select()
+                ->where('wallpaper_publico =?',1)
+                ->order('wallpaper_orden asc');
         return $result->query()->fetchAll();
     }
     
