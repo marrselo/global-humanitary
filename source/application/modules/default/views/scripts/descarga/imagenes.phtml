@@ -1,0 +1,26 @@
+<div class="body-content">
+
+    <div class="leftside">
+        <div class="topsection">
+            <h2 class="section-title">ZONA DE DESCARGAS</h2>
+            <div class="subtitle">Descarga</div>
+        </div>
+        <?php echo $this->navigation()->menu()->renderMenu($this->navigationLeft, array('ulClass' => 'leftmenu')); ?>
+    </div>
+    <div class="contentside">
+        <h1 class="section-title no-bottom">IMAGENES</h1>
+        <div class="subtitle">Compartimos archivos</div>
+        <hr class="dotted-long-line">
+
+        <div class="descargas-wrapper">
+            <?php foreach($this->imagenes as $index) ?>
+            <div class="videoBox">
+                <img width="131" height="89" src="<?php echo DINAMIC_URL ?>/imagenes/<?php echo $index['imagenes_imagen'] ?>">
+                <div class="descripcion"><a href="<?php echo DINAMIC_URL ?>/imagenes/<?php echo $index['imagenes_imagen'] ?>" class="popup-imagen link"><?php echo $index['imagenes_nombre'] ?> <br><?php echo $index['imagenes_descripcion'] ?></a></div>
+            </div>
+
+            
+        </div>
+        <hr class="dotted-long-line">
+    </div>
+</div>

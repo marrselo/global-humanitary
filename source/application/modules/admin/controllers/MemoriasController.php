@@ -23,7 +23,7 @@ class Admin_MemoriasController extends Core_Controller_ActionAdmin
                 $data['_descripcion'] = $form->getElement('descripcion')->getValue();
                 $data['_publico'] = $form->getElement('publico')->getValue();
                 $entityMemorias->setProperties($data);
-                $entityMemorias->insertNosotros();
+                $entityMemorias->insertMemorias();
                 $this->_flashMessenger->addMessage('el registro se efecto correctamente');
                 $this->_redirect('/admin/memorias');
             }

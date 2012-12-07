@@ -1,171 +1,129 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"><head>
-        <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
-        <title>Inicio</title>
-        <script src="lib/jquery-1.8.2.min.js" type="text/javascript"></script>
-        <script src="lib/jquery.cycle.all.js" type="text/javascript"></script>
-        <script type="text/javascript">
-            $(function() {
-                $('.slideshow').cycle({
-                    fx:     'fade',
-                    speed:  'fast',
-                    timeout: 3000,
-                    pager:  '#nav',
-                    slideExpr: 'img'
-                });
-            });
-        </script>
-        <link href="css/estilo.css" type="text/css" rel="stylesheet"/>
-    </head>
-    <body>
-        <div class="body-container">
-            <div class="header">
-                <div class="logo"><a href="/"><img src="images/logo.png" alt="Global Humanitaria Perú"></a></div>
-                <ul class="topmenu">
-                    <li class="first"><a href="quienes-somos.html"><span>¿QUIÉNES SOMOS?</span></a></li>
-                    <li><a href="nuestra-labor.html"><span>NUESTRA LABOR</span></a></li>
-                    <li><a href="colabora.html"><span>COLABORA</span></a></li>
-                    <li><a href="unete.html"><span>ÚNETE</span></a></li>
-                    <li><a href="sala-de-prensa.html"><span>SALA DE PRENSA	</span></a></li>
-                    <li><a href="descarga.html"><span>DESCARGA</span></a></li>
-                    <li><a href="voluntariado.html"><span>VOLUNTARIADO</span></a></li>
-                </ul>
-                <ul class="toplinks">
-                    <li><a class="active inicio" href="#">Inicio</a></li>
-                    <li><a class="favoritos" href="#">Favoritos</a></li>
-                    <li><a class="contactenos" href="#">Contactanos</a></li>
-                    <li><a class="mapadelsitio" href="#">Mapa del sitio</a></li>
-                </ul>
-            </div>
-            <div class="slideshow-cont">
+<html class="no-js" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<title>Inicio</title>
+<script src="lib/jquery-1.8.2.min.js" type="text/javascript"></script>
+<script src="lib/jquery.cycle.all.js" type="text/javascript"></script>
+<script type="text/javascript" src="http://simplemodal.googlecode.com/files/jquery.simplemodal-1.4.3.js"></script>
+<script type="text/javascript" src="javascript/common.js"></script>
+<link href="css/fontface.css" type="text/css" rel="stylesheet"/>
+<link href="css/estilo.css" type="text/css" rel="stylesheet"/>
 
-                <div class="slideshow-control">
-                    <div class="nextprev-controls">
-                        <a href="#" class="prevlink"><span id="prev">Prev</span></a> 
-                        <a href="#" class="nextlink"><span id="next">Next</span></a>
-                    </div>
-                    <ul id="nav"></ul>
-                </div>
-                <div class="slideshow" style="position: relative; width: 834px; height: 390px;">
-                    <img src="images/001.jpg" alt="Campesino" />
-                    <img src="images/002.jpg" alt="Campesino" />
-                    <img src="images/003.jpg" alt="Campesino" />
-                    <img src="images/004.jpg" alt="Campesino" />
-                    <img src="images/005.jpg" alt="Campesino" />
-                    <img src="images/006.jpg" alt="Campesino" />
-                    <img src="images/007.jpg" alt="Campesino" />
-                    <img src="images/008.jpg" alt="Campesino" />
-                </div>
-            </div>
-            <div class="bottom-content">
-
-                <div class="right-zone">
-                    <div class="section-noticias">
-                        <h1 class="section-title">Noticias</h1>
-
-
-                        <div class="sectionblock left-block"><div class="noticia-title">La ayuda llego a Pucara</div>
-                            <div class="field-image">
-                                <img style="" src="images/imagen-noticia-01.jpg" alt="Noticia" />
-                            </div><a class="morelink" href="#">Leer más</a></div>
-
-                        <div class="sectionblock right-block"><div class="noticia-title">La ayuda llego a Pucara</div>
-                            <div class="field-image">
-                                <img style="" src="images/imagen-noticia-01.jpg" alt="Noticia" />
-                            </div>
-                            <a class="morelink" href="#">Leer más</a></div>
-                    </div>
-
-
-
-
-                    <div class="section-colabora">
-                        <h1 class="section-title">Colabora</h1>
-
-
-                        <div class="sectionblock left-block">
-                            <div class="field-image">
-                                <img alt="Colabora" src="images/section-colabora-img.jpg">
-                            </div><div class="bloque-info-colabora">
-                                <div class="pre-title">PARTICIPA</div>
-                                <div class="title">Iniciativas Solidarias</div>
-                                <div class="descripcion">Todos podemos actuar contra la pobreza. Podemos organizar un partido, una cena solidaria o un mercadillo.¿Tienes una idea?</div>
-                                <a href="#" class="morelink">Cuéntanosla!</a>
-                            </div></div>
-
-                        <div class="sectionblock right-block">
-                            <div class="field-image">
-                                <img src="images/section-colabora-img.jpg" alt="Colabora">
-                            </div><div class="bloque-info-colabora">
-                                <div class="pre-title">PARTICIPA</div>
-                                <div class="title">Iniciativas Solidarias</div>
-                                <div class="descripcion">Todos podemos actuar contra la pobreza. Podemos organizar un partido, una cena solidaria o un mercadillo.¿Tienes una idea?</div>
-                                <a class="morelink" href="#">Cuéntanosla!</a>
-                            </div></div>
-                    </div>
-                </div>
-
-
-                <div class="left-zone">
-
-
-
-                    <div class="bloque bloque-ultproyecto">
-                        <div class="bloque-title"><a href="#">Ultimo proyecto en curso</a></div>
-                        <div class="bloque-body">
-                            <div class="bloque-field-image"><img src="images/imagen-noticia-01.jpg" alt="Noticia"></div>
-                            <div class="bloque-field-teaser">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </div>
-                            <a class="bloque-field-morelink" href="#">Leer mas</a>
-                        </div>
-                    </div>
-
-                    <div class="bloque bloque-ultproyecto">
-
-                        <div class="bloque-body blq2">
-                            <div class="four-pictures">
-                                <a href="#"><img src="images/kid.png" alt="Infante"></a>
-                                <a href="#"><img src="images/kid.png" alt="Infante"></a>
-                                <a href="#"><img src="images/kid.png" alt="Infante"></a>
-                                <a href="#"><img src="images/kid.png" alt="Infante"></a>
-                            </div>
-
-                            <div class="bloque-field-resumen">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </div>
-                            <a class="bloque-field-morelink" href="#">Leer mas</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="footer">
-                <div class="leftside">
-                    <h1 class="section-title">MAPA GENERAL</h1>
-                    <ul class="bottom_menu">
-                        <li><a href="#">Quienes somos</a></li>
-                        <li><a href="#">Unete</a></li>
-                        <li><a href="#">La compania</a></li>
-                        <li><a href="#">La compania</a></li>
-                        <li><a href="#">La compania</a></li>
-                        <li><a href="#">La compania</a></li>
-                        <li><a href="#">La compania</a></li>
-                        <li><a href="#">La compania</a></li>
-                    </ul>
-                </div>
-                <div class="rightside">
-                    <h1 class="section-title">Estamos en las Redes Sociales</h1>
-                    <a href="#"><img src="images/facebook.png" alt="Facebook"></a>
-                    <a href="#"><img src="images/twitter.png" alt="Twitter"></a>
-                    <a href="#"><img src="images/flickr.png" alt="Flickr"></a>
-                    <a href="#"><img src="images/youtube.png"  alt="Youtube"></a>
-                </div>
-                <div class="footer-wide">&reg; Global Humanitaria 2012 todos los derechos reservados<br>Creado y desarrollado por Crystal Studio
-                    <a href="http://validator.w3.org/check?uri=referer" class="validator"><img
-                            src="http://www.w3.org/Icons/valid-html401" alt="Valid HTML 4.01 Transitional" height="31" width="88"></a>
-
-                    <a href="http://jigsaw.w3.org/css-validator/check/referer" class="validator">
-                        <img style="border:0;width:88px;height:31px"
-                             src="http://jigsaw.w3.org/css-validator/images/vcss-blue"
-                             alt="¡CSS Válido!" />
-                    </a></div>
-            </div>
+<script type="text/javascript" src="javascript/modernizer-latest.js"></script>
+<script type="text/javascript">
+$(function() {
+    $('.slideshow').cycle({
+        fx:     'fade',
+        speed:  'fast',
+        timeout: 3000,
+        pager:  '#nav',
+    slideExpr: 'img'
+    });
+});
+</script>
+</head>
+<body>
+<div class="body-container">
+  <div class="header">
+    <div class="logo"><a href="index.html"><img src="images/logo.png" alt="Global Humanitaria Perú"></a></div>
+    <ul class="topmenu">
+      <li class="first"><a href="quienes-somos.html"><span>¿QUIÉNES SOMOS?</span></a></li>
+      <li><a href="nuestra-labor.html"><span>NUESTRA LABOR</span></a></li>
+      <li><a href="colabora.html"><span>COLABORA</span></a></li>
+      <li><a href="unete.html"><span>ÚNETE</span></a></li>
+      <li><a href="sala-de-prensa.html"><span>SALA DE PRENSA </span></a></li>
+      <li><a href="descarga.html"><span>DESCARGA</span></a></li>
+      <li><a href="voluntariado.html"><span>VOLUNTARIADO</span></a></li>
+    </ul>
+    <ul class="toplinks">
+      <li class="active"><a href="index.html" title="Inicio" class="inicio">Inicio</a></li>
+      <li><a id="bookmarkme" title="Favoritos" onclick="bookmark()" class="favoritos">Favoritos</a></li>
+      <li><a href="contactanos.html" title="Contáctanos" class="contactenos">Contactanos</a></li>
+      <li><a href="mapadelsitio.html" title="Mapa del sitio" class="mapadelsitio">Mapa del sitio</a></li>
+    </ul>
+    <div class="consultas-top"> <span class="gblue">CONSULTAS:</span> <span class="gorange">01 421 4514</span> </div>
+  </div>
+  <div class="slideshow-cont">
+    <div class="slideshow-control">
+      <div class="nextprev-controls"> <a href="#" class="prevlink"><span id="prev">Prev</span></a> <a href="#" class="nextlink"><span id="next">Next</span></a> </div>
+      <ul id="nav">
+      </ul>
+    </div>
+    <div class="slideshow"> <img src="images/001.jpg" alt="Campesino" /> <img src="images/002.jpg" alt="Campesino" /> <img src="images/003.jpg" alt="Campesino" /> <img src="images/004.jpg" alt="Campesino" /> <img src="images/005.jpg" alt="Campesino" /> </div>
+  </div>
+  <div class="bottom-content">
+    <div class="right-zone">
+      <div class="section-noticias">
+        <h1 class="section-title">+ Noticias</h1>
+        <div class="sectionblock left-block">
+          <div class="noticia-title">La ayuda llego a Pucara</div>
+          <div class="field-image"> <img style="" src="images/imagen-noticia-01.jpg" alt="Noticia" /> </div>
+          <a class="morelink" href="#">Leer más</a></div>
+        <div class="sectionblock right-block">
+          <div class="noticia-title">La ayuda llego a Pucara</div>
+          <div class="field-image"> <img style="" src="images/imagen-noticia-01.jpg" alt="Noticia" /> </div>
+          <a class="morelink" href="#">Leer más</a></div>
+      </div>
+      <div class="section-colabora">
+        <h1 class="section-title">+ Colabora</h1>
+        <div class="sectionblock left-block">
+          <div class="field-image"> <img alt="Colabora" src="images/section-colabora-img.jpg"> </div>
+          <div class="bloque-info-colabora">
+            <div class="pre-title">PARTICIPA</div>
+            <div class="title">INICIATIVAS SOLIDARIAS</div>
+            <div class="descripcion">Todos podemos actuar contra la pobreza. Podemos organizar un partido, una cena solidaria o un mercadillo.¿Tienes una idea?</div>
+            <a href="#" class="morelink">Cuéntanosla!</a> </div>
         </div>
-
-    </body></html>
+        <div class="sectionblock right-block">
+          <div class="field-image"> <img src="images/section-colabora-img.jpg" alt="Colabora"> </div>
+          <div class="bloque-info-colabora">
+            <div class="pre-title">SORPRENDELE</div>
+            <div class="title">REGALO DIFERENTE</div>
+            <div class="descripcion">Todos podemos actuar contra la pobreza. Podemos organizar un partido, una cena solidaria o un mercadillo.¿Tienes una idea?</div>
+            <a class="morelink" href="#">¿Quieres ver cómo?</a> </div>
+        </div>
+      </div>
+    </div>
+    <div class="left-zone">
+      <div class="bloque bloque-ultproyecto">
+        <div class="bloque-title"><a href="#">Ultimo proyecto en curso</a></div>
+        <div class="bloque-body">
+          <div class="bloque-field-teaser">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </div>
+          <div class="bloque-field-image"><img src="images/imagen-noticia-01.jpg" alt="Noticia"></div>
+        </div>
+      </div>
+      <div class="bloque bloque-ultproyecto">
+        <div class="bloque-body blq2">
+          <div class="four-pictures"> <a href="#"><img src="images/kid.png" alt="Infante"></a> <a href="#"><img src="images/kid.png" alt="Infante"></a> <a href="#"><img src="images/kid.png" alt="Infante"></a> <a href="#"><img src="images/kid.png" alt="Infante"></a> </div>
+          <div class="bloque-field-resumen">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </div>
+          <a class="bloque-field-morelink" href="#">Leer mas</a> </div>
+      </div>
+    </div>
+  </div>
+<div class="footer">
+    <div class="leftside">
+      <h1 class="section-title">MAPA GENERAL</h1>
+      <ul class="bottom_menu">
+        <li><a href="quienes-somos.html">Quienes somos</a></li>
+        <li><a href="unete.html">Unete</a></li>
+        <li><a href="voluntariado.html">Voluntariado</a></li>
+        <li><a href="nuestra-labor.html">Nuestra labor</a></li>
+        <li><a href="sala-de-prensa.html">Sala de prensa</a></li>
+        <li><a href="contactenos.html">Contactenos</a></li>
+        <li><a href="colabora.html">Colabora</a></li>
+        <li><a href="descarga.html">Descargas</a></li>
+      </ul>
+    </div>
+    <div class="rightside">
+      <h1 class="section-title">Estamos en las Redes Sociales</h1>
+      <a href="https://www.facebook.com/GHumanitaria?fref=ts"><img src="images/facebook.png" alt="Facebook"></a> 
+      <a href="#"><img src="images/twitter.png" alt="Twitter"></a> 
+      <a href="#"><img src="images/flickr.png" alt="Flickr"></a> 
+      <a href="#"><img src="images/youtube.png"  alt="Youtube"></a> 
+    </div>
+    <div class="footer-wide">&reg; Global Humanitaria 2012 todos los derechos reservados<br>Creado y desarrollado por Crystal Studio </div>
+  </div>
+</div>
+</body>
+</html>

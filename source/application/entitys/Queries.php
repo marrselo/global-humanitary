@@ -35,6 +35,15 @@ class Application_Entity_Queries {
       $model = new Application_Model_Queries();
       return $model->listingMiembros();
     }
+    
+    static function listingImagenes(){
+      $model = new Application_Model_Queries();
+      return $model->listingImagenes();
+    }
+    static function listingWallpaper(){
+      $model = new Application_Model_Queries();
+      return $model->listingWallpaper();
+    }
 }
 
 ?>
