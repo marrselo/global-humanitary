@@ -14,7 +14,7 @@ defined('APPLICATION_PUBLIC')
 // Define application environment
 defined('APPLICATION_ENV')
     || define('APPLICATION_ENV',
-        (getenv('APPLICATION_ENV') ? getenv('APPLICATION_ENV') : 'production'));
+        (getenv('APPLICATION_ENV') ? getenv('APPLICATION_ENV') : 'development'));
 
 // Ensure library/ is on include_path
 set_include_path(implode(PATH_SEPARATOR,
@@ -45,7 +45,8 @@ class index
      *
      * @var array
      */
-    protected static $_ini = array('routes.ini','images.ini','private.ini',);
+    //protected static $_ini = array('routes.ini','images.ini','private.ini',);
+    protected static $_ini = array('routes.ini','images.ini');
 
     /**
      *

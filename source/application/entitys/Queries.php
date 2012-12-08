@@ -44,6 +44,10 @@ class Application_Entity_Queries {
       $model = new Application_Model_Queries();
       return $model->listingWallpaper();
     }
+    static function listingVideos(){
+      $model = new Application_Model_Queries();
+      return $model->listingVideos();
+    }
 }
 
 ?>

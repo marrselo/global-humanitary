@@ -14,7 +14,7 @@ class Default_DescargaController extends Core_Controller_ActionDefault {
         $this->view->imagenes = Application_Entity_Queries::listingImagenes();
     }
     public function videosAction() {
-        
+        $this->view->imagenes = Application_Entity_Queries::listingVideos();
     }
     public function fondosEscritorioAction() {
         $this->view->wallpaper = Application_Entity_Queries::listingWallpaper();
