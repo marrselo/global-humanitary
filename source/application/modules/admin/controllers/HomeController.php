@@ -71,12 +71,18 @@ class Admin_HomeController extends Core_Controller_ActionAdmin
     }
     
     public function deleteBannerAction(){
+        $idBanner = $this->_getParam('id',0);
+        $objBanner= new Application_Model_Banner();        
+        if(empty($idBanner)){
+            $this->_redirect('admin/home/banner');
+        }
+        $objBanner->deleteBanner($idBanner);
+        $this->_redirect('/admin/home/banner');        
         
     }
     
-    public function deleteAction()
+    public function projectsAction()
     {
-        //$modelBanner = new Application_Model_Banner();
         
     }
 }

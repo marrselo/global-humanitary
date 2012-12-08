@@ -64,8 +64,4 @@ class Core_Controller_ActionDefault extends Core_Controller_Action {
  
 return $pages;
     }
-
-       
-   
-
 }

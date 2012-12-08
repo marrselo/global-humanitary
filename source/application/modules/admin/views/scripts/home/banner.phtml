@@ -84,9 +84,12 @@
                             </td>
                             <td class="tableActs">
 
-                                <a href="#" class="tablectrl_small bDefault tipS" title="Borrar">
+                                <a href="/admin/home/delete-banner/id<?php echo $index['banner_id']?>" 
+                                   class="tablectrl_small bDefault tipS" 
+                                   title="Borrar">
                                     <span class="iconb" data-icon="&#xe136;"></span></a>
-                                <a href="<?php //echo ?>" class="tablectrl_small bDefault tipS" 
+                                <a href="/admin/home/publish/id/<?php echo $index['banner_id'] ?>" 
+                                   class="tablectrl_small bDefault tipS" 
                                    title="<?php echo $index['banner_publico']==1 ?
                                         'desactivar' : 'activar'?>">
                                     <span class="iconb" data-icon="&#xe1f7;">

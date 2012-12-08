@@ -68,6 +68,11 @@ class Application_Model_Banner  extends Core_Model
         $data=array('banner_publico'=>1);
         $this->_tableBanner->update($data,$where);
     }
+    
+    public function deleteBanner($idBanner){
+        $where=$this->_tableBanner->getAdapter()->quoteInto('banner_id',$idBanner);
+        $this->_tableBanner->delete($where);
+    }
                 
     
 }
