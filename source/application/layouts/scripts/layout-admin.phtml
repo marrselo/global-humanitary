@@ -167,45 +167,27 @@
         
         <!-- Main nav -->
         <ul class="nav">
-            <li><a href="#" title="" class="active"><img src="<?php echo STATIC_ADMIN_IMG; ?>/icons/mainnav/dashboard.png" alt="" />
-                    <span>Home</span>
+            <?php foreach($this->menu as $index =>$value):
+                if($index!='0'):?>
+            <li><a href="<?php echo $value['url']?>" 
+                   title="<?php echo $value['titulo']?>" 
+                   class="active">
+                    <img src="<?php echo STATIC_ADMIN_IMG.$value['img']; ?>" 
+                         alt="<?echo $value['titulo']?>" />
+                    <span><?php echo $value['titulo']?></span>
+                </a>
+            </li>           
+                <?php else: 
+                    $each = each($value)?>
+            <li><a href="<?php echo $each[1]['url']?>" 
+                   title="<?php echo $each[0]?>">
+                    <img src="<?php echo STATIC_ADMIN_IMG.$each[1]['img']?>" 
+                         alt="<?php echo $each[1]['titulo']?>" />
+                    <span><?php echo $each[1]['titulo']?></span>
                 </a>
             </li>
-            <li><a href="#" title=""><img src="<?php echo STATIC_ADMIN_IMG; ?>/icons/mainnav/ui.png" alt="" />
-                    <span>Nuesta labor</span></a>
-                
-            </li>
-            <li><a href="#" title="">
-                    <img src="<?php echo STATIC_ADMIN_IMG; ?>/icons/mainnav/forms.png" alt="" /><span>
-                        Colabora
-                    </span>
-                </a>
-                
-            </li>
-            <li><a href="#" title="">
-                    <img src="<?php echo STATIC_ADMIN_IMG; ?>/icons/mainnav/messages.png" alt="" /><span>
-                        Unete
-                    </span>
-                </a>
-            </li>
-            <li><a href="statistics.html" title="">
-                    <img src="<?php echo STATIC_ADMIN_IMG; ?>/icons/mainnav/statistics.png" alt="" /><span>
-                        Prensa
-                    </span>
-                </a>
-            </li>
-            <li><a href="#" title="">
-                    <img src="<?php echo STATIC_ADMIN_IMG; ?>/icons/mainnav/tables.png" alt="" /><span>
-                        Gestión Archivos
-                    </span>
-                </a>
-                
-            </li>
-            <li><a href="#" title="">
-                    <img src="<?php echo STATIC_ADMIN_IMG; ?>/icons/mainnav/other.png" alt="" />
-                    <span>Voluntariado</span></a>
-              
-            </li>            
+                <?php endif;?>
+           <? endforeach;?>
         </ul>
     </div>
     
@@ -268,7 +250,9 @@
     
     <!-- Main content -->
     <div class="wrapper">
-          <?php echo $this->layout()->content ?>
+          <?php 
+          
+          echo $this->layout()->content ?>
     </div>
     <!-- Main content ends -->
     

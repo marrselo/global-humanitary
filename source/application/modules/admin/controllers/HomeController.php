@@ -80,5 +80,10 @@ class Admin_HomeController extends Core_Controller_ActionAdmin
         $this->_redirect('/admin/home/banner');        
         
     }
+    
+    public function projectsAction()
+    {
+        
+    }
 }
 
