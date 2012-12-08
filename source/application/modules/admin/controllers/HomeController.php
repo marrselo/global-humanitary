@@ -83,7 +83,8 @@ class Admin_HomeController extends Core_Controller_ActionAdmin
     
     public function projectsAction()
     {
-        
+        $objProjects = new Application_Model_Proyectos();
+   
     }
 }
 
