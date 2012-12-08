@@ -195,26 +195,31 @@
     <div class="secNav">
         <div class="secWrapper">                        
             <br>
-            <div id="general">
-                    <ul class="subNav">
-                        <li><a href="ui.html" title="" class="this">
-                                <span class="icos-fullscreen">                                    
-                                </span>Banner</a></li>
-                        <li><a href="ui_icons.html" title="">
-                                <span class="icos-images2"></span>
-                                Proyectos
-                            </a>
-                        </li>
-                        <li><a href="ui_buttons.html" title="">
-                                <span class="icos-coverflow"></span>
-                                Noticias
-                            </a>
-                        </li>
-                        <li><a href="ui_grid.html" title=""><span class="icos-view"></span>Grid</a></li>
-                        <li><a href="ui_custom.html" title=""><span class="icos-cog2"></span>Custom elements</a></li>
-                        <li><a href="ui_experimental.html" title=""><span class="icos-beta"></span>Experimental</a></li>
-                    </ul>
-                </div>                                                               
+            <div id="general">                
+                <ul class="subNav">
+                    <?php foreach($this->submenu as $index=>$value):
+                        if($index!='0'):?>
+                    <li>
+                        <a href="<?php echo $value['url']?>" 
+                           title="<?php echo $value['titulo']?>">
+                            <span class="icos-cog2"></span>
+                            <?php echo $value['titulo']?>
+                        </a>
+                    </li>
+                    <?php else:
+                        $each = each($value)?>
+                    <li>
+                        <a href="<?php echo $each[1]['url']?>" 
+                           title="<?php echo $each[1]['titulo']?>" 
+                           class="this">
+                            <span class="icos-fullscreen"></span>
+                            <?php echo $each[1]['titulo']?>
+                        </a>
+                    </li>
+                    <?php endif;
+                        endforeach;?>                        
+                </ul>
+         </div>                                                               
        </div> 
        <div class="clear"></div>
    </div>

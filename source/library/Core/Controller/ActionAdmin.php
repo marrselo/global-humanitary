@@ -1,11 +1,7 @@
 <?php
 
 class Core_Controller_ActionAdmin extends Core_Controller_Action {
-    
-    protected $_submenu;
-    
-    
-    
+                    
     public function init() {
         $this->_helper->layout->setLayout('layout-admin');
         parent::init();
@@ -15,51 +11,14 @@ class Core_Controller_ActionAdmin extends Core_Controller_Action {
     public function preDispatch()
     {
         $controller = $this->getRequest()->getControllerName();
-        
-        $menu=$this->getMenu();
-        unset($menu[$controller]);          
-        switch ($controller){
-            case 'imagenes' : 
-                $items = array('img'=>'/icons/mainnav/other.png',
-                    'url'=>'/admin/imagenes','titulo'=>'Albúm Fotos');
-                break;
-            case 'memorias' :
-                $items=array('img'=>'/icons/mainnav/statistics.png',
-                    'url'=>'/admin/memorias','titulo'=>'Memorias');
-                break;
-            case 'miembros' :
-                $items=array('img'=>'/icons/mainnav/ui.png','url'=>'/admin/miembros',
-                    'titulo'=>'Miembros');
-                break;
-            case 'nosotros' : 
-                $items= array('img'=>'/icons/mainnav/forms.png','url'=>'/admin/nosotros',
-                'titulo'=>'Nosotros');
-                break;
-            case 'home' :
-                $items=array('img'=>'/icons/mainnav/dashboard.png','url'=>'/admin/home',
-                'titulo'=>'Home');
-                break;
-            case 'videos' :
-                $items=array('img'=>'/icons/mainnav/dashboard.png','url'=>'/admin/videos',
-                'titulo'=>'Videos');
-                break;
-            case 'wallpaper' :
-                $items=array('img'=>'/icons/mainnav/tables.png','url'=>'/admin/wallpaper',
-                'titulo'=>'Fondos Escritorio');
-                break;
-            case 'unete' :
-                $items=array('img'=>'/icons/mainnav/messages.png','url'=>'admin/unete',
-                'titulo'=>'Únete');
-                break;
-            default:
-                $this->_redirect('/');
-        }       
-        $elemento=array($controller=>$items);
-        array_unshift($menu,$elemento);
-        $this->view->menu=$menu;
+        $action=$this->getRequest()->getActionName();                
+        $this->view->menu=$this->getMenu($controller);
+        $this->view->submenu=$this->getSubmenu($controller,$action);        
         $this->view->controller=$controller;
+        $this->view->action=$action;
     }
-    function getMenu()
+    
+    function getMenu($controller)
     {
         $menu = array(
             'imagenes'=>
@@ -87,6 +46,52 @@ class Core_Controller_ActionAdmin extends Core_Controller_Action {
             array('img'=>'/icons/mainnav/messages.png','url'=>'admin/unete',
                 'titulo'=>'Únete')
             );
+        $activeMenu = $menu[$controller];
+        unset($menu[$controller]);              
+        $elemento=array($controller=>$activeMenu);
+        array_unshift($menu,$elemento);                
         return $menu;
     }
+    
+    public function getSubmenu($controller,$action)
+    {
+        $submenu=array();
+        switch($controller){
+            case 'home' :
+                $submenu = array(
+                    'banner'=>
+                    array('url'=>'/admin/'.$controller.'/banner','titulo'=>'Banner'),
+                    'projects'=>
+                    array('url'=>'/admin/'.$controller.'/projects','titulo'=>'Proyectos'),
+                    'notices'=>
+                    array('url'=>'/admin/'.$controller.'/notices','titulo'=>'Noticias'),
+                    'collaborates'=>
+                    array('url'=>'/admin/'.$controller.'/collaborates','titulo'=>'Colabora')
+                    );
+                break;
+            case 'miembros' :
+                $submenu = array(
+                    'index'=>
+                    array('url'=>'/admin/'.$controller.'/','titulo'=>'Gestion de Miembros'));
+                break;
+            case 'memorias' :
+                $submenu = array(
+                    'index'=>
+                    array('url'=>'/admin/'.$controller.'/','titulo'=>'Memorias'));
+                break;
+            case 'nosotros' :
+                $submenu = array(
+                    'index'=>
+                    array('url'=>'/admin/'.$controller.'/','titulo'=>'Nosotros'));
+                break;
+            
+        }
+        if(isset($submenu[$action]) ){
+            $submenuActive=$submenu[$action];
+            $elemento=array($action=>$submenuActive);            
+            unset($submenu[$action]);
+            array_unshift($submenu,$elemento);
+        }
+        return $submenu;
+    }            
 }

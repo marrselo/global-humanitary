@@ -7,7 +7,7 @@ class Admin_HomeController extends Core_Controller_ActionAdmin
     }
     public function indexAction()
     {                   
-        
+        $this->_redirect('/admin/home/banner');
     } 
     public function bannerAction()
     {   
