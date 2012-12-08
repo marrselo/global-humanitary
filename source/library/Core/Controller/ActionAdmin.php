@@ -57,6 +57,7 @@ class Core_Controller_ActionAdmin extends Core_Controller_Action {
         $elemento=array($controller=>$items);
         array_unshift($menu,$elemento);
         $this->view->menu=$menu;
+        $this->view->controller=$controller;
     }
     function getMenu()
     {
