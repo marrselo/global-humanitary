@@ -1,11 +1,9 @@
 <?php
 /**
- * Table Banner
+ * Table Noticias
  * 
  * @author marrselo
  */
-
-
 class Application_Model_DbTable_Noticias extends Core_Db_Table
 {
     protected  $_name = "noticias";
