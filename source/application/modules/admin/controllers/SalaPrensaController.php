@@ -1,16 +1,39 @@
 <?php
 
-class Admin_MiembrosController extends Core_Controller_ActionAdmin       
+class Admin_QuienesSomosController extends Core_Controller_ActionAdmin       
 {
     public function init() {
         parent::init();
     }
     public function indexAction()
     {           
+        $form = new Application_Form_NosotrosForm();
+        $entityNosotros = new  Application_Entity_Nosotros();        
+        if($this->_request->isPost()){
+            $modelNosotros = new Application_Model_Nosotros();
+            if($form->isValid($this->getAllParams())){                
+                $data['nosotros_titulo'] = $form->getElement('tituloNosotros')->getValue();
+                $data['nosotros_descripcion'] = $form->getElement('descripcionNosotros')->getValue();
+                $idNosotros = $form->getElement('idNosotros')->getValue();                
+                $modelNosotros->updateNosotros($idNosotros,$data);
+                $this->_flashMessenger->success('Actualización exitosa');            
+                $this->_redirect('/admin/quienes-somos');
+            }
+        }
+        $nosotrosValue = $entityNosotros->getNosotros();
+        $form->getElement('tituloNosotros')->setValue($nosotrosValue['nosotros_titulo']);
+        $form->getElement('descripcionNosotros')->setValue($nosotrosValue['nosotros_descripcion']);
+        $form->getElement('idNosotros')->setValue($nosotrosValue['nosotros_id']);        
+        $form->setDecorators(array(array('ViewScript',array('viewScript'=>'forms/_formNosotros.phtml'))));
+        $this->view->form = $form;                
+    } 
+    
+    public function miembrosAction()
+    {
         $entityMiembros = new Application_Entity_Miembros();
         $this->view->listingMiembros = $entityMiembros->listMiembros();
         $this->view->message = $this->_flashMessenger->getMessages();
-    } 
+    }
     public function insertAction(){
         $form = new Application_Form_AdminMiembrosForm();
         $entityMiembros = new Application_Entity_Miembros();
@@ -26,8 +49,8 @@ class Admin_MiembrosController extends Core_Controller_ActionAdmin
                 $data['_publico'] = $form->getElement('publico')->getValue();
                 $entityMiembros->setProperties($data);
                 $entityMiembros->insertNosotros();
-                $this->_flashMessenger->addMessage('el registro se efecto correctamente');
-                $this->_redirect('/admin/miembros');
+                $this->_flashMessenger->success('el registro se efecto correctamente');
+                $this->_redirect('/admin/quienes-somos/miembros');
             }
         }
         $this->view->form = $form;
@@ -56,10 +79,9 @@ class Admin_MiembrosController extends Core_Controller_ActionAdmin
                 $entityMiembros->setProperties($data);
                 $entityMiembros->updateMiembros();
                 $this->_flashMessenger->addMessage('el registro se actualizo correctamente');
-                $this->_redirect('/admin/miembros');
+                $this->_redirect('/admin/quienes-somos/miembros');
             }
-        }
-        
+        }        
         $this->view->form = $form;
         $this->view->message = $this->_flashMessenger->getMessages();
     }
@@ -87,7 +109,6 @@ class Admin_MiembrosController extends Core_Controller_ActionAdmin
         $entityMiembros->lowerOrder();
         $this->_redirect('/admin/miembros');
     }
-    
     
 }
 

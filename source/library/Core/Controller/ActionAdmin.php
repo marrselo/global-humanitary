@@ -27,9 +27,9 @@ class Core_Controller_ActionAdmin extends Core_Controller_Action {
             'memorias'=>
             array('img'=>'/icons/mainnav/statistics.png','url'=>'/admin/memorias',
                 'titulo'=>'Memorias'),
-            'miembros'=>
-            array('img'=>'/icons/mainnav/ui.png','url'=>'/admin/miembros',
-                'titulo'=>'Miembros'),
+            'sala-prensa'=>
+            array('img'=>'/icons/mainnav/ui.png','url'=>'/admin/sala-prensa',
+                'titulo'=>'Sala de Prensa'),
            'quienes-somos'=>
             array('img'=>'/icons/mainnav/forms.png','url'=>'/admin/quienes-somos',
                 'titulo'=>'Quienes Somos'),
@@ -91,10 +91,12 @@ class Core_Controller_ActionAdmin extends Core_Controller_Action {
                     array('url'=>'/admin/'.$controller.'/miembros','titulo'=>'Editar Miembro Equipo')
                     ;
                 }
-                   
+                if($action=='insert'){                    
+                    $submenu['insert'] =
+                    array('url'=>'/admin/'.$controller.'/miembros','titulo'=>'Nuevo Miembro Equipo')
+                    ;
+                }                   
                 break;
-            
-            
         }        
         if(isset($submenu[$action]) ){            
             $submenuActive=$submenu[$action];

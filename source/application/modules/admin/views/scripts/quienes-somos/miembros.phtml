@@ -3,7 +3,7 @@ foreach ($this->message as $index):
     echo '<p>' . $index . '</p>';
 endforeach;
 ?></div>
-<a href="/admin/miembros/insert">Nuevo Registro</a>
+<a href="/admin/quienes-somos/insert">Nuevo Registro</a>
 <table>
     <tr> 
         <td>nombre </td>
@@ -33,8 +33,8 @@ endforeach;
             <td>
                 <a href="/admin/quienes-somos/edit/id/<?php echo $index['miembros_id']; ?>" > [Editar]</a>
                 <a href="<?php echo $arrayLinkPublicar[$index['miembros_publico']]['link'] . $index['miembros_id']; ?>">[<?php echo $arrayLinkPublicar[$index['miembros_publico']]['label']; ?>]</a>
-                <a href="/admin/miembros/uporder/id/<?php echo $index['miembros_id']; ?>" > [Subir orden]</a>
-                <a href="/admin/miembros/lowerorder/id/<?php echo $index['miembros_id']; ?>" > [Bajar orden]</a>
+                <a href="/admin/quienes-somos/uporder/id/<?php echo $index['miembros_id']; ?>" > [Subir orden]</a>
+                <a href="/admin/quienes-somos/lowerorder/id/<?php echo $index['miembros_id']; ?>" > [Bajar orden]</a>
             </td>
         </tr>
 

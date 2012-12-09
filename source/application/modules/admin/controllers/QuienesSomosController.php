@@ -49,8 +49,8 @@ class Admin_QuienesSomosController extends Core_Controller_ActionAdmin
                 $data['_publico'] = $form->getElement('publico')->getValue();
                 $entityMiembros->setProperties($data);
                 $entityMiembros->insertNosotros();
-                $this->_flashMessenger->addMessage('el registro se efecto correctamente');
-                $this->_redirect('/admin/miembros');
+                $this->_flashMessenger->success('el registro se efecto correctamente');
+                $this->_redirect('/admin/quienes-somos/miembros');
             }
         }
         $this->view->form = $form;
@@ -79,10 +79,9 @@ class Admin_QuienesSomosController extends Core_Controller_ActionAdmin
                 $entityMiembros->setProperties($data);
                 $entityMiembros->updateMiembros();
                 $this->_flashMessenger->addMessage('el registro se actualizo correctamente');
-                $this->_redirect('/admin/miembros');
+                $this->_redirect('/admin/quienes-somos/miembros');
             }
-        }
-        
+        }        
         $this->view->form = $form;
         $this->view->message = $this->_flashMessenger->getMessages();
     }

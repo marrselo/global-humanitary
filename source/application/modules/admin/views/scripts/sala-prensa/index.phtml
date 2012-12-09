@@ -1,0 +1,37 @@
+<div class="nNote"><?php foreach($this->message as $index):  
+echo '<p>'.$index.'</p>';
+ endforeach;  ?></div>
+<a href="/admin/memorias/insert">Nuevo Registro</a>
+<table>
+    <tr> 
+        <td>nombre </td>
+        <td>descripcion</td>
+        <td>imagen</td>
+        <td>estado</td>
+        <td>orden</td>
+        <td>Opciones</td>
+    </tr>
+    
+ <?php 
+ $arrayEstado = array('no publico', 'publico' );
+ $arrayLinkPublicar = array(
+     array('link'=>'/admin/memorias/publicar/id/','label'=>'publicar'), 
+     array('link'=>'/admin/memorias/despublicar/id/','label'=>'despublicar'), 
+     );
+ foreach($this->listingMemorias as $index): ?>
+    <tr> 
+        <td><?php echo $index['memorias_nombre']; ?></td>
+        <td><?php echo $index['memorias_descripcion']; ?></td>
+        <td><?php echo $index['memorias_imagen']; ?></td>
+        <td><?php echo $arrayEstado[$index['memorias_publico']]; ?></td>
+        <td><?php echo $index['memorias_orden']; ?></td>
+        <td>
+            <a href="/admin/memorias/edit/id/<?php echo $index['memorias_id']; ?>" > [Editar]</a>
+            <a href="<?php echo $arrayLinkPublicar[$index['memorias_publico']]['link'].$index['memorias_id']; ?>">[<?php echo $arrayLinkPublicar[$index['memorias_publico']]['label']; ?>]</a>
+            <a href="/admin/memorias/uporder/id/<?php echo $index['memorias_id']; ?>" > [Subir orden]</a>
+            <a href="/admin/memorias/lowerorder/id/<?php echo $index['memorias_id']; ?>" > [Bajar orden]</a>
+        </td>
+    </tr>
+
+<?php endforeach; ?>
+</table>

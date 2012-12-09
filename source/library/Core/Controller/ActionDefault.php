@@ -10,8 +10,10 @@ class Core_Controller_ActionDefault extends Core_Controller_Action {
     public function preDispatch() {
         parent::preDispatch();
         $navigatorMain = new Zend_Navigation($this->getNavMain());
+        
         $navigatorMain->findAllBy('controller', $this->getRequest()->getControllerName());
         Zend_Registry::set('navigationMais',$navigatorMain);
+       
     }
     
     

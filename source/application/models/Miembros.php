@@ -55,4 +55,3 @@ class Application_Model_Miembros
     }
     
 }
-
