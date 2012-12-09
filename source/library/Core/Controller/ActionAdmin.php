@@ -69,7 +69,7 @@ class Core_Controller_ActionAdmin extends Core_Controller_Action {
                     array('url'=>'/admin/'.$controller.'/collaborates','titulo'=>'Colabora')
                     );
                 break;
-            case 'miembros' :
+            case 'miembros' : 
                 $submenu = array(
                     'index'=>
                     array('url'=>'/admin/'.$controller.'/','titulo'=>'Gestion de Miembros'));
@@ -84,16 +84,23 @@ class Core_Controller_ActionAdmin extends Core_Controller_Action {
                     'index'=>
                     array('url'=>'/admin/'.$controller.'/','titulo'=>'Nosotros'),
                     'miembros'=>
-                    array('url'=>'/admin/'.$controller.'/miembros','titulo'=>'Nuestro Equipo'));
+                    array('url'=>'/admin/'.$controller.'/miembros','titulo'=>'Nuestro Equipo')
+                    );
+                if($action=='edit'){                    
+                    $submenu['edit'] =
+                    array('url'=>'/admin/'.$controller.'/miembros','titulo'=>'Editar Miembro Equipo')
+                    ;
+                }
+                   
                 break;
             
             
-        }
-        if(isset($submenu[$action]) ){
+        }        
+        if(isset($submenu[$action]) ){            
             $submenuActive=$submenu[$action];
             $elemento=array($action=>$submenuActive);            
             unset($submenu[$action]);
-            array_unshift($submenu,$elemento);
+            array_unshift($submenu,$elemento);        
         }
         return $submenu;
     }            
