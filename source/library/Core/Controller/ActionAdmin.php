@@ -30,9 +30,9 @@ class Core_Controller_ActionAdmin extends Core_Controller_Action {
             'miembros'=>
             array('img'=>'/icons/mainnav/ui.png','url'=>'/admin/miembros',
                 'titulo'=>'Miembros'),
-           'nosotros'=>
-            array('img'=>'/icons/mainnav/forms.png','url'=>'/admin/nosotros',
-                'titulo'=>'Nosotros'),
+           'quienes-somos'=>
+            array('img'=>'/icons/mainnav/forms.png','url'=>'/admin/quienes-somos',
+                'titulo'=>'Quienes Somos'),
             'home'=> 
             array('img'=>'/icons/mainnav/dashboard.png','url'=>'/admin/home',
                 'titulo'=>'Home'),
@@ -79,11 +79,14 @@ class Core_Controller_ActionAdmin extends Core_Controller_Action {
                     'index'=>
                     array('url'=>'/admin/'.$controller.'/','titulo'=>'Memorias'));
                 break;
-            case 'nosotros' :
+            case 'quienes-somos' :
                 $submenu = array(
                     'index'=>
-                    array('url'=>'/admin/'.$controller.'/','titulo'=>'Nosotros'));
+                    array('url'=>'/admin/'.$controller.'/','titulo'=>'Nosotros'),
+                    'miembros'=>
+                    array('url'=>'/admin/'.$controller.'/miembros','titulo'=>'Nuestro Equipo'));
                 break;
+            
             
         }
         if(isset($submenu[$action]) ){

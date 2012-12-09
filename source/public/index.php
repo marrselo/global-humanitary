@@ -45,8 +45,8 @@ class index
      *
      * @var array
      */
-    //protected static $_ini = array('routes.ini','images.ini','private.ini',);
-    protected static $_ini = array('routes.ini','images.ini');
+    protected static $_ini = array('routes.ini','images.ini','private.ini',);
+    //protected static $_ini = array('routes.ini','images.ini');
 
     /**
      *

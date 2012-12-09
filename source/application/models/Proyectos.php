@@ -3,7 +3,7 @@
  * 
  * @author marrselo
  */
-class Application_Model_Proyectos extends Application_Model_DbTable_Proyectos
+class Application_Model_Proyectos extends  Core_Model
 {
     public function __construct()
     {
@@ -14,7 +14,7 @@ class Application_Model_Proyectos extends Application_Model_DbTable_Proyectos
     {
         $smt = $this->_tableProyectos->select()
             ->from($this->_tableProyectos->getName())
-            ->query();
+            ->query();            
         $result = $smt->fetchAll();
         $smt->closeCursor();
         return $result;

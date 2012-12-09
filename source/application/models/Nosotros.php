@@ -1,10 +1,4 @@
 <?php
-
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /**
  * Description of Queries
  *
@@ -34,6 +28,15 @@ class Application_Model_Nosotros extends Core_Model {
         }else{
             return false;
         }
+    }
+    /**
+     * @param int $idNosotros id de tabla nosotros
+     * @param array $data data a actualizar
+     */
+    public function updateNosotros($idNosotros,$data)
+    {
+        $where=$this->_tableNosotros->getAdapter()->quoteInto('nosotros_id =?',$idNosotros);        
+        $this->_tableNosotros->update($data,$where);
     }
 
 }

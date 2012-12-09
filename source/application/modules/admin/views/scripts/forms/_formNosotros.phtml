@@ -1,0 +1,29 @@
+<div class="widget">
+    <div class="whead"><h6>Actualice información </h6><div class="clear"></div></div>
+    <form id="wizard3" method="post" action="" class="main">
+        <fieldset class="step" id="w3first">           
+            <div class="formRow">
+                <div class="grid3"><label>Titulo:</label></div>
+                <div class="grid9"><?php echo $this->element->tituloNosotros?></div>
+                <div class="clear"></div>
+            </div>
+            <div class="formRow">
+                <div class="grid3"><label>Contenido:</label></div>
+                <div class="grid9">
+                     <?php echo $this->element->descripcionNosotros?>
+                    <?php echo $this->element->idNosotros?>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </fieldset>        
+        <div class="formRow">
+            <div class="status" id="status3"></div>
+            <div class="formSubmit">                
+                <input class="buttonM bRed "  value="Grabar" type="submit" />
+                <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </form>
+    <div class="data" id="w3"></div>
+</div>

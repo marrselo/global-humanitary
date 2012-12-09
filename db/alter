@@ -1,0 +1,1 @@
+ALTER TABLE `globalhumanitariaperu`.`proyectos` ADD COLUMN `fecha_creacion` DATETIME NULL  AFTER `proyectos_descripcion_corta` ;
