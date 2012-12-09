@@ -1,6 +1,6 @@
 <?php
 
-class Default_DescargaController extends Core_Controller_ActionDefault {
+class Default_UneteController extends Core_Controller_ActionDefault {
 
     public function init() {
         parent::init();
