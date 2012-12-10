@@ -6,9 +6,7 @@ body {
     margin: 0;
     padding: 0;
 }
-a img {
-    border: 0 none;
-}
+a img{border:0;}
 ul.toplinks li {
     float: left;
 }
@@ -42,15 +40,15 @@ ul.toplinks li {
     float: left;
 }
 .body-container div.header ul.topmenu {
-    background: none repeat scroll 0 0 #4B589F;
-    display: inline;
-    float: left;
-    height: 26px;
-    list-style: none outside none;
-    margin: 1.5% 0 0;
-    overflow: hidden;
-    padding: 0 2.5%;
-    width: 95%;
+  background: none repeat scroll 0 0 #4B589F;
+  display: inline;
+  float: left;
+  height: 26px;
+  list-style: none outside none;
+  margin: 1.5% 0 0;
+  overflow: hidden;
+  padding: 0 2.5%;
+  width: 95%;
 }
 .body-container div.header ul.topmenu li {
     border: 0 none;
@@ -62,7 +60,7 @@ ul.toplinks li {
     border-right: 1px dotted white;
     color: #FFFFFF;
     float: left;
-    font-family: GandhiSansRegular,arial;
+    font-family: GandhiSansRegular, arial;
     font-size: 1.1em;
     padding: 5px 14px;
     text-align: center;
@@ -125,7 +123,7 @@ div.body-container div.bottom-content div.left-zone div.bloque div.bloque-body d
     width: 206px;
 }
 div.body-container div.bottom-content div.left-zone div.bloque div.bloque-body div.bloque-field-teaser {
-    color: #383737;
+    color: #000000;
     font-size: 0.9em;
     padding: 0 0 5%;
     text-align: justify;
@@ -179,14 +177,13 @@ div.body-container .footer .leftside ul.bottom_menu li {
     -moz-border-left-colors: none;
     -moz-border-right-colors: none;
     -moz-border-top-colors: none;
-    border-color: #CCCCCC -moz-use-text-color;
     border-image: none;
-    border-style: solid none;
-    border-width: 1px 0;
+    border-left: 0 none;
+    border-right: 0 none;
+    border-top: 1px solid #CCCCCC;
     display: table;
     float: left;
     margin-right: 7%;
-    margin-top: -1px;
     width: 26%;
 }
 div.body-container .footer .leftside ul.bottom_menu li a {
@@ -256,7 +253,9 @@ div.body-container div.bottom-content div.right-zone div.bloque-ultimoproyecto d
     font-weight: 400;
     margin-bottom: 0;
     margin-top: 0;
-    padding: 0.9% 0 0.5%;
+    padding-bottom: 0.5%;
+    padding-left: 3%;
+    padding-top: 0.9%;
     text-transform: uppercase;
     width: 100%;
 }
@@ -353,13 +352,6 @@ div.body-container div.body-content div.contentside div.bloque-content div.bloqu
     margin-bottom: 7%;
     margin-top: 1%;
 }
-div.bloque-imagen {
-    border: 2px solid #FFFFFF;
-    box-shadow: 2px 2px 4px #7B7B7B;
-    float: left;
-    margin-bottom: 7%;
-    margin-top: 1%;
-}
 div.body-container div.body-content div.contentside div.bloque-content div.bloque-text {
     color: grey;
     float: left;
@@ -380,7 +372,7 @@ div.body-container div.body-content div.leftside ul.leftmenu li a {
     border-right: 0 none;
     color: grey;
     float: left;
-    font-size: 0.8em;
+    font-size: 0.9em;
     padding: 4% 5% 4% 7%;
     text-decoration: none;
     width: 87%;
@@ -393,7 +385,7 @@ div.body-container div.body-content div.leftside ul.leftmenu {
     display: table;
     float: left;
     list-style: none outside none;
-    margin: 5% 0 0 3%;
+    margin: 15% 0 0;
     padding: 0;
     width: 100%;
 }
@@ -482,13 +474,12 @@ div.body-container .footer .leftside ul li a {
     font-size: 0.8em;
 }
 .body-container div.bottom-content div.right-zone .section-colabora .sectionblock .bloque-info-colabora .title {
-    color: #33302C;
+    color: #000000;
     font-size: 0.9em;
     font-weight: bold;
     text-transform: uppercase;
 }
 .body-container div.bottom-content div.right-zone .section-colabora .sectionblock .bloque-info-colabora .descripcion {
-    color: #383737;
     font-size: 0.9em;
     line-height: 1;
     margin-top: 3%;
@@ -534,7 +525,6 @@ div.body-container div.bottom-content div.left-zone div.bloque div.blq2 {
     padding-right: 6%;
 }
 div.body-container div.bottom-content div.left-zone div.bloque div.bloque-body .bloque-field-resumen {
-    color: #383737;
     float: left;
     font-size: 0.9em;
     text-align: justify;
@@ -575,12 +565,12 @@ div.body-container div.slideshow-cont div.slideshow-control a #prev {
 div.body-container div.slideshow-cont div.slideshow-control a #next {
 }
 div.body-container div.slideshow-cont div.slideshow-control ul#nav {
-    background: url("../images/pix01.png") repeat scroll 0 0 transparent;
-    float: left;
-    margin: auto;
-    padding: 0.5% 0 0.5% 39%;
-    position: relative;
-    width: 61%;
+  background: url("../images/pix01.png") repeat scroll 0 0 transparent;
+  float: left;
+  margin: auto;
+  padding: 0.5% 0 0.5% 39%;
+  position: relative;
+  width: 61%;
 }
 div.body-container div.slideshow-cont div.slideshow-control ul#nav a {
     background: url("../images/slideshow-button.png") no-repeat scroll 0 0 transparent;
@@ -602,6 +592,9 @@ div.body-container div.slideshow-cont div.slideshow-control .nextprev-controls {
 .body-container div.header ul.topmenu li a.active {
     background: none repeat scroll 0 0 #7A8FD0;
 }
+
+
+
 .body-container .header .logo a, .body-container .header .logo a img {
     border: medium none;
 }
@@ -693,10 +686,9 @@ div.body-container div.body-content div.contentside .memorias-gallery {
     width: 90%;
 }
 div.body-container div.body-content div.contentside .dossier-gallery {
-    float: none;
     margin: auto;
     position: relative;
-    width: 83%;
+    width: 72%;
 }
 div.body-container div.body-content div.contentside .memorias-gallery .memoriabox {
     float: left;
@@ -802,7 +794,7 @@ div.body-container div.body-content div.contentside .nlabor-gallery {
     float: none;
     margin: auto;
     position: relative;
-    width: 71%;
+    width: 84%;
 }
 div.body-container div.body-content div.contentside .nlabor-gallery .leftcolumn {
     margin-right: 1%;
@@ -964,19 +956,10 @@ div.body-container div.body-content div.contentside .bloque-casos .bloque-title 
     text-decoration: none;
 }
 div.body-container div.body-content div.leftside ul.leftmenu li ul {
-    background: none repeat scroll 0 0 #EFF1F8;
-    float: left;
     list-style: none outside none;
-    padding-bottom: 6%;
-    padding-left: 0;
-    padding-top: 6%;
+    padding-left: 6%;
 }
 div.body-container div.body-content div.leftside ul.leftmenu li ul li {
-    background: none repeat scroll 0 0 #EFF1F8;
-    float: left;
-    margin: 0;
-    padding: 0;
-    width: 100%;
 }
 div.body-container div.body-content div.leftside ul.leftmenu li ul li a {
     background: none repeat scroll 0 0 transparent;
@@ -1002,12 +985,12 @@ div.body-container div.body-content div.contentside .content-block-text .image-b
 div.body-container div.body-content div.contentside .floated-right {
 }
 div.body-container div.body-content div.contentside .floated-right .image-box {
-    margin-left: 8%;
+    margin-left: 6%;
     margin-top: 4%;
 }
 div.body-container div.body-content div.contentside .floated-right .text-box {
     float: right;
-    width: 40%;
+    width: 45%;
 }
 div.body-container div.body-content div.contentside .floated-left {
 }
@@ -1018,14 +1001,12 @@ div.body-container div.body-content div.contentside .floated-left .image-box {
     margin-top: 5%;
 }
 div.body-container div.body-content div.contentside .floated-left .text-box {
-    width: 63%;
+    width: 58%;
 }
 div.body-container div.body-content div.contentside h2.bloque-title {
-    clear: both;
     color: #4B589F;
     font-family: trebuchet ms;
     font-size: 1.4em;
-    text-decoration: none;
 }
 .body-container .body-content .contentside .noticias-gallery {
     float: left;
@@ -1169,12 +1150,10 @@ form.registro-form .line-form label {
     display: none;
 }
 #nav li ul li a {
-    padding-bottom: 2%;
-    padding-top: 2%;
 }
 div.body-container div.body-content div.contentside .content-block-text .text-box-large {
     margin-top: -2%;
-    width: 71%;
+    width: 72%;
 }
 form.lefted {
     float: left;
@@ -1227,6 +1206,10 @@ form.lefted {
 }
 #simplemodal-container .simplemodal-data .p2 {
     clear: left;
+}
+#simplemodal-container .simplemodal-data p {
+    float: left;
+    width: 410px;
 }
 #simplemodal-container {
     padding-top: 7% !important;
@@ -1352,126 +1335,13 @@ div.body-container div.body-content div.contentside .sdp-gallery .memoriabox {
     margin: 4%;
 }
 #nav > li.parent > a {
-    background-image: url("../images/arrow-off.png");
-    background-position: 0 center;
+    background-image: url("../images/arrow-right.png");
+    background-position: 120px center;
 }
 #nav > li.parent > a.active {
-    background-image: url("../images/arrow-on.png");
-    background-position: 0 center;
+    background-image: url("../images/arrow-down.png");
+    background-position: 120px center;
 }
 .body-container div.header ul.topmenu li.first a {
     border-left: 1px dotted white;
-}
-#simplemodal-container .ppersonal .description {
-    clear: both;
-    display: block;
-    float: left;
-    margin-top: 1%;
-    width: 100%;
-}
-.leftmenu li.parent ul {
-    background: none repeat scroll 0 0 transparent;
-    display: table;
-    width: 99%;
-}
-.leftmenu li.parent ul li {
-    background: none repeat scroll 0 0 #EFF1F8;
-}
-div.body-container div.body-content div.leftside ul.leftmenu li ul li.active {
-}
-div.body-container div.body-content div.leftside ul.leftmenu li.parent ul li a.active {
-    background-color: transparent;
-    color: #4B589F;
-}
-div.body-container div.body-content div.leftside ul.leftmenu li.parent ul li a {
-    border-bottom: 0 none;
-    padding-bottom: 0;
-    padding-top: 0;
-}
-div.body-container div.body-content div.leftside ul.leftmenu li.parent ul li a {
-    background-color: transparent;
-    background-image: url("../images/arrowlist.jpg");
-    background-position: 3px 7px;
-    background-repeat: no-repeat;
-    color: #636365;
-    float: left;
-    margin-left: 9%;
-    padding-left: 8%;
-    width: 74%;
-}
-div.body-container div.body-content div.leftside ul.leftmenu li.parent ul li a.active {
-    background-color: transparent;
-    background-image: url("../images/arrowlist-h.jpg");
-    background-position: 3px 7px;
-    background-repeat: no-repeat;
-    color: #4B589F;
-}
-div.body-container div.body-content div.contentside .dossier-gallery .memoriabox {
-    margin: 3%;
-}
-div.body-container div.body-content div.contentside .voluntariado-gallery {
-    width: 53%;
-}
-div.body-container div.body-content div.contentside .voluntariado-gallery .memoriabox {
-    margin: 4%;
-}
-#simplemodal-container .simplemodal-data .p2 p {
-    float: left;
-    width: 54%;
-}
-#simplemodal-container .simplemodal-data .p2 img {
-}
-#simplemodal-container .simplemodal-data .p1 p {
-    float: left;
-    margin-left: 2%;
-    width: 50%;
-}
-#simplemodal-container .simplemodal-data .p1 img {
-}
-div.body-container div.body-content div.leftside div.topsection .subtitle {
-    display: none;
-}
-div.body-container div.body-content div.contentside .mgallery1 {
-    float: left;
-    margin: 0;
-    position: relative;
-    width: 100%;
-}
-div.body-container div.body-content div.contentside .mgallery1 .centralcolumn {
-    margin-left: 18%;
-    margin-right: 18%;
-}
-.two-images .first-image {
-    margin-right: 3%;
-}
-.two-images .bloque-imagen {
-    margin-bottom: 2%;
-}
-.four-columns-content {
-    background: none repeat scroll 0 0 #E0DFDF;
-    display: table;
-    padding: 0 2% 2%;
-}
-.four-columns-content .column {
-    float: left;
-    margin: 0 2%;
-    width: 22%;
-}
-.four-columns-content .column1 {
-    margin-left: 0;
-}
-.four-columns-content .column2 {
-}
-.four-columns-content .column3 {
-}
-.four-columns-content .column4 {
-    margin-right: 0;
-}
-.four-columns-content .column h3.titulo {
-    font-size: 1em;
-    font-weight: normal;
-    margin-bottom: 0;
-}
-.four-columns-content .column .bloque-imagen {
-    margin-top: 1%;
 }

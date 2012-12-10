@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<buildpath>
+	<buildpathentry kind="src" path="application"/>
+	<buildpathentry kind="src" path="emailing"/>
+	<buildpathentry kind="src" path="library/Core"/>
+	<buildpathentry kind="src" path="library/CronJobs"/>
+	<buildpathentry kind="src" path="library/Dompdf"/>
+	<buildpathentry kind="src" path="library/PHPExcel"/>
+	<buildpathentry kind="src" path="library/Zend"/>
+	<buildpathentry kind="src" path="library/ZFDebug/Controller/Plugin"/>
+	<buildpathentry kind="src" path="library/Zrt/Controller"/>
+	<buildpathentry kind="src" path="library/Zrt/Conversion"/>
+	<buildpathentry kind="src" path="library/Zrt/JQuery"/>
+	<buildpathentry kind="src" path="library/Zrt/Migration"/>
+	<buildpathentry kind="src" path="library/Zrt/Tools"/>
+	<buildpathentry kind="src" path="public"/>
+	<buildpathentry kind="src" path="tests"/>
+	<buildpathentry kind="con" path="org.eclipse.php.core.LANGUAGE"/>
+</buildpath>
