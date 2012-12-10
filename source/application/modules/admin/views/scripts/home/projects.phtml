@@ -1,28 +1,27 @@
-<div class="contentTop">
-        <span class="pageTitle"><span class="icon-screen">                
-            </span>
-                <?php echo $this->menu[0][$this->controller]['titulo']?>
-            </span>
-        
-        <div class="clear"></div>
-</div>
-
+<br>
+    <a href="#" class="buttonM bDefault ml10" 
+       id="formDialog_open">
+        Nuevo Proyecto
+    </a>
 <?php if (!empty($this->listprojects)): ?>
     <div class="widget check grid9">
         <div class="whead">
             <span class="titleIcon">
-                <input type="checkbox" id="titleCheck" name="titleCheck" />
+                <input type="checkbox"  id="titleCheck" name="titleCheck" />
             </span>
-            <h6>Gestione sus proyectos</h6>
+            <h6>Gestione sus proyectos publicados</h6>
             <div class="clear"></div>
         </div>
         <table cellpadding="0" cellspacing="0" width="100%" class="tDefault checkAll tMedia" id="checkAll">
             <thead>
                 <tr>
                     <td><img src="<?php echo STATIC_ADMIN_IMG; ?>/elements/other/tableArrows.png" alt="" /></td>
+                    <td width="50">Imagen</td>
                     <td width="130">Nombre</td>
                     <td class="sortCol">
-                        <div>Descripción<span></span></div>
+                        <div>Titulo<span>
+                                
+                            </span></div>
                     </td>
                     <td width="130" class="sortCol"><div>Fecha<span></span></div></td>                        
                     <td width="100">Acciones</td>
@@ -30,7 +29,7 @@
             </thead>
             <tfoot>
                 <tr>
-                    <td colspan="5">
+                    <td colspan="6">
                         <div class="itemActions">
                             <label>Seleccion:</label>
                             <select>
@@ -59,20 +58,44 @@
                 <?php foreach ($this->listprojects as
                         $index): ?>
                     <tr>
-                        <td><input type="checkbox" name="checkRow" /></td>
-                        <td>                   
-        <?php echo $index['proyectos_nombre'] ?>
+                        <td><input type="checkbox" name="checkRow" />
                         </td>
-                        <td class="textL">
-        <?php echo substr($index['proyectos_descripcion'],
-            0, 60) . '....' ?>
+                        <td>
+                            <a href="<?php echo DINAMIC_URL; ?>/proyectos/imagen/<?php 
+                            $imagen=  explode('|',$index['imagen']);
+                            echo $imagen[0]?>" 
+                               title="" 
+                               class="lightbox">
+                            <img src="<?php echo DINAMIC_URL; ?>/proyectos/imagen/<?php                            
+                            echo $imagen[0] ?>" 
+                               alt="" width="57" height="36"/>
+                            </a>
+                        </td>
+                        <td>                   
+                        <?php echo $index['proyectos_nombre'] ?>
+                                        </td>
+                                        <td class="textL">
+                        <?php echo substr($index['proyectos_descripcion'],
+                            0, 60) . '....' ?>
                         </td>
                         <td><?php echo $index['fecha_creacion'] ?></td>                            
                         <td class="tableActs">
-                            <a href="/admin/home/delete-banner/id<?php echo $index['proyectos_id'] ?>" 
+                            <a href="/admin/home/delete-project/id/<?php echo $index['proyectos_id'] ?>" 
                                class="tablectrl_small bDefault tipS" 
-                               title="Borrar">
-                                <span class="iconb" data-icon="&#xe136;"></span></a>                                
+                               title="Borrar proyecto">
+                                <span class="iconb" data-icon="&#xe136;"></span>
+                            </a>
+                            <?php $action=($index['proyectos_home']==1)?
+                                'publish-home-project':'unpublish-home-project';?>
+                            <a href="/admin/home/<?php echo $action?>/id/<?php                             
+                            echo $index['proyectos_id'] ?>" 
+                                   class="tablectrl_small bDefault tipS" 
+                                   title="<?php echo $index['proyectos_home']==0 ?
+                                        'Publicar Home' : 'retirar home'?>">
+                                    <span class="iconb" data-icon="&#xe1f7;">
+                                        
+                                    </span>
+                           </a>
                         </td>
                     </tr>
     <?php endforeach ?>
@@ -81,31 +104,6 @@
     </div>
     </div>
 <?php endif; ?>
-<div id="formDialog" class="dialog" title="Dialog with form elements">
-    <form action="">
-        <label>Text field:</label>
-        <input type="text" name="sampleInput" class="clear" placeholder="Enter something" />
-        <div class="divider"><span></span></div>
-        <div class="dialogSelect m10">
-            <label>Select:</label>
-            <select name="select2" >
-                <option value="opt1">Usual select box</option>
-                <option value="opt2">Option 2</option>
-                <option value="opt3">Option 3</option>
-                <option value="opt4">Option 4</option>
-                <option value="opt5">Option 5</option>
-                <option value="opt6">Option 6</option>
-                <option value="opt7">Option 7</option>
-                <option value="opt8">Option 8</option>
-            </select>
-        </div>
-        <div class="divider"><span></span></div>
-        <label>Textarea:</label>
-        <textarea rows="8" cols="" name="textarea" class="auto" placeholder="This textarea is elastic"></textarea>
-        <div>
-            <span class="floatL"><input type="radio" name="dialogRadio" /><label>Radio</label></span>
-            <span class="floatR"><input type="checkbox" class="check" name="dialogCheck" checked="checked" /><label>Checkbox</label></span>
-            <span class="clear"></span>
-        </div>
-    </form>
+<div id="formDialog" class="dialog" title="Ingrese nuevo proyecto">
+<?php echo $this->form?>
 </div>

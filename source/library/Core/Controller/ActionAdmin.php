@@ -27,8 +27,8 @@ class Core_Controller_ActionAdmin extends Core_Controller_Action {
             'memorias'=>
             array('img'=>'/icons/mainnav/statistics.png','url'=>'/admin/memorias',
                 'titulo'=>'Memorias'),
-            'sala-prensa'=>
-            array('img'=>'/icons/mainnav/ui.png','url'=>'/admin/sala-prensa',
+            'newsroom'=>
+            array('img'=>'/icons/mainnav/ui.png','url'=>'/admin/newsroom',
                 'titulo'=>'Sala de Prensa'),
            'quienes-somos'=>
             array('img'=>'/icons/mainnav/forms.png','url'=>'/admin/quienes-somos',
@@ -96,6 +96,11 @@ class Core_Controller_ActionAdmin extends Core_Controller_Action {
                     array('url'=>'/admin/'.$controller.'/miembros','titulo'=>'Nuevo Miembro Equipo')
                     ;
                 }                   
+                break;
+            case 'newsroom' :
+                $submenu = array(
+                    'notices'=>
+                    array('url'=>'/admin/'.$controller.'/noticias','titulo'=>'Noticias'));
                 break;
         }        
         if(isset($submenu[$action]) ){            

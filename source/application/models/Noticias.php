@@ -18,14 +18,14 @@ class Application_Model_Noticias
         $smt->closeCursor();
         return $result;
     }
-    public function listNoticia()
+    public function listNoticias()
     {
         $smt = $this->_tableNoticias->select()->order('miembros_orden asc')->query();
         $result = $smt->fetchAll();
         $smt->closeCursor();
         return $result;
     }
-    public function insertMiembros($data){
+    public function insertNoticia($data){
         if($this->_tableMiembros->insert($data)){
             return $this->_tableMiembros->getAdapter()->lastInsertId();
         }else{

@@ -1,0 +1,29 @@
+
+    <form action="" method='post' id="dialogForm"  enctype="multipart/form-data">
+        <div class="dialogSelect m10"> 
+        <label>Titulo:</label>
+        <?php echo $this->element->titulo; ?>
+<!--        <input type="text" name="sampleInput" class="clear" placeholder="Enter something" />-->
+        </div>
+        <div class="divider"><span></span></div>
+        <div class="dialogSelect m10">
+            <label>Sub titulo:</label>
+            <?php echo $this->element->subtitulo; ?>
+            <?php echo $this->element->idProyecto; ?>
+        </div>
+        <div class="divider"><span></span></div>
+        <div class="dialogSelect m10">    
+             <label>Imagen:</label>
+            <?php echo $this->element->imagen; ?>                    
+        </div>
+        <div class="divider"><span></span></div>
+        <label>Descripcion:</label>
+        <?php echo $this->element->descripcion; ?>
+        <div>            
+            <span class="floatL">
+                <?php echo $this->element->realizado; ?>
+                <label>Realizado</label>
+            </span>
+            <span class="clear"></span>
+        </div>
+    </form>

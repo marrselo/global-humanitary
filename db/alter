@@ -1,1 +1,2 @@
-ALTER TABLE `globalhumanitariaperu`.`proyectos` ADD COLUMN `fecha_creacion` DATETIME NULL  AFTER `proyectos_descripcion_corta` ;
+ALTER TABLE `proyectos` ADD COLUMN `fecha_creacion` DATETIME NULL  AFTER `proyectos_descripcion_corta` ;
+ALTER TABLE `proyectos` CHANGE COLUMN `proyectos_publico` `proyectos_publico` TINYINT(1) NULL DEFAULT 1  ;

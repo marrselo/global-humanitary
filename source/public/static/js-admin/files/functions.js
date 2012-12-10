@@ -758,10 +758,10 @@ $(function() {
         autoOpen: false,
         width: 400,
         buttons: {
-            "Nice stuff": function () {
-                $(this).dialog("close");
+            "Enviar": function () {                                
+               $('#dialogForm').submit();                
             },
-            "Cancel": function () {
+            "Cancelar": function () {
                 $(this).dialog("close");
             }
         }

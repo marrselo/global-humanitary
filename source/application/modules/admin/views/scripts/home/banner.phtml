@@ -85,7 +85,10 @@
                                    class="tablectrl_small bDefault tipS" 
                                    title="Borrar">
                                     <span class="iconb" data-icon="&#xe136;"></span></a>
-                                <a href="/admin/home/publish/id/<?php echo $index['banner_id'] ?>" 
+                                <?php $action=($index['banner_publico']==1)?
+                                          'publish':'unpublish'?>
+                                <a href="/admin/home/<?php echo $action?>/id/<?php 
+                                    echo $index['banner_id'] ?>" 
                                    class="tablectrl_small bDefault tipS" 
                                    title="<?php echo $index['banner_publico']==1 ?
                                         'desactivar' : 'activar'?>">
