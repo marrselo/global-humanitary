@@ -36,7 +36,7 @@ class Application_Model_Queries extends Core_Model {
     public function getUltimasNoticias($limit=0){
         $result = $this->_tableNoticias
                 ->select()
-                ->where('noticias_publico =?',1)
+                ->where('noticias_home =?',1)
                 ->order('noticias_fecha_creacion desc')
                 ;
         if((int)$limit>0){
@@ -120,8 +120,37 @@ class Application_Model_Queries extends Core_Model {
                 ->where('tp.proyectos_home =?',1)
                 ->order('tp.proyectos_orden asc')
                 ->group('tp.proyectos_id')
-                ->limit(1);
+                ->limit(2)
+                ;
         return $result->query()->fetchAll();
+    }
+    public function getUltimoProyectoEncursoHome(){
+        $result = $this->_tableProyectos
+                ->getAdapter()
+                ->select()
+                ->from(array('tp'=>$this->_tableProyectos->getName()),array(
+                    'tp.proyectos_id',
+                    'tp.proyectos_slug',
+                    'tp.proyectos_descripcion_corta',
+                    'tp.proyectos_nombre',
+                    'tp.proyectos_subtitulo',
+                    'tp.proyectos_orden',
+                    'tp.proyectos_descripcion',
+                    'tp.proyectos_publico',
+                    'tp.proyectos_estado_id',
+                    'tp.proyectos_home',
+                    'imagen' =>'tpi.proyectos_imagen_nombre'
+                ))
+                ->joinLeft(array('tpi'=>$this->_tableProyectosImagen->getName()), 
+                        'tpi.proyectos_id=tp.proyectos_id','')
+                ->where('tp.proyectos_publico =?',1)
+                ->where('tp.proyectos_home =?',1)
+                ->where( 'tp.proyectos_estado_id=?',2)
+                ->order('tp.proyectos_orden asc')
+                ->group('tp.proyectos_id')
+                ->limit(1)
+                ;
+        return $result->query()->fetch();
     }
 
 }

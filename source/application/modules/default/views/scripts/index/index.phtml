@@ -9,7 +9,9 @@
             <div class="<?php echo $arrayClass[$value]; ?>">
                 <div class="noticia-title"><?php echo $index['noticias_titulo'] ?></div>
                 <div class="field-image">
-                    <img src="<?php echo DINAMIC_URL; ?>/noticias/<?php echo $index['noticias_imagen']; ?>"/>
+                    <img src="<?php echo DINAMIC_URL; ?>/noticias/<?php 
+                        echo $index['noticias_imagen']; ?>"
+                         width="227" height="85"/>
                 </div>
                 <a class="morelink" href="<?php echo SITE_URL ?>noticias/<?php echo $index['noticias_slug']; ?>" class="bloque-noticias-field-morelink">Leer mas</a>
             </div>
@@ -43,11 +45,20 @@
 <div class="left-zone">
     <div class="bloque bloque-ultproyecto">
         <div class="bloque-title"><a href="#">Ultimo proyecto en curso</a></div>
+        <?php if(!empty($this->ultimoProyecto)):?>
         <div class="bloque-body">
-            <div class="bloque-field-image"><img src="<?php echo STATIC_URL; ?>/images/imagen-noticia-01.jpg" alt="Noticia"></div>
-            <div class="bloque-field-teaser">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </div>
+            <div class="bloque-field-image">
+                <img src="<?php echo DINAMIC_URL; 
+            ?>/proyectos/imagen/<?php echo $this->ultimoProyecto['imagen']?>" 
+                     alt="Noticia"
+                     widht="206"
+                     height="78"></div>
+            <div class="bloque-field-teaser">
+                <?php echo $this->ultimoProyecto['proyectos_descripcion_corta']?>
+            </div>
             <a class="bloque-field-morelink" href="#">Leer mas</a>
         </div>
+        <?php endif;?>
     </div>
 
     <?php foreach ($this->proyectosHome as $index): ?>

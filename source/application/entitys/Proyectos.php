@@ -23,9 +23,9 @@ class Application_Entity_Proyectos extends Core_Entity {
     {
         $objProyecto=new Application_Model_Proyectos();
         $nroPublicHome = $objProyecto->nroPublicHome();
-        echo $publicHome=($nroPublicHome>=4)? '0' : '1' ;
+        $publicHome=($nroPublicHome>=4)? '0' : '1' ;
         $realizado=(!empty($data['realizado']))? '1' : '2' ;
-        $shortDescription=substr($data['descripcion'],50,0);
+        $shortDescription=substr($data['descripcion'],0,50);
         $dataProject=array('proyectos_nombre'=>$data['titulo'],
              'proyectos_subtitulo'=>$data['subtitulo'],
              'proyectos_descripcion'=>$data['descripcion'],
@@ -75,8 +75,14 @@ class Application_Entity_Proyectos extends Core_Entity {
             return false;
         }else{ 
             $data=array('proyectos_home'=>1);
+            try{return true;
             $objProject->actualizarProyecto($idProject,$data);
-            return true;
+            }  catch (Exception $e){
+                Zend_Debug::dump($e);
+                                exit();
+               return false;
+            }
+            
         }
     }
     public static function unpublishProjectHome($idProject)

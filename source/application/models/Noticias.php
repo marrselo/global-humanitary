@@ -9,10 +9,10 @@ class Application_Model_Noticias
         $this->_tableNoticias = new Application_Model_DbTable_Noticias();
     }
     
-    public function getNoticia($idMiembro){
+    public function getNoticia($idNoticia){
         $smt = $this->_tableNoticias
                 ->select()
-                ->where('noticia_id=?', $idMiembro)
+                ->where('noticia_id=?',$idNoticia)
                 ->query();
         $result = $smt->fetch();
         $smt->closeCursor();
@@ -25,33 +25,56 @@ class Application_Model_Noticias
         $smt->closeCursor();
         return $result;
     }
-    public function insertNoticia($data){
-        if($this->_tableMiembros->insert($data)){
-            return $this->_tableMiembros->getAdapter()->lastInsertId();
-        }else{
-            false;
-        }
-    }
-    public function getMiembrosForOrden($orden){
-        $smt = $this->_tableMiembros
-                ->select()
-                ->where('miembros_orden=?', $orden)
-                ->query();
+
+     public static function nroPublicHome()
+    {        
+        $objNotices = new Application_Model_DbTable_Noticias();    
+        $smt = $objNotices->getAdapter()->select()
+            ->from(array('P'=>$objNotices->getName()),
+                new Zend_Db_Expr('count(*) as nroHome'))
+            ->where('noticias_home=?',1)
+            ->query();
         $result = $smt->fetch();
         $smt->closeCursor();
-        return $result;
+        return $result['nroHome'];
     }
-    public function getOrdenlastMiembros(){
-        $sql = $this->_tableMiembros->select()
-                ->from($this->_tableMiembros->getName(),'miembros_orden')
-                ->where('miembros_orden >= 0')
-                ->order('miembros_orden desc')
-                ->limit(1);
-        return $this->_tableMiembros->getAdapter()->fetchOne($sql);
+    public function insertar($data)
+    {
+        $this->_tableNoticias->insert($data);        
+        return $this->_tableNoticias->getAdapter()->lastInsertId();    
     }
-    public function updateMiembros($data,$idMiembro){
-        $where = $this->_tableMiembros->getAdapter()->quoteInto('miembros_id=?', $idMiembro);
-        return $this->_tableMiembros->update($data, $where);
+    public function getNoticiasHome(){
+      $smt = $this->_tableNoticias
+                ->getAdapter()
+                ->select()
+                ->from(array('tp'=>$this->_tableNoticias->getName()),array(
+                    'tp.noticias_id',
+                    'tp.noticias_slug',
+                    'tp.noticias_descripcion_corta',
+                    'tp.noticias_titulo',
+                    'tp.noticias_subtitulo',                    
+                    'tp.noticias_descripcion',
+                    'tp.noticias_publico',                    
+                    'tp.noticias_home',
+                    'tp.noticias_imagen',
+                    'tp.noticias_fecha_creacion'                    
+                ))                
+                ->where('tp.noticias_publico =?',1)                
+                ->order('tp.noticias_fecha_creacion desc')                
+                ->query()
+                ;
+       $result=$smt->fetchAll();
+       $smt->closeCursor();
+       return $result;
+    }
+    public function eliminarNoticia($idNoticia){
+        $where=$this->_tableNoticias->getAdapter()->quoteInto('noticias_id=?',$idNoticia);
+        $this->_tableNoticias->delete($where);
+    }
+    public function actualizarNoticia($idNoticia,$data)
+    {        
+        $where=$this->_tableNoticias->getAdapter()->quoteInto('noticias_id =?',$idNoticia);        
+        $this->_tableNoticias->update($data,$where);
     }
     
 }

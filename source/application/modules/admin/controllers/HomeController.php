@@ -124,7 +124,7 @@ class Admin_HomeController extends Core_Controller_ActionAdmin
          
        }
        $this->view->form=$form;
-       $this->view->listprojects=Application_Entity_Proyectos::listProjectHome();          
+       $this->view->listprojects=Application_Entity_Proyectos::listProjectHome();         
     }
     
     public function deleteProjectAction()
@@ -143,8 +143,8 @@ class Admin_HomeController extends Core_Controller_ActionAdmin
         $idProject=$this->_getParam('id',0);
         $result=Application_Entity_Proyectos::publishProjectHome($idProject);
         if($result){$msj='Proyecto publicado en el home';}
-        else{$msj='Ya tiene 4 proyectos publicados, elimine 1 e intente de nuevo';}
-        $this->_flashMessenger->success();
+        else{$msj='Ya tiene 4 proyectos publicados, despublique 1 e intente de nuevo';}
+        $this->_flashMessenger->success($msj);
         $this->_redirect('/admin/home/projects');
         
         
@@ -155,5 +155,83 @@ class Admin_HomeController extends Core_Controller_ActionAdmin
         $this->_flashMessenger->success('Se retiro publicación en el home');
         $this->_redirect('/admin/home/projects');
     }
+    public function noticesAction()
+    {
+           
+       $form=new Application_Form_AdminNoticiasForm();
+       $form->setDecorators(array(array('ViewScript',
+            array('viewScript'=>'forms/_formProyectos.phtml'))));       
+       if ($this->_request->isPost()){
+           $params = $this->_getAllParams();
+           if($form->isValid($params)){   
+               try{                   
+                   
+                   $filter = new Core_Utils_SeoUrl(); 
+                   $extn = pathinfo($form->imagen->getFileName(),PATHINFO_EXTENSION);          
+                   $params['noticias_slug'] = $filter->filter(trim($params['titulo']),'-',0);                   
+                   $params['nameImagen']=$params['noticias_slug'].'-'.date('s').'.'.$extn;  
+                   $form->imagen->addFilter('Rename',array('target' 
+                         => $form->imagen->getDestination().'/'.$params['nameImagen'])); 
+                   $form->imagen->receive();
+                    if($form->imagen->receive()){                                            
+                    }else{
+                        $this->_flashMessenger->error('La imagen ya existe, o es demasiado grande,
+                             no se efectuo el registro');
+                        $this->_redirect('/admin/home/notices');
+                    }
+                   Application_Entity_Noticias::insertNoticia($params);                   
+                   $this->_flashMessenger->success('el registro se efectuo correctamente');
+                    $this->_redirect('/admin/home/notices');
+               }catch(Exception $e){
+                   $this->_flashMessenger->error('Ouch! Error inesperado intente de nuevo');                  
+                   $this->_redirect('/admin/home/notices');
+               }                              
+           }else{
+               $form->getMessages();
+               $this->_flashMessenger->error('Error faltan datos');
+               foreach($form->getMessages() as $value=> $index){
+                   $msj=  each($index);
+                   $this->_flashMessenger->warning(strtoupper($value).'=> '.$msj[1]);                
+               }               
+               $this->_redirect('/admin/home/notices');
+           }
+         
+       }
+       $this->view->form=$form;
+       $this->view->listnotices=Application_Entity_Noticias::listNoticesHomeAdmin();
+    }
+    public function deleteNoticeAction()
+    {
+        $idNotice=$this->_getParam('id',0);
+        try{
+            Application_Entity_Noticias::deleteNotice($idNotice);
+            $this->_flashMessenger->success('Registro eliminado');
+        }catch(Exception $e){
+            $this->_flashMessenger->error('Ouch! ocurrio un problema intentelo de nuevo');
+        }
+        $this->_redirect('/admin/home/notices');
+    }
+    public function publishHomeNoticeAction()
+    {
+        $idNotice=$this->_getParam('id',0);
+        $result=Application_Entity_Noticias::publishNoticiatHome($idNotice);
+        if($result){
+            $this->_flashMessenger->success('Noticia publicado en el home');}
+        else{
+            $this->_flashMessenger->warning(
+                'Ya tiene 2 noticias publicados,retire 1 e intente de nuevo');
+            
+            }        
+        $this->_redirect('/admin/home/notices');
+        
+        
+    }
+    public function unpublishHomeNoticeAction(){
+        $idNotice=$this->_getParam('id',0);
+        Application_Entity_Noticias::unpublishProjectHome($idNotice);
+        $this->_flashMessenger->success('Se retiro publicación en el home');
+        $this->_redirect('/admin/home/notices');
+    }
+    
 }
 

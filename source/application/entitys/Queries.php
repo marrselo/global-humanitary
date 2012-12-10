@@ -27,6 +27,11 @@ class Application_Entity_Queries {
       $model = new Application_Model_Queries();
       return $model->getProyectosHome();
     }
+    static function getUltimoProyectoEncurso()
+    {
+      $model = new Application_Model_Queries();
+      return $model->getUltimoProyectoEncursoHome();
+    }
     static function listingMemorias(){
       $model = new Application_Model_Queries();
       return $model->listingMemorias();

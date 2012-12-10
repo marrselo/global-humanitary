@@ -1,15 +1,15 @@
 <br>
     <a href="#" class="buttonM bDefault ml10" 
        id="formDialog_open">
-        Nuevo Proyecto
+        Nueva Noticia
     </a>
-<?php if (!empty($this->listprojects)): ?>
+<?php if (!empty($this->listnotices)): ?>
     <div class="widget check grid9">
         <div class="whead">
             <span class="titleIcon">
                 <input type="checkbox"  id="titleCheck" name="titleCheck" />
             </span>
-            <h6>Gestione sus proyectos publicados en el Home</h6>
+            <h6>Gestione sus noticias del Home</h6>
             <div class="clear"></div>
         </div>
         <table cellpadding="0" cellspacing="0" width="100%" class="tDefault checkAll tMedia" id="checkAll">
@@ -57,48 +57,44 @@
                 </tr>
             </tfoot>
             <tbody>
-                <?php foreach ($this->listprojects as
-                        $index): ?>
+                <?php foreach ($this->listnotices as  $index): ?>
                     <tr>
                         <td>
                             <input type="checkbox" 
                                    name="checkRow" 
-                                   <?if($index['proyectos_home']==1):?>
+                                   <?if($index['noticias_home']==1):?>
                                    checked="checked"
-                                   <?php endif;?>
-                                   />
+                                   <?php endif;?>/>
                         </td>
                         <td>
-                            <a href="<?php echo DINAMIC_URL; ?>/proyectos/imagen/<?php 
-                            $imagen=  explode('|',$index['imagen']);
-                            echo $imagen[0]?>" 
+                            <a href="<?php echo DINAMIC_URL; ?>/noticias/<?php                             
+                            echo $index['noticias_imagen']?>" 
                                title="" 
                                class="lightbox">
-                            <img src="<?php echo DINAMIC_URL; ?>/proyectos/imagen/<?php                            
-                            echo $imagen[0] ?>" 
+                            <img src="<?php echo DINAMIC_URL; ?>/noticias/<?php                            
+                            echo $index['noticias_imagen']?>" 
                                alt="" width="57" height="36"/>
                             </a>
                         </td>
                         <td>                   
-                        <?php echo $index['proyectos_nombre'] ?>
+                        <?php echo $index['noticias_titulo'] ?>
                                         </td>
                                         <td class="textL">
-                        <?php echo substr($index['proyectos_descripcion'],
-                            0, 60) . '....' ?>
+                        <?php echo $index['noticias_descripcion_corta']. '....' ?>
                         </td>
-                        <td><?php echo $index['fecha_creacion'] ?></td>                            
+                        <td><?php echo $index['noticias_fecha_creacion'] ?></td>                            
                         <td class="tableActs">
-                            <a href="/admin/home/delete-project/id/<?php echo $index['proyectos_id'] ?>" 
+                            <a href="/admin/home/delete-notice/id/<?php echo $index['noticias_id'] ?>" 
                                class="tablectrl_small bDefault tipS" 
-                               title="Borrar proyecto">
+                               title="Borrar Noticia">
                                 <span class="iconb" data-icon="&#xe136;"></span>
                             </a>
-                            <?php $action=($index['proyectos_home']=='')?
-                                'publish-home-project':'unpublish-home-project';?>
+                            <?php $action=($index['noticias_home']=='')?
+                                'publish-home-notice':'unpublish-home-notice';?>
                             <a href="/admin/home/<?php echo $action?>/id/<?php                             
-                            echo $index['proyectos_id'] ?>" 
+                            echo $index['noticias_id'] ?>" 
                                    class="tablectrl_small bDefault tipS" 
-                                   title="<?php echo $index['proyectos_home']==0 ?
+                                   title="<?php echo $index['noticias_home']==0 ?
                                         'Publicar Home' : 'retirar home'?>">
                                     <span class="iconb" data-icon="&#xe1f7;">
                                         
@@ -112,6 +108,6 @@
     </div>
     </div>
 <?php endif; ?>
-<div id="formDialog" class="dialog" title="Ingrese nuevo proyecto">
+<div id="formDialog" class="dialog" title="Ingrese nuevo Noticia">
 <?php echo $this->form?>
 </div>

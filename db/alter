@@ -1,2 +1,7 @@
 ALTER TABLE `proyectos` ADD COLUMN `fecha_creacion` DATETIME NULL  AFTER `proyectos_descripcion_corta` ;
 ALTER TABLE `proyectos` CHANGE COLUMN `proyectos_publico` `proyectos_publico` TINYINT(1) NULL DEFAULT 1  ;
+ALTER TABLE `noticias` ADD COLUMN `noticias_home` TINYINT(1) UNSIGNED NULL DEFAULT 0  AFTER `noticias_descripcion_corta` ;
+UPDATE `noticias` SET `noticias_home`=1 WHERE `noticias_id`='1';
+UPDATE `noticias` SET `noticias_home`=1 WHERE `noticias_id`='2';
+ALTER  TABLE `tipo_colaboracion` ADD COLUMN `tipo_colaboracion_home` TINYINT(1) UNSIGNED NULL  AFTER `tipo_colaboracion_orden` ;
+ALTER TABLE `tipo_colaboracion` ADD COLUMN `fecha_creacion` DATETIME NULL  AFTER `tipo_colaboracion_home` ;
