@@ -17,6 +17,7 @@ class Core_Controller_Action extends Zend_Controller_Action {
     public function init() {
         // $this->_session = new Zend_Session_Namespace('sessionGeneral');
         $this->_flashMessenger = new Core_Controller_Action_Helper_FlashMessengerCustom();
+        $this->_layout = Zend_Layout::getMvcInstance();
         parent::init();
     
     }

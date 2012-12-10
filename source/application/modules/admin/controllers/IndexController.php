@@ -7,7 +7,7 @@ class Admin_IndexController extends Core_Controller_ActionAdmin
     }
     public function indexAction()
     {                   
-        $this->view->banner = Application_Entity_Queries::getBanner();               
+        $this->_layout->setLayout('layout-login');              
     } 
     public function deleteAction()
     {
