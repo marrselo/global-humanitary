@@ -4,6 +4,7 @@ class Admin_VideosController extends Core_Controller_ActionAdmin
 {
     public function init() {
         parent::init();
+         if(!isset($this->session->_identity)) $this->_redirect ('/admin');
     }
     public function indexAction()
     {           

@@ -3,7 +3,7 @@
 class Admin_NosotrosController extends Core_Controller_ActionAdmin       
 {
     public function init() {
-        parent::init();
+        parent::init();        
     }
     public function indexAction()
     {           

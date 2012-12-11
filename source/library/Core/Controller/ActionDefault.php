@@ -60,8 +60,7 @@ class Core_Controller_ActionDefault extends Core_Controller_Action {
             'module' => 'default',
             'controller' => 'voluntariado',
             'action' => 'index',
-        ),
- 
+        ),        
     );
  
 return $pages;

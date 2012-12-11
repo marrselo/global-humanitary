@@ -87,49 +87,62 @@
         </div>
         <div class="clear"></div>
     </div>
+    <div class="topNav"><?php echo $this->getMessegerAdmin(); ?></div>
 </div>
 <!-- Top line ends -->
 
 
 <!-- Login wrapper begins -->
-<div class="loginWrapper">
 
+
+<div class="loginWrapper">
 	<!-- Current user form -->
-    <form action="index.html" id="login">
-        <div class="loginPic">
-            <a href="#" title=""><img src="<?php echo STATIC_ADMIN_IMG; ?>/images/userLogin.png" alt="" /></a>
-            <span>Eugene Kopyov</span>
+    <form action="/admin/index/login" id="login" method="post">
+        <div class="loginPic">           
+            <a href="#" title="">
+                <img src="<?php echo STATIC_ADMIN_IMG; ?>/userLogin.png" 
+                     alt="" /></a>
+            <span>Red Interna</span>
             <div class="loginActions">
                 <div><a href="#" title="Change user" class="logleft flip"></a></div>
                 <div><a href="#" title="Forgot password?" class="logright"></a></div>
             </div>
         </div>
         
-        <input type="text" name="login" placeholder="Confirm your email" class="loginEmail" />
-        <input type="password" name="password" placeholder="Password" class="loginPassword" />
+        <input type="text" name="login" placeholder="usuario: admin"/> <!--class="loginEmail" --> 
+        <input type="password" name="password" placeholder="contraseña: 123" class="loginPassword" />
         
         <div class="logControl">
-            <div class="memory"><input type="checkbox" checked="checked" class="check" id="remember1" /><label for="remember1">Remember me</label></div>
+<!--            <div class="memory">
+                <input type="checkbox" checked="checked" class="check" id="remember1" />
+                <label for="remember1">Remember me</label>
+            </div>-->
             <input type="submit" name="submit" value="Login" class="buttonM bBlue" />
             <div class="clear"></div>
         </div>
     </form>
     
     <!-- New user form -->
-    <form action="index.html" id="recover">
+    <form action="/admin/index/login" id="recover">
         <div class="loginPic">
-            <a href="#" title=""><img src="/<?php echo STATIC_ADMIN_IMG; ?>/images/userLogin2.png" alt="" /></a>
+            <a href="#" title="">
+                <img src="<?php echo STATIC_ADMIN_IMG; ?>/userLogin2.png" 
+                     alt="" />
+            </a>
             <div class="loginActions">
                 <div><a href="#" title="" class="logback flip"></a></div>
                 <div><a href="#" title="Forgot password?" class="logright"></a></div>
             </div>
         </div>
             
-        <input type="text" name="login" placeholder="Your username" class="loginUsername" />
-        <input type="password" name="password" placeholder="Password" class="loginPassword" />
+        <input type="text" name="login" placeholder="invitado" class="loginUsername" />
+        <input type="password" name="password" placeholder="invitado" class="loginPassword" />
         
         <div class="logControl">
-            <div class="memory"><input type="checkbox" checked="checked" class="check" id="remember2" /><label for="remember2">Remember me</label></div>
+            <div class="memory">
+                <input type="checkbox" checked="checked" class="check" id="remember2" />
+                <label for="remember2">Recordarme</label>
+            </div>
             <input type="submit" name="submit" value="Login" class="buttonM bBlue" />
         </div>
     </form>

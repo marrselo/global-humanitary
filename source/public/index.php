@@ -75,7 +75,7 @@ class index
             } else {
             throw new Zend_Exception('error en la configuracion de los .ini');
             }
-        }        
+        }                
         Zend_Registry::set('config',$options);       
         $application->setOptions($options);  
         return $application;

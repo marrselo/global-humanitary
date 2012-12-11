@@ -2,22 +2,38 @@
 
 class Core_Controller_ActionAdmin extends Core_Controller_Action {
                     
+    protected $_identity;
     public function init() {
-        $this->_helper->layout->setLayout('layout-admin');
         parent::init();
+        $this->_helper->layout->setLayout('layout-admin');        
+        
+        
         
     }
     
     public function preDispatch()
-    {
-        $controller = $this->getRequest()->getControllerName();
+    {        
+        $this->_identity = Zend_Auth::getInstance()->getIdentity();
+        $controller = $this->getRequest()->getControllerName();        
         $action=$this->getRequest()->getActionName();                
         $this->view->menu=$this->getMenu($controller);
         $this->view->submenu=$this->getSubmenu($controller,$action);        
         $this->view->controller=$controller;
-        $this->view->action=$action;
+        $this->view->action=$action;        
     }
-    
+    function permisos()
+    {
+        $auth = Zend_Auth::getInstance();
+        $controller=$this->_request->getControllerName();
+        if ($auth->hasIdentity()) {        
+            Zend_Debug::dump($this->_identity);exit();
+        }else{
+            if ($controller!='index') {
+            $this->_redirect('/admin');
+            }
+        }
+        
+    }
     function getMenu($controller)
     {
         $menu = array(
@@ -46,10 +62,13 @@ class Core_Controller_ActionAdmin extends Core_Controller_Action {
             array('img'=>'/icons/mainnav/messages.png','url'=>'admin/unete',
                 'titulo'=>'Únete')
             );
-        $activeMenu = $menu[$controller];
-        unset($menu[$controller]);              
-        $elemento=array($controller=>$activeMenu);
-        array_unshift($menu,$elemento);                
+        if(isset($menu[$controller])){
+            $activeMenu = $menu[$controller];
+            unset($menu[$controller]);              
+            $elemento=array($controller=>$activeMenu);            
+            array_unshift($menu,$elemento);                
+        }
+        
         return $menu;
     }
     
@@ -111,4 +130,44 @@ class Core_Controller_ActionAdmin extends Core_Controller_Action {
         }
         return $submenu;
     }            
+    public function auth($usuario,$password)
+    {
+                  
+            $dbAdapter = Zend_Db_Table_Abstract::getDefaultAdapter();
+            $authAdapter = new Zend_Auth_Adapter_DbTable($dbAdapter);
+            $authAdapter
+                ->setTableName('user_admin')
+                ->setIdentityColumn('user_admin_user')
+                ->setCredentialColumn('user_admin_password')
+                ->setIdentity($usuario)
+                ->setCredential($password);
+            $select = $authAdapter->getDbSelect();
+            $select->where('user_admin_activo = 1');             
+            $result = Zend_Auth::getInstance()->authenticate($authAdapter);
+            if ($result->isValid()) {                
+                $storage = Zend_Auth::getInstance()->getStorage();
+                $bddResultRow = $authAdapter->getResultRowObject();
+                $storage->write($bddResultRow);
+                $msj = 'Bienvenido Usuario '.$result->getIdentity();
+                $this->_flashMessenger->success($msj);
+                $this->_identity = Zend_Auth::getInstance()->getIdentity();                
+                $return = true;
+            } else {
+                switch ($result->getCode()) {
+                    case Zend_Auth_Result::FAILURE_IDENTITY_NOT_FOUND:
+                        $msj = 'El usuario no existe';
+                        break;
+                    case Zend_Auth_Result::FAILURE_CREDENTIAL_INVALID:
+                        $msj = 'Password incorrecto';
+                        break;
+                    default:
+                        $msj='Datos incorrectos';
+                        break;
+                }
+               $this->_flashMessenger->warning($msj);
+                $return = false;
+            }
+             
+             return $return;
+    }
 }

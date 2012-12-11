@@ -3,15 +3,15 @@
 class Admin_HomeController extends Core_Controller_ActionAdmin       
 {
     public function init() {
-        parent::init();       
+        parent::init();            
     }
     public function indexAction()
-    {                   
+    {   
+        
         $this->_redirect('/admin/home/banner');
     } 
     public function bannerAction()
-    {   
-       //$this->_helper->layout()->disableLayout();    
+    {           
        $objBanner = new Application_Model_Banner();
        $orden = $objBanner->getOrden();
        
