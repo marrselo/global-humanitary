@@ -7,7 +7,7 @@ class Application_Model_TipoColaboracion
     function __construct()
     {
         $this->_tableTipoColaboracion = 
-            new $this->_Application_Model_DbTable_TipoColaboracion();
+            new Application_Model_DbTable_TipoColaboracion();
     }
     
     public function getNoticia($idTipoColaboracion){
@@ -29,7 +29,7 @@ class Application_Model_TipoColaboracion
 
      public static function nroPublicHome()
     {        
-        $objTipoColaboracion = new $this->_Application_Model_DbTable_TipoColaboracion();    
+        $objTipoColaboracion = new Application_Model_DbTable_TipoColaboracion();    
         $smt = $objTipoColaboracion->getAdapter()->select()
             ->from(array('P'=>$objTipoColaboracion->getName()),
                 new Zend_Db_Expr('count(*) as nroHome'))

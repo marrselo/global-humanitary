@@ -6,27 +6,26 @@ class Core_Controller_ActionAdmin extends Core_Controller_Action {
     public function init() {
         parent::init();
         $this->_helper->layout->setLayout('layout-admin');        
-        
-        
-        
     }
     
     public function preDispatch()
     {        
         $this->_identity = Zend_Auth::getInstance()->getIdentity();
+        
         $controller = $this->getRequest()->getControllerName();        
         $action=$this->getRequest()->getActionName();                
         $this->view->menu=$this->getMenu($controller);
         $this->view->submenu=$this->getSubmenu($controller,$action);        
         $this->view->controller=$controller;
         $this->view->action=$action;        
+        $this->permisos();
     }
     function permisos()
     {
         $auth = Zend_Auth::getInstance();
         $controller=$this->_request->getControllerName();
         if ($auth->hasIdentity()) {        
-            Zend_Debug::dump($this->_identity);exit();
+            
         }else{
             if ($controller!='index') {
             $this->_redirect('/admin');

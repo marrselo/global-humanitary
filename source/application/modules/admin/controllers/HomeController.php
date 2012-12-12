@@ -39,8 +39,7 @@ class Admin_HomeController extends Core_Controller_ActionAdmin
 //                 exit();
 //             }
           }        
-        }    
-        
+        }            
         $this->view->banner = $objBanner->listBannerAdmin();        
         $this->view->form = $form;
         
@@ -232,6 +231,55 @@ class Admin_HomeController extends Core_Controller_ActionAdmin
         $this->_flashMessenger->success('Se retiro publicación en el home');
         $this->_redirect('/admin/home/notices');
     }
-    
+    public function collaboratesAction()
+    {
+           
+       $form=new Application_Form_AdminColaboraForm();
+       $form->setDecorators(array(array('ViewScript',
+            array('viewScript'=>'forms/_formColabora.phtml'))));       
+       if ($this->_request->isPost()){
+           $params = $this->_getAllParams();
+           if($form->isValid($params)){   
+               try{                   
+                   
+                   $filter = new Core_Utils_SeoUrl(); 
+                   $extn = pathinfo($form->imagen->getFileName(),PATHINFO_EXTENSION);          
+                   $file = $filter->filter(trim($params['titulo']),'-',0);                   
+                   $params['nameImagen']=$file.'-'.date('s').'.'.$extn;  
+                   $form->imagen->addFilter('Rename',array('target' 
+                         => $form->imagen->getDestination().'/'.$params['nameImagen'])); 
+                   $form->imagen->receive();
+                    if($form->imagen->receive()){                                            
+                    }else{
+                        $this->_flashMessenger->error('La imagen ya existe, o es demasiado grande,
+                             no se efectuo el registro');
+                        exit;
+                        $this->_redirect('/admin/home/collaborates');
+                    }
+                   Application_Entity_TipoColaboracion::insertCollabora($params);                   
+                   $this->_flashMessenger->success('el registro se efectuo correctamente');
+                    $this->_redirect('/admin/home/collaborates');
+               }catch(Exception $e){
+                   $this->_flashMessenger->error('Ouch! Error inesperado intente de nuevo');
+                   Zend_Debug::dump($e);
+                   exit;
+                   $this->_redirect('/admin/home/collaborates');
+               }                              
+           }else{
+               $form->getMessages();
+               $this->_flashMessenger->error('Error faltan datos');
+               foreach($form->getMessages() as $value=> $index){
+                   $msj=  each($index);
+                   $this->_flashMessenger->warning(strtoupper($value).'=> '.$msj[1]);                
+               }               
+               $this->_redirect('/admin/home/collaborates');
+           }
+         
+       }
+       $this->view->form=$form;
+       $this->view->listaTipoColaboracion=Application_Entity_TipoColaboracion::
+            listaTipoColaboracionAdmin();
+       
+    }
 }
 

@@ -4,7 +4,7 @@
  *
  * @author Marcelo Carranza
  */
-class Application_Entity_Noticias extends Core_Entity {
+class Application_Entity_TipoColaboracion extends Core_Entity {
 
     //put your code here
     protected $_id;    
@@ -19,29 +19,28 @@ class Application_Entity_Noticias extends Core_Entity {
         $$this->_publicHome = 1;
         
     }       
-    public static function  insertNoticia($data)
+    public static function  insertCollabora($data)
     {
         $objTipoColaboracion=new Application_Model_TipoColaboracion();
         $nroPublicHome = $objTipoColaboracion->nroPublicHome();
         $publicHome=($nroPublicHome>=2)? '0' : '1' ;
         
         $shortDescription=substr($data['descripcion'],0,50);
-        $dataNotice=array('tipo_colaboracion_titulo'=>$data['titulo'],
+        $dataCollabore=array('tipo_colaboracion_titulo'=>$data['titulo'],
              'tipo_colaboracion_subtitulo'=>$data['subtitulo'],
              'tipo_colaboracion_descripcion'=>$data['descripcion'],
-             'fecha_creacion'=>date('Y-m-d H:i:s'),
-             'tipo_colaboracion_descripcion_corta'=>$shortDescription,
+             'fecha_creacion'=>date('Y-m-d H:i:s'),             
              'tipo_colaboracion_img'=>$data['nameImagen'],
              'tipo_colaboracion_publico'=>1,
              'tipo_colaboracion_home'=>$publicHome,
-             );       
-            $data['idProyecto']=$objTipoColaboracion->insertar($dataNotice);            
+             );                    
+            $objTipoColaboracion->insertar($dataCollabore);            
             return '';              
     }
-    public static function listNoticesHomeAdmin()
+    public static function listaTipoColaboracionAdmin()
     {        
         $objTipoColaboracion=new Application_Model_TipoColaboracion();
-        return $objTipoColaboracion->getNoticiasHome();
+        return $objTipoColaboracion->getColaboracionHome();
     }
     
     public static function deleteColaboracion($idNoticia){

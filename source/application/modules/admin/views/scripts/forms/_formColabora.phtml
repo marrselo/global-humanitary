@@ -9,21 +9,19 @@
         <div class="dialogSelect m10">
             <label>Sub titulo:</label>
             <?php echo $this->element->subtitulo; ?>
-            <?php echo $this->element->idProyecto; ?>
+            <?php echo $this->element->id; ?>
         </div>
         <div class="divider"><span></span></div>
         <div class="dialogSelect m10">    
              <label>Imagen:</label>
             <?php echo $this->element->imagen; ?>                    
         </div>
+        
+        <div class="dialogSelect m10">    
+             <label>Archivo:</label>
+            <?php echo $this->element->file; ?>                    
+        </div>
         <div class="divider"><span></span></div>
         <label>Descripcion:</label>
-        <?php echo $this->element->descripcion; ?>
-        <div>            
-            <span class="floatL">
-                <?php echo $this->element->realizado; ?>
-                <label>Publicado</label>
-            </span>
-            <span class="clear"></span>
-        </div>
+        <?php echo $this->element->descripcion; ?>       
     </form>
