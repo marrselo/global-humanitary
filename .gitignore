@@ -3,4 +3,6 @@ source/nbproject/*
 source/data/log
 source/data/cache
 source/application/configs/private.ini
+source/library/Zend
+source/library/Zend/*
 
